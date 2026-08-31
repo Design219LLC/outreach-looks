@@ -180,6 +180,37 @@ a { color: inherit; }
   text-shadow: 0 2px 10px rgba(0,0,0,.6);
 }
 
+
+/* FB cover banner — wide graphic, not a hero replacement */
+.front-door-banner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: #000;
+  border-top: 1px solid rgba(244, 236, 227, 0.08);
+  border-bottom: 1px solid rgba(244, 236, 227, 0.08);
+}
+.front-door-img {
+  width: 100%;
+  max-width: 100%;
+  max-height: min(42vh, 22rem);
+  object-fit: contain;
+  object-position: center;
+  background: #000;
+  margin: 0 auto;
+}
+.front-door-cap {
+  margin: 0;
+  padding: .7rem var(--pad) .9rem;
+  font-family: var(--display);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .95rem;
+  color: var(--neon);
+  text-align: center;
+  background: var(--panel);
+}
 /* Visit — chalk unit card */
 .find-unit {
   display: flex;
@@ -268,6 +299,7 @@ a { color: inherit; }
     grid-template-columns: none !important;
   }
   .slab, .slab img, .garage-shot, .garage-shot img,
+  .front-door-banner, .front-door-img,
   .smash-lead, .find-unit, .unit-photo img, .map-sns, .map-sns iframe {
     max-width: 100% !important;
   }

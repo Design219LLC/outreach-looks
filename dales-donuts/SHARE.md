@@ -4,9 +4,10 @@
 - NAP: Dale's Donuts · 919 Military Rd, Benton, AR · (501) 776-2710 · `tel:+15017762710`
 - Maps: https://www.google.com/maps/dir/?api=1&destination=919+Military+Rd,+Benton,+AR
 - Facebook: https://www.facebook.com/people/Dales-Donuts-Benton/61579812901069/
-- Grammar: cinematic storefront (type BELOW photo) → horizontal case scroll of counter/donuts/box → bakery-ticket Visit
+- Grammar: cinematic storefront (type BELOW photo) → horizontal case scroll of counter/donuts/box + BTS box/room panes → bakery-ticket Visit
+- BTS: `img/bts-box.jpg` + `img/bts-room.jpg` cropped from FB reel thumb (540×960 collage); each upscaled ~1100px long edge (LANCZOS). Source is soft — usable product + real interior, not hero-grade. Collage not used as one tall uncropped strip.
 - Palette: navy `#1e3a5f`, warm cream, cherry `#c41e3a` from Dale's script
 - Display: DM Serif Display + Karla
-- Photos: kit `hero.jpg` kept at 1200px upscale; 2/3/4 from look-photos
+- Photos: kit `hero.jpg` kept at 1200px upscale; 2/3/4 from look-photos; BTS panes from FB share reel
 - Hours: not listed — call the shop
 - noindex; Look chip → design219.com

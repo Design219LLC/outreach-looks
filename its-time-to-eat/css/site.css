@@ -133,6 +133,36 @@ a { color: inherit; }
   text-shadow: 0 2px 12px rgba(0,0,0,.55);
 }
 
+
+/* Brand graphic — FB cover, labeled honestly (not plated food) */
+.brand-graphic {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--brown);
+  border-top: 1px solid rgba(250, 247, 242, 0.08);
+}
+.brand-graphic-img {
+  width: 100%;
+  max-width: 100%;
+  max-height: min(52vh, 28rem);
+  object-fit: contain;
+  object-position: center;
+  background: #111;
+  margin: 0 auto;
+}
+.brand-graphic-cap {
+  margin: 0;
+  padding: .65rem var(--pad) .85rem;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gravy);
+  text-align: center;
+  background: var(--brown);
+}
 /* 2-up → 1-col at 390 */
 .duo {
   display: grid;
