@@ -2,7 +2,7 @@ Paw Springs Resort
 1113 West Center, Sheridan, AR 72150
 (870) 942-1550
 Facebook: https://www.facebook.com/pawspringspetresort/
-CRM: https://crm.pawfinity.com/paw-springs-resort/
-Never pawsprings.com. Never use CRM email on the look.
-Photos: hero (kept) + brand mark (2) + staff/dog (3) + wide banner (4) + wordmark (5).
-Rates from CRM pricing page. Hours not published.
+CRM book: https://crm.pawfinity.com/paw-springs-resort/
+Do not use the parked domain or the CRM mailbox on the look pages.
+Grammar: Rates-first — compact brand + Book/Call, rate cards as hero, photos below.
+Photos: hero basset, staff+dog (3), brand mark (2/4/5). Rates from CRM. Hours not published.

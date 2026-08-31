@@ -9,59 +9,75 @@
   <meta property="og:title" content="Smashed N' Stacked · Little Rock">
   <meta property="og:description" content="Smashed N' Stacked, 1020 E 6th St Unit 4, Little Rock, AR 72202. Call (501) 291-2353.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="img/hero.jpg">
+  <meta property="og:image" content="img/3.jpg">
   <link rel="icon" type="image/jpeg" href="img/favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
-
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <a class="look-chip" href="https://design219.com">Look · Design219</a>
-  <header class="top">
-    <a class="mark" href="index.html">Smashed N' Stacked</a>
-    <nav class="nav" aria-label="Primary">
+
+  <header class="brandbar-sns">
+    <a class="mark-sns" href="index.html">Smashed N' Stacked</a>
+    <nav class="nav-sns" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
       <a href="visit.html">Visit</a>
     </nav>
   </header>
+
   <main id="main">
-    <section class="hero">
+    <!-- Grammar: BURGER leads. Dark East Village. -->
+    <section class="smash-lead">
+      <picture>
+        <source media="(max-width: 640px)" srcset="img/3-sm.jpg">
+        <img class="smash-photo" src="img/3.jpg" width="1600" height="1117" alt="Cheese-pull stacked smash burger in foil from Smashed N' Stacked.">
+      </picture>
+      <div class="smash-ink">
+        <p class="neon-tag">East Village · Little Rock</p>
+        <h1>Smash it.<br>Stack it.</h1>
+        <p class="chalk-line">1020 E 6th St, Unit 4.</p>
+        <div class="crush-row">
+          <a class="crush-go" href="tel:+15012912353">Call (501) 291-2353</a>
+          <a class="crush-ghost" href="https://www.google.com/maps/dir/?api=1&destination=1020+E+6th+St+Unit+4,+Little+Rock,+AR+72202">Directions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1-col @390 → 2-col @768. No forced 3-col. No overflow. -->
+    <section class="stack-sns" aria-label="The smash">
+      <figure class="slab">
+        <picture>
+          <source media="(max-width: 640px)" srcset="img/2-sm.jpg">
+          <img src="img/2.jpg" width="1200" height="630" alt="Hand holding a stacked smash burger in foil at Smashed N' Stacked.">
+        </picture>
+        <figcaption>The stack</figcaption>
+      </figure>
+      <figure class="slab">
+        <img src="img/4.jpg" width="1400" height="933" alt="Owner in branded hoodie in front of the Smashed N' Stacked food truck.">
+        <figcaption>Truck &amp; crew</figcaption>
+      </figure>
+    </section>
+
+    <!-- Storefront secondary -->
+    <section class="garage-shot" aria-label="The door">
       <picture>
         <source media="(max-width: 640px)" srcset="img/hero-sm.jpg">
-        <img class="bleed" src="img/hero.jpg" width="1200" height="900" alt="Smashed N' Stacked storefront in East Village, Little Rock — garage-door glass with promo writing.">
+        <img src="img/hero.jpg" width="1200" height="900" alt="Smashed N' Stacked East Village storefront — garage-door glass with chalk-style promo writing.">
       </picture>
-      <div class="veil" aria-hidden="true"></div>
-      <div class="copy">
-        <p class="kicker">East 6th · Little Rock</p>
-        <h1>Smash it.<br>Stack it.</h1>
-        <p class="promise">1020 E 6th St, Unit 4.</p>
-        <div class="acts">
-          <a class="btn btn-go" href="tel:+15012912353">Call (501) 291-2353</a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=1020+E+6th+St+Unit+4,+Little+Rock,+AR+72202">Directions</a>
-        </div>
-      </div>
-    </section>
-    <section class="band">
-      <div class="wrap">
-        <p class="kicker">The smash</p>
-        <h2>From the window.</h2>
-        <p class="lede">Burgers they actually cook. We don't invent a menu or a price.</p>
-        <div class="strip" style="grid-template-columns:1fr 1fr 1fr;">
-          <img src="img/2.jpg" alt="Stacked smash burger in foil from Smashed N' Stacked, Little Rock.">
-          <img src="img/3.jpg" alt="Cheese-pull stacked burger from Smashed N' Stacked.">
-          <img src="img/4.jpg" alt="Smashed N' Stacked food truck with branded hoodie.">
-        </div>
-      </div>
+      <p class="garage-cap">Unit 4 · East 6th</p>
     </section>
   </main>
-  <footer class="foot">
-    Smashed N' Stacked · 1020 E 6th St Unit 4 · Little Rock, AR 72202 · <a href="tel:+15012912353">(501) 291-2353</a>
-    · <a href="https://www.facebook.com/smashednstacked/">Facebook</a>
+
+  <footer class="colophon-sns">
+    Smashed N' Stacked · 1020 E 6th St Unit 4 · Little Rock, AR 72202 ·
+    <a href="tel:+15012912353">(501) 291-2353</a> ·
+    <a href="https://www.facebook.com/smashednstacked/">Facebook</a>
   </footer>
-  <nav class="stick" aria-label="Quick actions">
+
+  <nav class="neon-dock" aria-label="Quick actions">
     <a href="tel:+15012912353">Call</a>
     <a href="visit.html">Visit</a>
     <a href="https://www.google.com/maps/dir/?api=1&destination=1020+E+6th+St+Unit+4,+Little+Rock,+AR+72202">Directions</a>

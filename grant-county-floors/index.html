@@ -13,56 +13,71 @@
   <link rel="icon" type="image/jpeg" href="img/favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
-
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <a class="look-chip" href="https://design219.com">Look · Design219</a>
-  <header class="top">
-    <a class="mark" href="index.html">Grant County Floors</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
+
+  <header class="yard-bar">
+    <a class="yard-mark" href="index.html">Grant County Floors</a>
+    <nav class="yard-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Showroom</a>
       <a href="visit.html">Visit</a>
     </nav>
   </header>
+
   <main id="main">
-    <section class="hero">
+    <section class="facade-stage" aria-label="Shop facade">
       <picture>
         <source media="(max-width: 640px)" srcset="img/hero-sm.jpg">
-        <img class="bleed" src="img/hero.jpg" alt="Grant County Floors shop on Highway 167 N in Sheridan — gray metal building with shop sign and phone over the garage door.">
+        <img class="facade-shot" src="img/hero.jpg" width="1200" height="900" alt="Grant County Floors metal shop on Highway 167 N in Sheridan — gray building with shop sign and phone over the garage door.">
       </picture>
-      <div class="veil" aria-hidden="true"></div>
-      <div class="copy">
-        <p class="kicker">Highway 167 · Sheridan</p>
-        <h1>Floors for the county.</h1>
-        <p class="promise">9948 Highway 167 N. Come see the boards.</p>
-        <div class="acts">
-          <a class="btn btn-go" href="tel:+15014163317">Call (501) 416-3317</a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=9948+Highway+167+N,+Sheridan,+AR+72150">Directions</a>
+      <div class="facade-slab">
+        <div class="facade-slab-inner">
+          <p class="yard-tag">Highway 167 · Sheridan</p>
+          <h1>Floors for the county.</h1>
+          <p class="yard-line">9948 Highway 167 N. Come see the boards.</p>
+          <div class="yard-acts">
+            <a class="yard-cta" href="tel:+15014163317">Call (501) 416-3317</a>
+            <a class="yard-ghost" href="https://www.google.com/maps/dir/?api=1&destination=9948+Highway+167+N,+Sheridan,+AR+72150">Directions</a>
+          </div>
         </div>
       </div>
     </section>
-    <section class="band">
-      <div class="wrap">
-        <p class="kicker">Showroom</p>
-        <h2>See it in person.</h2>
-        <p class="lede">Real sample racks from the shop. Call for what they stock — we don't invent a catalog or a quote here.</p>
-        <div class="strip" style="--strip-cols: 1fr 1fr 1fr; --strip-ar: 3/4;">
-          <img src="img/2.jpg" alt="Flooring sample racks inside Grant County Floors.">
-          <img src="img/3.jpg" alt="SPC flooring sample boards at Grant County Floors.">
-          <img src="img/4.jpg" alt="Carpet sample board inside Grant County Floors.">
-        </div>
+
+    <section class="rack-block" aria-label="Sample boards">
+      <div class="rack-head">
+        <p class="yard-tag">On the floor</p>
+        <h2>Sample racks.</h2>
+        <p class="yard-line">LVT, SPC, carpet — swipe the boards.</p>
+      </div>
+      <div class="rack-rail" tabindex="0">
+        <figure class="rack-card">
+          <img src="img/2.jpg" width="480" height="640" alt="LVT and plank sample racks — Triumph, Dreamweaver, Timbers — inside Grant County Floors.">
+          <figcaption>LVT racks</figcaption>
+        </figure>
+        <figure class="rack-card">
+          <img src="img/3.jpg" width="480" height="640" alt="Traditions USA SPC flooring sample boards on display at Grant County Floors.">
+          <figcaption>SPC boards</figcaption>
+        </figure>
+        <figure class="rack-card">
+          <img src="img/4.jpg" width="480" height="640" alt="Shaw Floors carpet sample board inside Grant County Floors showroom.">
+          <figcaption>Carpet samples</figcaption>
+        </figure>
       </div>
     </section>
   </main>
-  <footer class="foot">
-    Grant County Floors · 9948 Highway 167 N. · Sheridan, AR 72150 · <a href="tel:+15014163317">(501) 416-3317</a>
+
+  <footer class="yard-foot">
+    Grant County Floors · 9948 Highway 167 N. · Sheridan, AR 72150 ·
+    <a href="tel:+15014163317">(501) 416-3317</a>
     · <a href="https://www.facebook.com/p/Grant-County-Floors-100083168980708/">Facebook</a>
   </footer>
-  <nav class="stick" aria-label="Quick actions">
-    <a href="tel:+15014163317">Call</a>
+
+  <nav class="yard-dock" aria-label="Quick actions">
+    <a class="yard-dock-call" href="tel:+15014163317">Call</a>
     <a href="visit.html">Visit</a>
     <a href="https://www.google.com/maps/dir/?api=1&destination=9948+Highway+167+N,+Sheridan,+AR+72150">Directions</a>
   </nav>
