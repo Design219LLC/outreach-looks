@@ -31,13 +31,24 @@ a { color: inherit; }
 .skip:focus { left: 1rem; top: 1rem; background: #fff; padding: .5rem 1rem; z-index: 80; }
 
 .look-chip {
-  position: static;
+  position: static; top: 0.65rem; right: 0.75rem; z-index: 60;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  text-decoration: none; line-height: 1;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.45rem;
+  background: rgba(10, 12, 16, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  color: #f4f1ea;
   flex-shrink: 0;
-  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
-  background: #c9a227; color: #1a1408; padding: .28rem .6rem;
-  border-radius: 999px; text-decoration: none; font-weight: 700;
-  white-space: nowrap;
 }
+.look-chip-icon { width: 1.05rem; height: 1.05rem; color: #D4AF37; flex-shrink: 0; }
+.look-chip-word { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
+.look-chip-design { color: #f4f1ea; font-weight: 600; }
+.look-chip-num { color: #D4AF37; font-weight: 700; }
+.resort-bar .look-chip { position: static; }
 
 .resort-bar {
   position: sticky; top: 0; z-index: 40;

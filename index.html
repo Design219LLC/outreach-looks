@@ -13,10 +13,36 @@
     .note { color: #4a3f35; font-size: .92rem; }
     ul { padding-left: 1.2rem; }
     li { margin: .35rem 0; }
+    .hub-brand { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin: 0 0 1.25rem; }
+    .look-chip {
+      position: static;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      text-decoration: none; line-height: 1;
+      padding: 0.35rem 0.55rem;
+      border-radius: 0.45rem;
+      background: rgba(10, 12, 16, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+      color: #f4f1ea;
+    }
+    .look-chip--inline { position: static; }
+    .look-chip-icon { width: 1.05rem; height: 1.05rem; color: #D4AF37; flex-shrink: 0; }
+    .look-chip-word { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
+    .look-chip-design { color: #f4f1ea; font-weight: 600; }
+    .look-chip-num { color: #D4AF37; font-weight: 700; }
+    .noindex-note { margin: 0; font-size: 0.75rem; color: #6b6258; }
   </style>
 </head>
 <body>
-  <p>Look · Design219 · noindex</p>
+  <header class="hub-brand">
+    <a class="look-chip look-chip--inline" href="https://design219.com" aria-label="Design219">
+      <svg class="look-chip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+      <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
+    </a>
+    <p class="noindex-note">noindex</p>
+  </header>
   <h1>Outreach looks</h1>
   <h2>A-queue looks</h2>
   <ul>
