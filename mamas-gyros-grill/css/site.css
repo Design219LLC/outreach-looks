@@ -1,8 +1,8 @@
 /* Mama’s Gyros Grill — foil-ticket grammar.
    Gyro face (food alone) → paper ticket type → spit cut → checker stagger →
    olive plate → room stagger → bay find. Unique class tree.
-   Not Lady Birds veil+kicker+band. Not Uncle Henry’s smoke-ledger.
-   Not SNS smash-lead. Not ITTE magazine spread. Not Dale’s doorframe. */
+   Not Lady Birds veil+kicker+band. Not Uncle Henry’s smoke/pit-tray.
+   Not Mama K’s hwy-billboard. Not Dale’s doorframe. */
 
 :root {
   --ink: #1a1412;
@@ -193,7 +193,7 @@ address { font-style: normal; }
   background: transparent;
 }
 
-/* 3 — SPIT CUT: square rotisserie chapter */
+/* 3 — SPIT CUT */
 .spit-cut {
   margin: 0;
   display: grid;
@@ -228,7 +228,7 @@ address { font-style: normal; }
   letter-spacing: .04em;
 }
 
-/* 4 — CHECKER STAGGER: large + small, not 3-equal */
+/* 4 — CHECKER STAGGER */
 .checker {
   margin: 0;
   padding: .85rem var(--pad);
@@ -259,7 +259,7 @@ address { font-style: normal; }
   background: var(--ink-soft);
 }
 
-/* 5 — OLIVE PLATE: salmon salad full-bleed editorial */
+/* 5 — OLIVE PLATE */
 .olive-plate {
   margin: 0;
   position: relative;
@@ -310,7 +310,7 @@ address { font-style: normal; }
   background: var(--ink-soft);
 }
 
-/* 7 — BAY FIND: door + pole */
+/* 7 — BAY FIND */
 .bay-find {
   margin: 0;
   display: grid;
@@ -467,7 +467,6 @@ address { font-style: normal; }
     gap: .9rem;
     padding: 1rem;
   }
-  .checker-wide { margin-top: 0; }
   .checker-tall { margin-top: 2.5rem; }
   .checker-wide img { aspect-ratio: 4 / 5; max-height: 32rem; }
   .checker-tall img { aspect-ratio: 3 / 4; max-height: 26rem; }
