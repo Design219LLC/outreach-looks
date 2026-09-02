@@ -43,11 +43,56 @@ p{margin:0 0 .85rem}
 .postal{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--mute);margin-top:1.5rem}
 .deep{font-family:system-ui,sans-serif;font-size:.85rem;word-break:break-all}
 @media (max-width:640px){.shot-row,.caps,.sig{grid-template-columns:1fr}}
-@media print{body{background:#fff;font-size:11pt}.wrap{max-width:none;padding:0}section{break-inside:avoid;padding-top:18pt;margin-top:14pt}a{text-decoration:none}}
+.wrap{max-width:none;padding:0}section{break-inside:auto}a{text-decoration:none}}
+
+@media print {
+  @page { size: letter portrait; margin: 0.5in; }
+  html, body {
+    background: #fff !important;
+    color: #141414 !important;
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print { display: none !important; }
+  .wrap { max-width: none; padding: 0; margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  .print-sheet { break-before: page; break-inside: auto; padding-top: 0; margin-top: 0; border-top: 0; }
+  .print-sheet.print-cover,
+  .print-sheet:first-of-type { break-before: auto; }
+  .print-sheet:last-child { break-after: auto; }
+  section { break-inside: auto !important; }
+  figure, .shot, .card, .cap, .item, .step, .sig, .signoff, .qr-box, .scan, .letter {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, .label { break-after: avoid; page-break-after: avoid; }
+  p { orphans: 3; widows: 3; }
+  .shot img, .shot-row img, figure img, .scroller img {
+    max-height: 9in;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .shot-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.35in;
+  }
+  .masthead { margin-bottom: 0.4in; }
+}
+
 </style>
 </head>
 <body>
 <div class="wrap">
+<div class="no-print print-bar" style="margin:0 0 1.25rem;font-family:system-ui,sans-serif">
+  <button type="button" class="no-print" id="printBtn" onclick="window.print()" style="appearance:none;border:1px solid rgba(20,20,20,.28);background:#fff;color:#141414;padding:.65rem 1rem;border-radius:.45rem;font-weight:700;cursor:pointer">Print packet</button>
+</div>
+
   <header class="masthead">
     <a class="look-chip" href="https://design219.com">Design<b>219</b></a>
     <span>Owner packet · unpublished</span>
@@ -56,18 +101,18 @@ p{margin:0 0 .85rem}
   <p class="lede">Not a proposal and not a slide mock. The site is finished and working. This packet shows what it looks like on every screen, what it does, how people find it, how it sits with your social, and where it could go. Nothing owed. Nothing signed.</p>
   <div class="chips"><span>Built on spec</span><span>Not published</span><span>Yours to look at</span></div>
   <p class="owner-kicker">ATTN: Owner · For the owner</p>
-  <section style="border:0;margin:0;padding-top:0">
+  <section class="print-sheet" style="border:0;margin:0;padding-top:0">
     <p>Hello,</p>
     <p>Your 3309 bay and neon OPEN already mark Kiehl. What someone searching Sherwood still does not get is a quiet address that is yours: the name, the door, Call, and hours on the first screen of a phone.</p>
     <p>I built a finished look on my own time from your public photos so you can open it cold. If you want it on a domain you own, we put it there. If not, you have lost nothing.</p>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">01 · The front page</p>
     <h2>Your door, your name, your street.</h2>
     <p>The first screen is door-led: bay 3309, the line <em>Gyros on Kiehl.</em>, hours marked DIRECTORY until you lock them, Call to (501) 833-0306 only, and Directions to 3309 E Kiehl Ave.</p>
     <figure class="shot"><img src="img/shot-desktop.png" alt="Mama's Gyros Grill unpublished home on a wide screen."></figure>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">02 · Every screen</p>
     <h2>Computer, tablet, phone.</h2>
     <p>Hours, address, and Call sit on the first screen. On a phone, a sticky bar keeps Call · Hours · Directions under the thumb.</p>
@@ -77,7 +122,7 @@ p{margin:0 0 .85rem}
       <figure class="shot"><img src="img/shot-390.png" alt="Phone crop."></figure>
     </div>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">03 · The working parts</p>
     <h2>What already works.</h2>
     <div class="caps">
@@ -89,17 +134,17 @@ p{margin:0 0 .85rem}
       <div class="cap"><strong>Nothing to babysit</strong><span>Static site — no plugin theater.</span></div>
     </div>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">04 · Being found</p>
     <h2>What search engines see.</h2>
     <p>Page titles, share cards, real headings, and alt text. Name, address, and phone are ready when you publish. Results build over weeks; a claimed Google Business Profile still matters. Nobody honest promises the top spot.</p>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">05 · Site and social together</p>
     <h2>Social is the conversation. The site is the address.</h2>
     <p>Facebook (or your real network) stays the conversation. The site would be the address searchers get when they are not already inside the page.</p>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">06 · The whole site</p>
     <h2>Two pages, top to bottom.</h2>
     <p>Home and Visit. Scan the code for the live phone link.</p>
@@ -114,7 +159,7 @@ p{margin:0 0 .85rem}
       </div>
     </div>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">07 · What it opens up</p>
     <h2>The door this puts in the wall.</h2>
     <p>None of this is required for the site to work. Once you own an address, each piece is a small addition from the same bench.</p>
@@ -128,12 +173,12 @@ p{margin:0 0 .85rem}
     </div>
     <p>Order matters. Analytics first so the rest is evidence, not a hunch.</p>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">08 · What is still needed</p>
     <h2>Two or three short conversations.</h2>
     <p>Hours labeled DIRECTORY (door glass times if shown stay labeled). Menu/prices not invented. Call stays (501) 833-0306 — never the other number on old graphics. Photo rights from public frames.</p>
   </section>
-  <section>
+  <section class="print-sheet">
     <p class="label">Close</p>
     <h2>Fair price before any work starts.</h2>
     <p>No number in this packet. No obligation and no invoice behind the look. Think about it — it is not going anywhere.</p>

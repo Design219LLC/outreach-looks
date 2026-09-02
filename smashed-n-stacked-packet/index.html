@@ -305,21 +305,44 @@
   }
 
   @media print {
-    body { font-size: 11pt; line-height: 1.48; background: #fff; }
-    .wrap { max-width: none; padding: 0; }
-    .no-print { display: none !important; }
-    section { padding-top: 24pt; break-inside: avoid; }
-    h1 { font-size: 28pt; }
-    h2 { font-size: 16pt; }
-    h3, h4 { font-size: 11.5pt; }
-    .frame { box-shadow: none; border: 1px solid #bdb6ab; }
-    .scroller { max-height: none; overflow: visible; box-shadow: none; border: 1px solid #bdb6ab; }
-    .devices { grid-template-columns: 1.9fr 1fr 0.6fr; }
-    .roadmap { grid-template-columns: 1fr 1fr; }
-    figure, .card, .step, .item, .signoff, .letter, .scan { break-inside: avoid; }
-    a { color: var(--ink); text-decoration: none; }
-    @page { margin: 14mm; }
+  @page { size: letter portrait; margin: 0.5in; }
+  html, body {
+    background: #fff !important;
+    color: #141414 !important;
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
+  .no-print { display: none !important; }
+  .wrap { max-width: none; padding: 0; margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  .print-sheet { break-before: page; break-inside: auto; padding-top: 0; margin-top: 0; border-top: 0; }
+  .print-sheet.print-cover,
+  .print-sheet:first-of-type { break-before: auto; }
+  .print-sheet:last-child { break-after: auto; }
+  section { break-inside: auto !important; }
+  figure, .shot, .card, .cap, .item, .step, .sig, .signoff, .qr-box, .scan, .letter {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, .label { break-after: avoid; page-break-after: avoid; }
+  p { orphans: 3; widows: 3; }
+  .shot img, .shot-row img, figure img, .scroller img {
+    max-height: 9in;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .shot-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.35in;
+  }
+  .masthead { margin-bottom: 0.4in; }
+}
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
@@ -333,7 +356,7 @@
         <svg class="look-chip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>
         <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
       </a>
-      <button class="btn no-print" id="printBtn" type="button">Print this packet</button>
+      <button class="btn no-print" id="printBtn" type="button">Print packet</button>
     </div>
     <p class="label">ATTN: James Mann &middot; For the owner &middot; Smashed N' Stacked &middot; 1020 E 6th St Unit 4, Little Rock</p>
     <h1>A website for Smashed N' Stacked,<br>already built.</h1>
@@ -350,7 +373,7 @@
     </div>
   </header>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">First &middot; Who did this, and why</p>
       <h2>James — a finished look for the East Village door.</h2>
@@ -393,7 +416,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">01 &middot; The front page</p>
       <h2>Your foil, your name, your street.</h2>
@@ -416,7 +439,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">02 &middot; Every screen</p>
       <h2>Computer, tablet, phone.</h2>
@@ -455,7 +478,7 @@
     </p>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">03 &middot; What it does</p>
       <h2>The working parts.</h2>
@@ -504,7 +527,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">04 &middot; Being found</p>
       <h2>What search engines see.</h2>
@@ -562,7 +585,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">05 &middot; Site and social together</p>
       <h2>Facebook is the conversation. The site is the address.</h2>
@@ -612,7 +635,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">06 &middot; The whole site</p>
       <h2>Two pages, top to bottom.</h2>
@@ -652,7 +675,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">07 &middot; What it opens up</p>
       <h2>The door this puts in the wall.</h2>
@@ -726,7 +749,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="print-sheet">
     <div class="head">
       <p class="label">08 &middot; What is still needed</p>
       <h2>Three short conversations.</h2>
