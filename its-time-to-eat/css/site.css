@@ -1,307 +1,553 @@
-/* It's Time to Eat — food magazine. Unique class tree. No veil skeleton. */
+/* It's Time to Eat — Plate on ink. Food-led. Fraunces + Source Sans 3. */
 :root {
-  --plate: #faf7f2;
-  --plate-deep: #efe6d8;
-  --brown: #2a1810;
-  --brown-soft: #5c4030;
-  --gravy: #c9a04a;
-  --gravy-d: #a07e2e;
-  --pad: clamp(1.1rem, 4vw, 2.5rem);
-  --display: "Playfair Display", Georgia, serif;
-  --text: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --gravy: #C07A1C;
+  --yam: #B07346;
+  --chef: #9D1623;
+  --ink: #1C1410;
+  --cream: #FAF7F2;
+  --cream-soft: rgba(250, 247, 242, 0.72);
+  --line: rgba(250, 247, 242, 0.16);
+  --dock-h: 4.35rem;
+  --pad: clamp(1.05rem, 4vw, 2.25rem);
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --text: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 body {
   margin: 0;
-  background: var(--plate);
-  color: var(--brown);
+  background: var(--ink);
+  color: var(--cream);
   font-family: var(--text);
   font-size: 1.0625rem;
-  line-height: 1.5;
-  padding-bottom: 4.75rem;
+  line-height: 1.45;
+  padding-bottom: var(--dock-h);
   overflow-x: clip;
 }
-img { max-width: 100%; display: block; height: auto; }
+
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 
-.skip { position: absolute; left: -999px; top: 0; }
-.skip:focus { left: 1rem; top: 1rem; z-index: 80; background: #fff; padding: .5rem 1rem; }
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 80;
+  background: var(--cream);
+  color: var(--ink);
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+}
 
+/* BrandWordmark chip — outreach mock only */
 .look-chip {
-  position: fixed; top: 0.65rem; right: 0.75rem; z-index: 60;
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  text-decoration: none; line-height: 1;
+  position: fixed;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  line-height: 1;
   padding: 0.35rem 0.55rem;
   border-radius: 0.45rem;
-  background: rgba(10, 12, 16, 0.72);
+  background: rgba(10, 12, 16, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   color: #f4f1ea;
+}
+.look-chip-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: #C9A227;
   flex-shrink: 0;
 }
-.look-chip-icon { width: 1.05rem; height: 1.05rem; color: #D4AF37; flex-shrink: 0; }
-.look-chip-word { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
-.look-chip-design { color: #f4f1ea; font-weight: 600; }
-.look-chip-num { color: #D4AF37; font-weight: 700; }
-
-.rail-top {
-  position: sticky; top: 0; z-index: 40;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; padding: .7rem var(--pad);
-  background: rgba(250, 247, 242, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(42, 24, 16, 0.1);
+.look-chip-word {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
-.wordmark-itte {
+.look-chip-design { color: #f4f1ea; }
+.look-chip-num { color: #C9A227; font-weight: 700; }
+
+/* Slim mast over hero */
+.plate-mast {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  padding: 0.85rem var(--pad);
+  padding-right: 8.9rem; /* BrandWordmark chip clearance */
+  pointer-events: none;
+}
+.plate-mast a {
+  pointer-events: auto;
+  text-decoration: none;
+}
+.plate-mark {
   font-family: var(--display);
   font-weight: 700;
-  font-size: 1.15rem;
-  text-decoration: none;
-  letter-spacing: -0.02em;
+  font-size: 1.02rem;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
-.nav-itte { display: flex; gap: 1.15rem; }
-.nav-itte a {
-  text-decoration: none; font-size: .8rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--brown-soft);
+.plate-nav {
+  display: flex;
+  gap: 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream-soft);
 }
-.nav-itte a[aria-current="page"] { color: var(--gravy-d); }
+.plate-nav a[aria-current="page"] { color: var(--cream); }
+.plate-nav a:hover { color: var(--gravy); }
 
-/* Magazine spread: stacked on 390, rail beside on desktop */
-.spread {
+/* Full-bleed gravy hero — Plate on ink */
+.plate-hero {
+  position: relative;
+  min-height: min(92svh, 46rem);
   display: flex;
   flex-direction: column;
-  background: var(--brown);
-  color: var(--plate);
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--ink);
 }
-.spread-photo { width: 100%; }
-.spread-photo img {
+.plate-hero > picture,
+.plate-hero .plate-bleed {
+  position: absolute;
+  inset: 0;
+}
+.plate-hero img.plate-bleed,
+.plate-hero picture img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 100%;
   object-fit: cover;
-  object-position: 50% 45%;
+  object-position: 50% 42%;
 }
-.spread-rail {
-  padding: 1.8rem var(--pad) 2.2rem;
-  max-width: 28rem;
+.plate-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(28, 20, 16, 0.35) 0%, rgba(28, 20, 16, 0.08) 28%, rgba(28, 20, 16, 0.55) 58%, rgba(28, 20, 16, 0.92) 82%, #1C1410 100%);
 }
-.tag-itte {
-  margin: 0 0 .45rem;
-  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--gravy); font-weight: 700;
+.plate-copy {
+  position: relative;
+  z-index: 2;
+  padding: 1.35rem var(--pad) 1.55rem;
+  max-width: 34rem;
 }
-.spread-rail h1, .seat-block h1 {
+.plate-name {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(2.6rem, 9vw, 4.6rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin: 0 0 .4rem;
+  font-optical-sizing: auto;
+  font-size: clamp(2.35rem, 10vw, 3.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.55rem;
 }
-.hungry {
-  margin: 0 0 1rem;
-  font-size: 1.35rem;
+.plate-voice {
+  margin: 0 0 0.85rem;
   font-family: var(--display);
   font-weight: 600;
+  font-size: clamp(1.15rem, 3.6vw, 1.35rem);
   color: var(--gravy);
 }
-.addr-itte {
-  margin: 0 0 1.3rem;
-  font-size: 1.05rem;
-  color: rgba(250, 247, 242, 0.78);
+.plate-today {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  margin: 0 0 1.05rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  background: rgba(28, 20, 16, 0.35);
 }
-.bite-row { display: flex; flex-wrap: wrap; gap: .55rem; }
-.bite-go, .bite-ghost {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: 2.85rem; padding: .55rem 1.2rem;
-  text-decoration: none; border-radius: 4px; font-weight: 700;
+.dir-tag {
+  display: inline-block;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(176, 115, 70, 0.55);
+  color: var(--yam);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
 }
-.bite-go { background: var(--gravy); color: var(--brown); }
-.bite-go:hover { background: #d4b05c; }
-.bite-ghost { border: 1px solid rgba(250,247,242,.55); color: var(--plate); }
-
-/* Chef chapter break — full bleed */
-.chapter-break {
-  position: relative;
-  background: #111;
-}
-.chapter-photo {
-  width: 100%;
-  max-height: min(72vh, 38rem);
-  object-fit: cover;
-  object-position: 50% 40%;
-}
-.chapter-line {
-  position: absolute;
-  left: var(--pad);
-  bottom: 1.2rem;
-  margin: 0;
-  font-family: var(--display);
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  color: #fff;
-  text-shadow: 0 2px 12px rgba(0,0,0,.55);
+.plate-today strong {
+  color: var(--cream);
+  font-weight: 700;
 }
 
-
-/* Brand graphic — FB cover, labeled honestly (not plated food) */
-.brand-graphic {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  background: var(--brown);
-  border-top: 1px solid rgba(250, 247, 242, 0.08);
+.gravy-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
 }
-.brand-graphic-img {
-  width: 100%;
-  max-width: 100%;
-  max-height: min(52vh, 28rem);
-  object-fit: contain;
-  object-position: center;
-  background: #111;
+.gravy-call,
+.gravy-dir {
+  flex: 1;
+  min-width: 7.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.95rem 0.85rem;
+  border-radius: 14px;
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+.gravy-call { flex: 1.35; font-size: 0.95rem; }
+.gravy-call {
+  background: var(--gravy);
+  color: var(--ink);
+}
+.gravy-call:hover { filter: brightness(1.06); }
+.gravy-dir {
+  border: 1.5px solid rgba(250, 247, 242, 0.38);
+  color: var(--cream);
+  font-weight: 600;
+}
+.gravy-dir:hover { border-color: var(--cream); }
+
+/* Secondary food plate */
+.gravy-side {
+  padding: 1.35rem var(--pad) 0.4rem;
+  max-width: 44rem;
   margin: 0 auto;
 }
-.brand-graphic-cap {
-  margin: 0;
-  padding: .65rem var(--pad) .85rem;
-  font-size: .72rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--gravy);
-  text-align: center;
-  background: var(--brown);
-}
-/* 2-up → 1-col at 390 */
-.duo {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: .35rem;
-  padding: .35rem;
-  background: var(--brown);
-}
-.duo-cell {
-  margin: 0;
-  background: var(--plate);
-}
-.duo-cell img {
+.gravy-side figure { margin: 0; }
+.gravy-side img {
   width: 100%;
-  aspect-ratio: 5 / 4;
+  border-radius: 16px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: 50% 48%;
 }
-.duo-cell figcaption {
-  padding: .7rem .9rem .85rem;
-  font-size: .78rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--brown-soft);
+.gravy-cap {
+  margin: 0.65rem 0 0;
+  font-size: 0.9rem;
+  color: var(--cream-soft);
 }
+.gravy-cap b { color: var(--cream); font-weight: 700; }
 
-/* Visit — "Come sit" seat card */
-.come-sit {
-  display: grid;
-  gap: 0;
-  margin: 0;
+/* Kitchen story — chef red rule */
+.chef-story {
+  margin: 1.5rem auto 0;
+  max-width: 44rem;
+  padding: 0 var(--pad);
 }
-.seat-photo img {
+.chef-rule {
+  height: 3px;
+  width: 3.5rem;
+  background: var(--chef);
+  border-radius: 2px;
+  margin: 0 0 0.85rem;
+}
+.chef-story h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.45rem, 4.5vw, 1.9rem);
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.015em;
+}
+.chef-line {
+  margin: 0 0 0.95rem;
+  color: var(--cream-soft);
+  font-size: 0.98rem;
+  max-width: 36rem;
+}
+.chef-cut {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(157, 22, 35, 0.35);
+}
+.chef-cut img {
   width: 100%;
   aspect-ratio: 16 / 11;
   object-fit: cover;
+  object-position: 45% 35%;
 }
-.seat-block {
-  padding: 2rem var(--pad) 1.6rem;
-  background: var(--plate);
+
+/* Breakfast / weekend drop support */
+.drop-band {
+  padding: 1.6rem var(--pad) 0.5rem;
+  max-width: 44rem;
+  margin: 0 auto;
 }
-.seat-block .hungry { color: var(--brown-soft); font-size: 1.15rem; line-height: 1.45; }
-.seat-block .bite-go { margin-bottom: 1rem; }
-.seat-links { margin: 0 0 .8rem; font-weight: 700; }
-.seat-links a { color: var(--gravy-d); text-decoration: none; }
-.seat-links a:hover { text-decoration: underline; }
-.fine-itte { margin: 0; font-size: .85rem; color: var(--brown-soft); }
-.map-itte {
+.drop-band h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  margin: 0 0 0.35rem;
+}
+.drop-note {
+  margin: 0 0 0.9rem;
+  color: var(--cream-soft);
+  font-size: 0.95rem;
+}
+.drop-cut {
   margin: 0;
-  background: var(--plate-deep);
+  border-radius: 16px;
+  overflow: hidden;
 }
-.map-itte iframe { width: 100%; height: 16rem; border: 0; filter: sepia(.15); }
+.drop-cut img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+.drop-cap {
+  margin: 0.55rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(250, 247, 242, 0.55);
+}
 
-.signoff {
-  padding: 2rem var(--pad) 1.4rem;
-  border-top: 1px solid rgba(42,24,16,.12);
-  font-size: .92rem;
-  color: var(--brown-soft);
+/* Facebook conversation band */
+.fb-lane {
+  margin: 1.75rem var(--pad) 0;
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(250, 247, 242, 0.03);
 }
-.signoff a { color: var(--brown); font-weight: 700; }
+.fb-lane p {
+  margin: 0 0 0.65rem;
+  color: var(--cream-soft);
+  font-size: 0.95rem;
+}
+.fb-lane a {
+  color: var(--gravy);
+  font-weight: 700;
+  text-decoration: none;
+}
+.fb-lane a:hover { text-decoration: underline; }
 
-.phonebar-itte {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  background: var(--brown); color: var(--plate);
+.table-foot {
+  padding: 1.75rem var(--pad) 1.4rem;
+  max-width: 44rem;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--cream-soft);
+  border-top: 1px solid var(--line);
+  margin-top: 1.75rem;
 }
-.phonebar-itte a {
-  text-decoration: none; min-height: 3.3rem;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  font-size: .76rem;
+.table-foot a {
+  color: var(--cream);
+  font-weight: 700;
+  text-decoration: none;
 }
-.phonebar-itte a + a { border-left: 1px solid rgba(250,247,242,.14); }
-.phonebar-itte a:first-child { background: var(--gravy); color: var(--brown); }
+.table-foot a:hover { color: var(--gravy); }
+
+/* Sticky dock */
+.dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: rgba(28, 20, 16, 0.96);
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.dock a {
+  text-align: center;
+  padding: 0.95rem 0.4rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--cream);
+  min-height: var(--dock-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dock a.dock-call {
+  background: var(--gravy);
+  color: var(--ink);
+}
+
+/* Visit page */
+.visit-sheet {
+  padding: 5.5rem var(--pad) 1.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.visit-sheet .plate-mast {
+  position: fixed;
+  background: rgba(28, 20, 16, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  pointer-events: auto;
+}
+.visit-sheet .plate-mark { text-shadow: none; }
+
+.wayne-card {
+  background: rgba(250, 247, 242, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.25rem 1.2rem;
+  margin: 0 0 1.1rem;
+}
+.wayne-card h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  line-height: 1.05;
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.02em;
+}
+.wayne-card p { margin: 0 0 0.55rem; }
+.wayne-card .addr-line { font-size: 1.05rem; }
+.wayne-card .soft { color: var(--cream-soft); font-size: 0.95rem; }
+.wayne-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.hours-card {
+  border: 1px solid rgba(176, 115, 70, 0.4);
+  border-radius: 16px;
+  padding: 1.15rem 1.2rem;
+  margin: 0 0 1.1rem;
+  background: rgba(176, 115, 70, 0.06);
+}
+.hours-card h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 0.55rem;
+  color: var(--gravy);
+}
+.hours-card .dir-tag { margin-bottom: 0.65rem; }
+.hours-card .hours-callout {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: var(--display);
+}
+.hours-card .hours-fine {
+  margin: 0.55rem 0 0;
+  font-size: 0.88rem;
+  color: var(--cream-soft);
+}
+
+.wayne-map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 16 / 10;
+  margin: 0 0 1.1rem;
+  background: #111;
+}
+.wayne-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 @media (min-width: 768px) {
-  .spread {
-    flex-direction: row;
-    align-items: stretch;
-    min-height: min(78vh, 40rem);
+  .plate-hero {
+    min-height: min(88vh, 42rem);
   }
-  .spread-photo {
-    flex: 1 1 62%;
-    min-width: 0;
+  .plate-copy {
+    padding: 2rem var(--pad) 2.25rem;
+    max-width: 38rem;
   }
-  .spread-photo img {
-    height: 100%;
-    aspect-ratio: auto;
-    min-height: 28rem;
+  .plate-name {
+    font-size: clamp(2.8rem, 5.5vw, 3.8rem);
   }
-  .spread-rail {
-    flex: 0 0 min(38%, 22rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2.5rem 2rem;
+  .gravy-side,
+  .chef-story,
+  .drop-band,
+  .fb-lane,
+  .table-foot {
+    max-width: 52rem;
   }
-  .duo {
-    grid-template-columns: 1fr 1fr;
-    gap: .45rem;
-    padding: .45rem;
+  .chef-story {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
   }
-  .chapter-photo { max-height: min(78vh, 44rem); }
-  .come-sit {
-    grid-template-columns: 1.15fr 1fr;
-    max-width: 70rem;
-    margin: 1.5rem auto 0;
-    padding: 0 var(--pad);
-    gap: 0;
-    border: 1px solid rgba(42,24,16,.12);
-  }
-  .seat-photo img { height: 100%; aspect-ratio: auto; min-height: 22rem; }
-  .map-itte {
-    max-width: 70rem;
+  .chef-story .chef-copy { order: 0; }
+  .chef-story .chef-cut { order: 1; }
+  .stack-pair {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1rem;
+    max-width: 52rem;
     margin: 0 auto;
-    padding: 0 var(--pad) 0;
+    padding: 1.35rem var(--pad) 0.4rem;
   }
-  .map-itte iframe { border: 1px solid rgba(42,24,16,.12); border-top: 0; }
+  .stack-pair .gravy-side,
+  .stack-pair .drop-band {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
 }
 
-@media (min-width: 390px) and (max-width: 767px) {
-  /* Explicit single-column guarantee at phone width */
-  .duo { grid-template-columns: 1fr; }
-  .spread { flex-direction: column; }
+@media (min-width: 1100px) {
+  .plate-hero { min-height: min(90vh, 48rem); }
+  .plate-copy { padding-left: clamp(2rem, 6vw, 5rem); }
 }
 
-/* phone chip clearance */
 @media (max-width: 640px) {
-  .rail-top { padding-right: 7.5rem; }
+  .plate-mast { padding-right: 8.9rem; }
+  .plate-nav { gap: 0.65rem; font-size: 0.72rem; }
+  .plate-mark { font-size: 0.95rem; max-width: 11rem; }
+  .gravy-acts { flex-direction: column; }
+  .gravy-call, .gravy-dir { flex: 1 1 auto; width: 100%; min-width: 0; }
+}
+
+.visit-foot {
+  border-top: 0;
+  margin-top: 1rem;
+  padding-left: 0;
+  padding-right: 0;
 }

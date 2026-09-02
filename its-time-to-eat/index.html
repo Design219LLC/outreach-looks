@@ -9,11 +9,11 @@
   <meta property="og:title" content="It's Time to Eat · North Little Rock">
   <meta property="og:description" content="It's Time to Eat, 415 Wayne Street, North Little Rock, AR 72117. Call (501) 263-5044.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="img/hero.jpg">
+  <meta property="og:image" content="img/og.jpg">
   <link rel="icon" type="image/jpeg" href="img/favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
@@ -23,69 +23,85 @@
     <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
   </a>
 
-  <header class="rail-top">
-    <a class="wordmark-itte" href="index.html">It's Time to Eat</a>
-    <nav class="nav-itte" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="visit.html">Visit</a>
-    </nav>
-  </header>
-
   <main id="main">
-    <!-- Grammar: food magazine — oversized plate + caption rail -->
-    <section class="spread">
-      <div class="spread-photo">
-        <picture>
-          <source media="(max-width: 640px)" srcset="img/hero-sm.jpg">
-          <img src="img/hero.jpg" width="1200" height="630" alt="Plated steak in gravy with mashed potatoes and cornbread from It's Time to Eat.">
-        </picture>
-      </div>
-      <aside class="spread-rail">
-        <p class="tag-itte">North Little Rock</p>
-        <h1>It's time.</h1>
-        <p class="hungry">Come sit.</p>
-        <p class="addr-itte">415 Wayne Street</p>
-        <div class="bite-row">
-          <a class="bite-go" href="tel:+15012635044">Call (501) 263-5044</a>
-          <a class="bite-ghost" href="https://www.google.com/maps/dir/?api=1&destination=415+Wayne+Street,+North+Little+Rock,+AR+72117">Directions</a>
+    <section class="plate-hero" aria-label="Hero">
+      <header class="plate-mast">
+        <a class="plate-mark" href="index.html">It's Time to Eat</a>
+        <nav class="plate-nav" aria-label="Primary">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="visit.html">Visit</a>
+        </nav>
+      </header>
+      <picture>
+        <source media="(max-width: 640px)" srcset="img/hero-sm.jpg">
+        <img class="plate-bleed" src="img/hero.jpg" width="1200" height="630" alt="Steak in pepper gravy with mashed potatoes and cornbread from It's Time to Eat.">
+      </picture>
+      <div class="plate-fade" aria-hidden="true"></div>
+      <div class="plate-copy">
+        <h1 class="plate-name">It's Time<br>to Eat</h1>
+        <p class="plate-voice">It's time to eat.</p>
+        <p class="plate-today" id="hours">
+          <span class="dir-tag">DIRECTORY</span>
+          <strong>Today</strong> · Call for today's hours
+        </p>
+        <div class="gravy-acts">
+          <a class="gravy-call" href="tel:+15012635044">Call (501) 263-5044</a>
+          <a class="gravy-dir" href="https://www.google.com/maps/dir/?api=1&destination=415+Wayne+Street,+North+Little+Rock,+AR+72117">Directions</a>
         </div>
-      </aside>
+      </div>
     </section>
 
-    <!-- Chef as full-bleed chapter break -->
-    <section class="chapter-break" aria-label="In the kitchen">
-      <img class="chapter-photo" src="img/4.jpg" width="1200" height="895" alt="Chef Craig Big Chef Taylor plating gravy over meat in the It's Time to Eat kitchen.">
-      <p class="chapter-line">In the kitchen.</p>
-    </section>
-
-    <!-- Brand graphic from FB cover — not plated food -->
-    <section class="brand-graphic" aria-label="Big Chef Taylor brand cover">
-      <img class="brand-graphic-img" src="img/cover.jpg" width="1200" height="676" alt="It's Time to Eat Facebook cover graphic — Big Chef Taylor illustration with 415 Wayne Street, North Little Rock AR 72117 and phone 501.263.5044.">
-      <p class="brand-graphic-cap">Brand cover · Big Chef Taylor</p>
-    </section>
-
-    <!-- 2-up plates → 1-col at 390 -->
-    <section class="duo" aria-label="On the plate">
-      <figure class="duo-cell">
-        <img src="img/2.jpg" width="1200" height="880" alt="Turkey over yellow rice with cornbread, yams, dressing, and mashed potatoes.">
-        <figcaption>Turkey &amp; rice</figcaption>
-      </figure>
-      <figure class="duo-cell">
-        <img src="img/3.jpg" width="1200" height="900" alt="Breakfast platters — pancakes, French toast, eggs, bacon, potatoes, pork chop.">
-        <figcaption>Breakfast platters</figcaption>
+    <section class="gravy-side" aria-label="On the plate">
+      <figure>
+        <picture>
+          <source media="(max-width: 640px)" srcset="img/2-sm.jpg">
+          <img src="img/2.jpg" width="1200" height="880" alt="Turkey and yellow rice with gravy, cornbread, candied yams, and sides from It's Time to Eat.">
+        </picture>
+        <figcaption class="gravy-cap"><b>415 Wayne Street</b> · North Little Rock</figcaption>
       </figure>
     </section>
+
+    <section class="chef-story" aria-label="In the kitchen">
+      <div class="chef-copy">
+        <div class="chef-rule" aria-hidden="true"></div>
+        <h2>Big Chef at the stove</h2>
+        <p class="chef-line">Craig “Big Chef” Taylor plating gravy in the kitchen — the story behind the plate, not the first screen.</p>
+      </div>
+      <figure class="chef-cut">
+        <picture>
+          <source media="(max-width: 640px)" srcset="img/4-sm.jpg">
+          <img src="img/4.jpg" width="1200" height="895" alt="Chef Craig Big Chef Taylor plating gravy over meat at the stove in the It's Time to Eat kitchen.">
+        </picture>
+      </figure>
+    </section>
+
+    <section class="drop-band" aria-label="Breakfast takeout">
+      <h2>Weekend drops</h2>
+      <p class="drop-note">Breakfast takeout when they post it — check Facebook for what’s out.</p>
+      <figure class="drop-cut">
+        <picture>
+          <source media="(max-width: 640px)" srcset="img/3-sm.jpg">
+          <img src="img/3.jpg" width="1200" height="900" alt="New Year's breakfast takeout platters — pancakes, French toast, eggs, bacon, potatoes, and pork chop in gravy.">
+        </picture>
+        <figcaption class="drop-cap">Breakfast platters · photographed special</figcaption>
+      </figure>
+    </section>
+
+    <aside class="fb-lane" aria-label="Facebook">
+      <p>Conversation lives on Facebook — specials and drops land there first.</p>
+      <a href="https://www.facebook.com/itstimetoeatllc/">facebook.com/itstimetoeatllc</a>
+    </aside>
   </main>
 
-  <footer class="signoff">
+  <footer class="table-foot">
     It's Time to Eat · 415 Wayne Street · North Little Rock, AR 72117 ·
     <a href="tel:+15012635044">(501) 263-5044</a> ·
     <a href="https://www.facebook.com/itstimetoeatllc/">Facebook</a>
   </footer>
 
-  <nav class="phonebar-itte" aria-label="Quick actions">
-    <a href="tel:+15012635044">Call</a>
-    <a href="visit.html">Visit</a>
+  <nav class="dock" aria-label="Quick actions">
+    <a class="dock-call" href="tel:+15012635044">Call</a>
+    <a href="visit.html#hours">Hours</a>
     <a href="https://www.google.com/maps/dir/?api=1&destination=415+Wayne+Street,+North+Little+Rock,+AR+72117">Directions</a>
   </nav>
 </body>
