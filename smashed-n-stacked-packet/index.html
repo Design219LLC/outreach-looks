@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="The finished Smashed N' Stacked website, walked through for the owner: every screen size, what it does, how it gets found, and what it opens up next. Built on spec by Design219 LLC.">
+<link rel="icon" type="image/png" href="favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Design219 LLC">
 <meta property="og:title" content="A website for Smashed N' Stacked, already built.">
@@ -39,7 +40,6 @@
   }
 
   * { box-sizing: border-box; }
-
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
   body {
@@ -159,21 +159,26 @@
     grid-template-columns: 148px minmax(0, 1fr);
     gap: 18px 22px;
     align-items: center;
-    margin-top: 28px;
-    padding: 20px 22px;
+    padding: 22px;
     background: var(--cream-3);
     border: 1px solid var(--rule);
     max-width: 640px;
   }
-  @media (max-width: 520px) { .scan { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .scan { grid-template-columns: 1fr; } }
   .scan img {
     width: 148px; height: 148px;
     background: #fff;
     padding: 8px;
     border: 1px solid var(--rule);
   }
-  .scan p { font-size: 0.92rem; color: var(--ink-soft); word-break: break-all; }
-  .scan a { color: var(--ink); }
+  .scan .scan-title {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .scan p { font-size: 0.95rem; color: var(--ink-soft); }
+  .scan a { word-break: break-all; }
 
   .devices {
     display: grid; gap: 32px;
@@ -275,22 +280,22 @@
     font-family: var(--display); font-style: italic; font-weight: 400;
     font-size: 2.2rem; line-height: 1.1; color: var(--ink); padding: 14px 0 4px;
   }
-  .sig-rule { width: 280px; border-top: 1px solid var(--rule-2); padding-top: 7px; }
+  .sig-rule { width: 230px; border-top: 1px solid var(--rule-2); padding-top: 7px; }
   .sig-name { font-size: 0.82rem; color: var(--stone); font-weight: 600; }
   .contact { font-size: 0.9rem; display: flex; flex-direction: column; gap: 3px; padding-top: 10px; }
   .contact a { color: var(--ink-soft); text-decoration: none; }
   .contact a:hover { color: var(--brick); text-decoration: underline; }
   .motto {
-    margin-top: 14px;
     font-family: var(--display);
     font-style: italic;
     font-size: 1.15rem;
+    padding-top: 14px;
     color: var(--ink);
   }
-  .postal {
-    margin-top: 10px;
+  .canspam {
     font-size: 0.8rem;
     color: var(--stone);
+    padding-top: 10px;
   }
 
   footer {
@@ -313,8 +318,7 @@
     .roadmap { grid-template-columns: 1fr 1fr; }
     figure, .card, .step, .item, .signoff, .letter, .scan { break-inside: avoid; }
     a { color: var(--ink); text-decoration: none; }
-    .scan a, .pages-note a { text-decoration: underline; }
-    @page { margin: 14mm; size: letter; }
+    @page { margin: 14mm; }
   }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
@@ -331,12 +335,12 @@
       </a>
       <button class="btn no-print" id="printBtn" type="button">Print this packet</button>
     </div>
-    <p class="label">For the owner &middot; Smashed N' Stacked &middot; 1020 E 6th St Unit 4, Little Rock</p>
+    <p class="label">ATTN: James Mann &middot; For the owner &middot; Smashed N' Stacked &middot; 1020 E 6th St Unit 4, Little Rock</p>
     <h1>A website for Smashed N' Stacked,<br>already built.</h1>
     <p class="lede">
       Not a proposal, not a mock-up on a slide. The site is finished and working. This
       packet shows you what it looks like on every screen, what it does, how people
-      will find it, how it sits with your Facebook page, and where it could go from
+      will find it, how it works with your Facebook page, and where it could go from
       here. Nothing is owed and nothing is signed.
     </p>
     <div class="rule-meta">
@@ -349,74 +353,65 @@
   <section>
     <div class="head">
       <p class="label">First &middot; Who did this, and why</p>
-      <h2>ATTN: James Mann</h2>
+      <h2>James — a finished look for the East Village door.</h2>
     </div>
     <div class="letter">
       <p class="opening">
-        The smash burgers left the truck and landed in East Village. Someone searching
-        for that door still lands on Facebook or Toast.
+        Your burgers already travel on Facebook. What was missing was a place on the
+        internet that belongs to you.
       </p>
       <p>
-        Public listings put Smashed N' Stacked at
-        <strong>1020 E 6th St Unit 4, Little Rock, AR 72202</strong>, phone
-        <a href="tel:+15012912353">(501) 291-2353</a>. The door fascia reads Unit 4;
-        a few directories still say Unit D. Press coverage of the brick-and-mortar move
-        lists hours as Wednesday through Saturday, 11am to 5pm &mdash; marked on the
-        look as DIRECTORY, call to confirm, not as an owner-locked permanent board.
+        When someone in Little Rock looks for Smashed N' Stacked today, they land on
+        directory listings, Toast, or your Facebook page. The domain that carries your
+        name does not load. None of that is an insult — it is what a busy shop looks
+        like when the truck work and the door work come first.
       </p>
       <p>
-        What a hungry person finds today is a strong Facebook page
-        (<a href="https://www.facebook.com/smashednstacked/">facebook.com/smashednstacked</a>)
-        carrying the photos and the conversation, and ordering tools that are not a
-        place you own. There is no finished site sitting at an address under your name.
+        I build websites and the software underneath them. On my own time I put together
+        a finished look from photographs already on your public Facebook: the cheese-pull
+        foil stack, the chalked Unit 4 garage door, the truck. Your name, your phone,
+        directions to <strong>1020 E 6th St Unit 4</strong>, and the line you already
+        use — <em>Your favorite burger just got a new home.</em>
       </p>
       <p>
-        I build websites and the software under them &mdash; the part customers see and
-        the systems that keep a shop running. On my own time I built a finished look
-        from photographs already public on your Facebook: the foil stack, the cheese
-        pull, the Unit 4 garage door, the truck-era portrait. Voice on the hero is the
-        one already in the room: <em>Your favorite burger just got a new home.</em>
-      </p>
-      <p>
-        Open it on a phone. Call dials you. Directions open maps to Unit 4. Nothing is
-        published. Nothing is owed. If you want it, we put it on an address you own and
-        point search there. If you do not, you have lost nothing.
+        Everything in this packet already exists and works on a phone. Open the link or
+        scan the code. If you like it, I put it on an address you own and point Google
+        there. If you do not, you have lost nothing.
       </p>
     </div>
-
-    <figure class="scan">
-      <img src="img/qr.png" width="148" height="148" alt="QR code that opens the unpublished Smashed N' Stacked look.">
-      <figcaption>
-        <p class="label" style="margin-bottom: 8px;">Open on your phone</p>
+    <div class="scan" style="margin-top: 28px;">
+      <img src="img/qr.png" width="410" height="410" alt="QR code that opens the Smashed N' Stacked unpublished site.">
+      <div>
+        <p class="scan-title">Open it on your phone</p>
         <p>
-          Scan or tap the deep link &mdash; not a hub, not a GitHub page.
+          Deep link only — not the hub, not GitHub.
         </p>
-        <p style="margin-top: 8px;">
+        <p style="padding-top: 8px;">
           <a href="https://design219llc.github.io/outreach-looks/smashed-n-stacked/">https://design219llc.github.io/outreach-looks/smashed-n-stacked/</a>
         </p>
-      </figcaption>
-    </figure>
+      </div>
+    </div>
   </section>
 
   <section>
     <div class="head">
       <p class="label">01 &middot; The front page</p>
-      <h2>Your plate, your name, your street.</h2>
+      <h2>Your foil, your name, your street.</h2>
     </div>
     <div class="stack">
       <p>
-        The first screen is the foil-wrapped smash with the cheese pull &mdash; food
-        first, not a door photo standing in for the product. Beside it sit the name,
-        the line about the new home, the DIRECTORY hours chip, and the two buttons
-        someone actually needs: Call and Directions. No menu to dig through before the
-        phone number. Unit 4 and East Village show up as soon as they scroll one breath.
+        The first thing a visitor sees is the cheese-pull smash burger in foil — your
+        own photograph — with the shop name over it and the three things they came for
+        beside it: today's hours note, Call locked to <strong>(501) 291-2353</strong>,
+        and Directions into maps for Unit 4. No menu dig. No scroll required for the
+        essentials.
       </p>
       <figure>
         <div class="frame">
           <div class="bar"><i></i><i></i><i></i></div>
-          <img src="img/shot-desktop-fold.png" alt="Smashed N' Stacked front page on a computer: cheese-pull foil hero, name, hours chip, Call and Directions." width="1440" height="900">
+          <img src="img/shot-desktop-fold.png" alt="The Smashed N' Stacked front page on a computer: cheese-pull foil burger fills the hero with the shop name, voice line, DIRECTORY hours, Call and Directions." width="1440" height="900">
         </div>
-        <figcaption>Front page &mdash; desktop, 1440&thinsp;px</figcaption>
+        <figcaption>Front page &mdash; desktop, first screen</figcaption>
       </figure>
     </div>
   </section>
@@ -427,36 +422,36 @@
       <h2>Computer, tablet, phone.</h2>
     </div>
     <p style="margin-bottom: 30px;">
-      The same site rearranges itself for whatever opens it. On all three sizes the
-      hours chip, the Call button, and Directions sit on the first screen before
-      anyone scrolls. Nothing important is buried behind a hamburger menu.
+      The same site rearranges itself for whatever it is opened on. Nothing is cut and
+      nothing is buried behind a menu button &mdash; on all three, the hours note, the
+      call button and directions sit on the first screen before anyone scrolls.
     </p>
     <div class="devices">
       <figure>
         <div class="frame">
           <div class="bar"><i></i><i></i><i></i></div>
-          <img src="img/shot-desktop-fold.png" alt="Smashed N' Stacked front page on a desktop computer." width="1440" height="900">
+          <img src="img/shot-desktop-fold.png" alt="The front page on a desktop computer." width="1440" height="900">
         </div>
         <figcaption>Desktop &mdash; 1440&thinsp;px</figcaption>
       </figure>
       <figure>
         <div class="frame tablet">
-          <img src="img/shot-768-fold.png" alt="Smashed N' Stacked front page on a tablet." width="768" height="1024">
+          <img src="img/shot-768-fold.png" alt="The same front page on a tablet, with the foil hero, hours, Call and Directions visible." width="768" height="1024">
         </div>
         <figcaption>Tablet &mdash; 768&thinsp;px</figcaption>
       </figure>
       <figure>
         <div class="frame phone">
-          <img src="img/shot-390-fold.png" alt="Smashed N' Stacked front page on a phone with the sticky Call, Hours, and Directions bar." width="390" height="844">
+          <img src="img/shot-390-fold.png" alt="The same front page on a phone, with a fixed bar at the bottom for Call, Hours and Directions." width="390" height="844">
         </div>
         <figcaption>Phone &mdash; 390&thinsp;px</figcaption>
       </figure>
     </div>
     <p style="padding-top: 24px;">
-      On a phone there is one extra touch: a bar pinned to the bottom with
-      <strong>Call</strong>, <strong>Hours</strong>, and <strong>Directions</strong>.
-      It stays put while someone reads, so the number is never more than one
-      thumb-reach away.
+      On a phone there is one extra touch: a bar pinned to the bottom of the screen with
+      <strong>Call</strong>, <strong>Hours</strong> and <strong>Directions</strong>. It
+      stays put the whole time someone is reading, so your phone number is never more
+      than one thumb-reach away.
     </p>
   </section>
 
@@ -468,43 +463,43 @@
     <div class="grid">
       <div class="item">
         <span class="tag">Calling</span>
-        <h3>One tap dials the shop</h3>
-        <p>Every Call control opens the dialer with <a href="tel:+15012912353">(501) 291-2353</a> already loaded. No copying, no mistyping on a foil-stained thumb.</p>
+        <h3>One tap dials you</h3>
+        <p>Every Call button opens the dialer with <strong>(501) 291-2353</strong> already in it. No copying, no typing.</p>
       </div>
       <div class="item">
         <span class="tag">Directions</span>
-        <h3>Straight into their maps</h3>
-        <p>Directions hands off to Google Maps or Apple Maps aimed at 1020 E 6th St Unit 4 &mdash; the fascia number, not the Unit D ghost some directories still carry.</p>
+        <h3>Straight to Unit 4</h3>
+        <p>Directions hands off to Google Maps or Apple Maps with the route set to 1020 E 6th St Unit 4, Little Rock.</p>
       </div>
       <div class="item">
         <span class="tag">Hours</span>
-        <h3>Honest about what we know</h3>
-        <p>The board shows Wednesday&ndash;Saturday 11am&ndash;5pm labeled DIRECTORY, with Sunday&ndash;Tuesday as call ahead, plus a plain note that this came from press of the move &mdash; not a locked owner schedule.</p>
+        <h3>Marked honestly</h3>
+        <p>Wed–Sat 11–5 sits on the first screen and is tagged <strong>DIRECTORY</strong> with a call-to-confirm note until you lock the board yourself.</p>
       </div>
       <div class="item">
         <span class="tag">Food</span>
-        <h3>Your foil stacks, photographed</h3>
-        <p>Cheese pull, smashed patties in foil, the chalk garage door &mdash; pictures already on your Facebook, not stock burgers from a catalog.</p>
+        <h3>Your foil, photographed</h3>
+        <p>Cheese-pull, hand-held stack, chalk door — real pictures from your shop, not stock burgers from somebody else's grill.</p>
       </div>
       <div class="item">
-        <span class="tag">Map</span>
-        <h3>East Village on the Visit page</h3>
-        <p>Address, the Unit 4 / Unit D note, the hours board, Facebook, and a live map for anyone who has never pulled into that lot.</p>
+        <span class="tag">Door</span>
+        <h3>Unit 4, not Unit D</h3>
+        <p>The Visit page says the fascia is Unit 4 and that some directories still say D — so a first-timer finds the right garage door.</p>
       </div>
       <div class="item">
         <span class="tag">Speed</span>
-        <h3>Loads before they bail</h3>
-        <p>Photos are compressed for phones. A customer on East 6th with one bar still gets the hero and the Call button without waiting on a desktop-sized file.</p>
+        <h3>Loads before they give up</h3>
+        <p>Photographs are sized for the screen asking for them. A phone on a city signal never downloads the desktop-sized foil shot.</p>
       </div>
       <div class="item">
         <span class="tag">Everyone</span>
         <h3>Readable by anyone</h3>
-        <p>Alt text on every photograph, contrast that holds, headings in order, keyboard operable &mdash; the same structure search engines like for the same reason a screen reader does.</p>
+        <p>Screen readers work, every photograph is described, the text passes contrast, and the whole site can be operated from a keyboard.</p>
       </div>
       <div class="item">
         <span class="tag">Upkeep</span>
-        <h3>Nothing to babysit</h3>
-        <p>No plugin theater, no login to forget, no theme that expires. It sits there and works until you decide what to change.</p>
+        <h3>Nothing to maintain</h3>
+        <p>No plugins to update, no software that expires, no login to forget. It sits there and works.</p>
       </div>
     </div>
   </section>
@@ -517,36 +512,36 @@
     <div class="stack">
       <p>
         A website is not only a page for people &mdash; it is also what Google reads
-        when somebody in Little Rock types <em>smash burger near me</em> or
-        <em>Smashed N' Stacked East Village</em>. This one was built to be read properly.
+        when somebody near East Village types <em>smash burger near me</em>. This one
+        was built to be read properly.
       </p>
       <div class="steps">
         <div class="step">
           <div class="n">1</div>
           <div class="body">
-            <h4>Machine-readable shop facts</h4>
-            <p>Name, street address (Unit 4), phone, and the fact that this is a restaurant sit in the page in the format Google publishes for local results. That is what lets hours and a map pin show up beside a listing once the site is live and claimed.</p>
+            <h4>Machine-readable business facts</h4>
+            <p>Your name, street address, phone number, and the fact that this is a restaurant are written into the page in the format search engines publish for local results — so hours and a call button can show in the listing once the site is live on an address you own.</p>
           </div>
         </div>
         <div class="step">
           <div class="n">2</div>
           <div class="body">
             <h4>Every page titled and described</h4>
-            <p>Home and Visit each carry their own title and summary, so a result reads like an invitation instead of a bare web address.</p>
+            <p>Home and Visit each carry their own title and summary, so a search result reads like an invitation instead of a bare web address.</p>
           </div>
         </div>
         <div class="step">
           <div class="n">3</div>
           <div class="body">
             <h4>Shares that look like something</h4>
-            <p>Pasted into Facebook or a text, the link can open with a photograph and a proper description instead of a lonely blue line.</p>
+            <p>Pasted into Facebook or a text message, the link opens with a photograph and a proper description instead of a blue line.</p>
           </div>
         </div>
         <div class="step">
           <div class="n">4</div>
           <div class="body">
             <h4>Written in plain structure</h4>
-            <p>Real headings in a sensible order, and a written description on every photograph. Good for search for the same reason it is good for a blind customer.</p>
+            <p>Real headings in a sensible order, and a written description on every photograph. Good for search engines for the same reason it is good for a blind customer.</p>
           </div>
         </div>
         <div class="step">
@@ -560,9 +555,9 @@
       <p style="padding-top: 20px;">
         <strong>An honest word about search.</strong> None of this is a magic switch.
         Results build over weeks, and for a local burger shop the single biggest factor
-        is a claimed, filled-in Google Business Profile pointed at an address you own.
-        The site makes that profile stronger. Anyone who promises the top spot is
-        selling something else.
+        is a claimed, filled-in Google Business Profile. The site makes that profile
+        stronger and gives it somewhere to point &mdash; the two work together. Anyone
+        who promises you the top spot is selling something.
       </p>
     </div>
   </section>
@@ -574,45 +569,45 @@
     </div>
     <div class="stack">
       <p class="pull">
-        You rent the Facebook page. You would own the website. They do different jobs,
+        You rent your Facebook page. You would own your website. They do different jobs,
         and they are stronger pointed at each other.
       </p>
       <p>
-        Your Facebook page is already doing the living work &mdash; the foil drops, the
-        move to Unit 4, comments from people who followed the truck. The site does not
-        try to replace that. It links straight to
+        Your Facebook page at
         <a href="https://www.facebook.com/smashednstacked/">facebook.com/smashednstacked</a>
-        and leaves specials and day-of noise where they belong.
+        is already doing the living work — plates, the truck, the move into Unit 4,
+        the days people ask if you are open. The site does not try to replace that. It
+        links straight to Facebook and leaves specials where they already land.
       </p>
       <p>
-        What Facebook cannot do is be the first door for someone who has never heard of
-        you. A driver looking for smash burgers in East Village does not start inside
-        Facebook &mdash; they search Google, or they ask the phone out loud. A page
-        inside a social network is largely invisible to that search. A website is
-        exactly what it is looking for.
+        What Facebook cannot do is be found by someone who has never heard of you.
+        Somebody driving through East Village looking for a smash burger does not start
+        inside Facebook &mdash; they search Google, or they ask their phone out loud.
+        A page inside a social network is largely invisible to that search. A website
+        is exactly what it is looking for.
       </p>
       <div class="grid" style="padding-top: 6px;">
         <div class="item">
           <span class="tag">Facebook does</span>
           <h3>Today</h3>
-          <p>Specials, sold-out stacks, a chalk-door update, the crowd after the move. Things that change and want a comment thread.</p>
+          <p>Specials, sold-out boards, a new stack, the crowd at the door. Things that change and want a comment section.</p>
         </div>
         <div class="item">
           <span class="tag">The site does</span>
           <h3>Always</h3>
-          <p>Hours posture, Unit 4 address, phone, what the shop is. The facts somebody needs with one hand on the wheel.</p>
+          <p>Hours note, address, phone, how to find Unit 4. The facts somebody needs at lunch with one hand on the wheel.</p>
         </div>
         <div class="item">
           <span class="tag">Together</span>
           <h3>A loop</h3>
-          <p>Search finds the site, the site sends them to Facebook to follow you; posts link back to the site, which lifts it in search. Each one feeds the other.</p>
+          <p>Search finds the site, the site sends them to Facebook and they follow you; your posts link back to the site, which lifts it in search. Each one feeds the other.</p>
         </div>
       </div>
       <p style="padding-top: 6px;">
-        There is a practical safety net too. Pages get locked, hacked, or caught by a
-        rule change, and there is no support line that answers. If that ever happened
-        to yours, the address, the phone, and the Visit facts would still sit at a
-        place you own.
+        There is a practical safety net in it too. Pages get locked out, hacked, or
+        caught by a rule change, and there is no phone number to call when it happens.
+        If that ever happened to yours, everything a customer actually needs would still
+        be sitting at your own address, untouched.
       </p>
     </div>
   </section>
@@ -622,41 +617,39 @@
       <p class="label">06 &middot; The whole site</p>
       <h2>Two pages, top to bottom.</h2>
     </div>
-    <p style="margin-bottom: 28px;">
-      Scroll either crop to see the full page as it stands. Home carries the foil hero,
-      the door, the stack photos, and the sticky Call bar. Visit holds the Unit 4 note,
-      the DIRECTORY hours board, Facebook, and the map.
-    </p>
+    <p style="margin-bottom: 28px;">Scroll either of these to see the full page as it stands today. Home carries the foil hero, the chalk door, and the stack story. Visit carries the NAP, the DIRECTORY hours board, the Unit 4 note, and the map.</p>
     <div class="pages">
       <figure>
         <div class="scroller" tabindex="0" aria-label="The full home page, scrollable">
-          <img src="img/shot-home-full.png" alt="Full Smashed N' Stacked home page: foil hero, Call and Directions, Unit 4 door, foil stack photo, truck-era portrait, footer." width="780" height="2193">
+          <img src="img/shot-home-full.png" alt="The whole home page: foil cheese-pull hero, Call and Directions, East Village chalk door, foil stack, James at the truck, and the footer with address and Facebook." width="780" height="2193">
         </div>
         <figcaption>Home</figcaption>
       </figure>
       <figure>
         <div class="scroller" tabindex="0" aria-label="The full visit page, scrollable">
-          <img src="img/shot-visit-full.png" alt="Full Smashed N' Stacked visit page: Unit 4 address, phone, Unit D directory note, DIRECTORY hours, map, sticky Call bar." width="780" height="1200">
+          <img src="img/shot-visit-full.png" alt="The whole visit page: Unit 4 address, phone, Facebook, DIRECTORY hours board, and the map." width="780" height="1200">
         </div>
         <figcaption>Visit</figcaption>
       </figure>
     </div>
     <p class="pages-note">
-      These are cropped to fit the screen. The site itself is easier to walk on a phone
-      &mdash; open
-      <a href="https://design219llc.github.io/outreach-looks/smashed-n-stacked/">the live look</a>
+      These are cropped to fit the screen. The site itself is easier to
+      look at on a phone &mdash; open
+      <a href="https://design219llc.github.io/outreach-looks/smashed-n-stacked/">the live version</a>
       and tap through it.
     </p>
-    <figure class="scan" style="margin-top: 28px;">
-      <img src="img/qr.png" width="148" height="148" alt="QR code that opens the unpublished Smashed N' Stacked look.">
-      <figcaption>
-        <p class="label" style="margin-bottom: 8px;">Print QR</p>
-        <p>Same deep link as the cover. Scan from the printed packet.</p>
-        <p style="margin-top: 8px;">
+    <div class="scan" style="margin-top: 28px;">
+      <img src="img/qr.png" width="410" height="410" alt="QR code that opens the Smashed N' Stacked unpublished site.">
+      <div>
+        <p class="scan-title">Same deep link on paper</p>
+        <p>
+          Scan to open the unpublished site. Print this page and the code still works.
+        </p>
+        <p style="padding-top: 8px;">
           <a href="https://design219llc.github.io/outreach-looks/smashed-n-stacked/">https://design219llc.github.io/outreach-looks/smashed-n-stacked/</a>
         </p>
-      </figcaption>
-    </figure>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -666,68 +659,69 @@
     </div>
     <div class="stack">
       <p style="margin-bottom: 12px;">
-        None of the following is built, and none of it is required for the site to do
-        its job. Once a burger shop owns its own address &mdash; especially one that
-        just stepped off a truck into a brick room &mdash; each item stops being a
-        second-vendor chase and becomes a small addition from the same bench. Site and
-        software, one pair of hands. Think about this slowly.
+        None of the following is built, and none of it is needed for the site to do its
+        job. But once a burger shop has its own place on the internet, each of these
+        stops being a big project and becomes a small addition. Every one of them is
+        something I build and look after myself &mdash; the website and the software
+        under it come from the same bench, so there is never a second company to
+        chase. This is the part worth thinking about slowly.
       </p>
       <div class="roadmap">
         <div class="card near">
           <span class="when">First</span>
           <h4>Knowing what happens</h4>
-          <p>How many people looked, what they tapped, what hour, whether they were already in East Village or two exits away. Numbers instead of a gut feel after the lunch rush.</p>
+          <p>How many people looked, what they tapped, what day and hour, whether they were in East Village or two exits over. Real numbers instead of a guess.</p>
         </div>
         <div class="card near">
           <span class="when">First</span>
-          <h4>A board you update yourself</h4>
-          <p>Swap a stack name, park a sold-out note, or post today&rsquo;s foil special from your phone. No waiting on a developer to change a price.</p>
+          <h4>The board you update yourself</h4>
+          <p>Change a price, mark a sold-out stack, or post today's hours from your phone and the site updates. No calling anybody.</p>
         </div>
         <div class="card near">
           <span class="when">First</span>
-          <h4>Counter or window QR</h4>
-          <p>Same facts on the glass or the napkin holder, always current, never a reprint run when the truck special becomes a shop special.</p>
-        </div>
-        <div class="card">
-          <span class="when">Next</span>
-          <h4>Call-ahead that sticks</h4>
-          <p>A clean path for &ldquo;I&rsquo;m five minutes out, smash two&rdquo; that lands as one message instead of a missed ring during the rush.</p>
+          <h4>A counter QR code</h4>
+          <p>The same menu on the foil wrap or the window, always current, never reprinted.</p>
         </div>
         <div class="card">
           <span class="when">Next</span>
           <h4>Rewards that remember</h4>
-          <p>A punch card that lives on a phone for the people who followed you from the truck lot to Unit 4 &mdash; and tells you who actually comes back.</p>
+          <p>A punch card that lives on a phone instead of a wallet, and tells you who your regulars actually are.</p>
         </div>
         <div class="card">
           <span class="when">Next</span>
-          <h4>Catering and office drops</h4>
-          <p>A form for the game-day tray or the downtown lunch order, arriving as one clear ticket instead of a half-heard voicemail.</p>
+          <h4>Call-ahead for the lunch rush</h4>
+          <p>Orders taken before they arrive so the stack is ready when they pull up — without a half-heard phone call.</p>
+        </div>
+        <div class="card">
+          <span class="when">Next</span>
+          <h4>Waitlist texts</h4>
+          <p>A Friday line that texts people when their order is up instead of holding them in the doorway.</p>
         </div>
         <div class="card">
           <span class="when">Later</span>
-          <h4>Inventory that counts down</h4>
-          <p>Patties, buns, foil, sauces &mdash; what is on hand and what ran out last Saturday. The end of the clipboard by the flat-top.</p>
+          <h4>Catering and big orders</h4>
+          <p>A form for the office lunch or the ball team, arriving as one clear message instead of a thread of DMs.</p>
         </div>
         <div class="card">
           <span class="when">Later</span>
           <h4>Gift cards</h4>
-          <p>Sold from the site, redeemed at the counter. Holidays and &ldquo;you have to try this place&rdquo; mostly run themselves.</p>
+          <p>Sold from the site, redeemed at the window. Holidays mostly run themselves.</p>
         </div>
         <div class="card">
           <span class="when">Later</span>
           <h4>A list you own</h4>
-          <p>Customers who ask to hear from you by text or email, reachable without paying a platform to talk to your own regulars.</p>
+          <p>Customers who ask to hear from you, reachable by text or email without paying to reach your own followers.</p>
         </div>
         <div class="card">
           <span class="when">Later</span>
           <h4>Reviews, gathered</h4>
-          <p>A gentle nudge to a happy customer at the right moment, pointed where it counts for local search.</p>
+          <p>A gentle nudge to happy customers at the right moment, pointed where it counts for search.</p>
         </div>
       </div>
       <p style="padding-top: 24px;">
         The order matters more than the list. Analytics first, because it tells you
         which of the others is worth doing. Everything after that becomes a decision
-        made with evidence instead of a hunch from the pass.
+        made with evidence instead of a hunch.
       </p>
     </div>
   </section>
@@ -741,22 +735,22 @@
       <div class="step">
         <div class="n">1</div>
         <div class="body">
-          <h4>Hours, confirmed by you</h4>
-          <p>What is on the look is DIRECTORY &mdash; Wednesday&ndash;Saturday 11am&ndash;5pm from press of the brick-and-mortar move, with Sunday&ndash;Tuesday as call ahead. Five minutes with you turns that into a permanent board (or corrects it).</p>
+          <h4>Your hours, from you</h4>
+          <p>What is on the site is tagged <strong>DIRECTORY</strong> — Wed–Sat 11–5, call to confirm — drawn from public listings and press about the brick-and-mortar move, not an owner-confirmed permanent board. Five minutes with you settles it for good.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">2</div>
         <div class="body">
-          <h4>Menu and prices, if you want them on the site</h4>
-          <p>Right now the look is food-led and phone-led: stacks in photographs, Call to order. A printed menu photo or a simple price list is enough if you want a Menu page before publish.</p>
+          <h4>A menu</h4>
+          <p>A photograph of the printed board or a list of stacks and prices is enough. Right now the site shows the foil and the door and carries no prices anywhere.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">3</div>
         <div class="body">
-          <h4>Photo rights</h4>
-          <p>Hero and gallery frames came from photographs already public on your Facebook. Fine for an unpublished look. Before the site goes live on an address you own, we confirm you can use them &mdash; or swap in fresh phone shots from the Unit 4 flat-top in good light.</p>
+          <h4>The photographs</h4>
+          <p>The food and door pictures are from your public Facebook. They are fine for showing you an idea. Before the site goes public they need your say-so (or replacing) — and phone photographs taken at the Unit 4 window in good light would do the job well.</p>
         </div>
       </div>
     </div>
@@ -767,18 +761,27 @@
     <div class="stack">
       <p class="label">A note to finish</p>
       <p>
-        The look is finished so you can judge the work, not a slide deck. A fair,
-        manageable price gets named before any paid work starts &mdash; not in this
-        packet, and not as a surprise invoice behind a free sample.
+        Before this I spent twenty-five years as a senior director and a senior business
+        analyst, and now I run a small business myself. Those years taught me how a
+        place actually makes and loses money. This last stretch has taught me what it
+        feels like when the bills land on your own desk instead of somebody else's.
       </p>
       <p>
-        There is no obligation attached to any of this. If you want the site, we put it
-        on an address you own and point Google and your Facebook there. If you want to
-        think about it for a while, that is fine too &mdash; it is not going anywhere.
+        So here is the one thing I hold to. My price will always be fair and manageable
+        for a business this size, and you will hear the number before any work starts.
+        Costs are real. Taxes are real. And in the small-business world there is hardly
+        ever anybody actually trying to help &mdash; mostly there is somebody trying to
+        sell you a subscription.
       </p>
       <p>
-        If you ever just want somebody to explain what any of this means in plain words,
-        with no pitch on the end, call or email for that.
+        There is no obligation attached to any of this, and no invoice behind it. I built
+        the look so you could open it on a phone and decide with your own eyes. If you
+        want it, it is yours to talk about. If you want to think about it for a month,
+        that is fine too &mdash; it is not going anywhere.
+      </p>
+      <p>
+        And if you ever just want somebody to explain what any of this actually means,
+        in plain words, with no sales pitch on the end, call me for that.
       </p>
       <div class="sig">David Locke</div>
       <div class="sig-rule">
@@ -790,7 +793,7 @@
         <a href="https://design219.com">https://design219.com</a>
       </div>
       <p class="motto">Whatever you run. We build for you.</p>
-      <p class="postal">110 E. Sunset Drive, Sheridan, AR 72150</p>
+      <p class="canspam">110 E. Sunset Drive, Sheridan, AR 72150</p>
     </div>
   </div>
 
@@ -800,7 +803,7 @@
       <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
     </a>
     <span>Smashed N' Stacked &middot; concept build &middot; not published</span>
-    <span>Envelope: ATTN: James Mann</span>
+    <span>ATTN: James Mann</span>
   </footer>
 
 </div>
