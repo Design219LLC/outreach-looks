@@ -3,85 +3,154 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Owner packet · Mama’s Gyros Grill</title>
+<title>A website for Mama's Gyros Grill, already built.</title>
+<meta name="description" content="The finished Mama's Gyros Grill website for the owner. Built on spec by Design219 LLC.">
 <meta name="robots" content="noindex,nofollow">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#12151c;--cream:#f6f3ec;--blue:#1e4d8c;--paper:#fff;--mute:#5c6570;--gold:#D4AF37}
-*{box-sizing:border-box}body{margin:0;font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
-img{max-width:100%;display:block}a{color:var(--blue)}
-.pack{max-width:720px;margin:0 auto;padding:1.25rem 1.1rem 3rem}
-.band{height:6px;background:linear-gradient(90deg,var(--blue) 0 40%,#fff 40% 60%,#b42318 60% 100%);margin:0 0 1rem}
-.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem}
-.look-chip{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;padding:.35rem .55rem;border-radius:.45rem;background:rgba(10,12,16,.72);border:1px solid rgba(212,175,55,.35);color:#f4f1ea}
-.look-chip-icon{width:1.05rem;height:1.05rem;color:#D4AF37}.look-chip-word{font-size:.95rem;font-weight:600}.look-chip-design{color:#f4f1ea}.look-chip-num{color:#D4AF37;font-weight:700}
-.btn{background:var(--blue);color:#fff;border:0;padding:.55rem .9rem;border-radius:999px;font-weight:700;cursor:pointer}
-.attn{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:700;margin:0 0 .35rem}
-h1{font-family:"Fraunces",Georgia,serif;font-size:clamp(1.8rem,5vw,2.4rem);margin:0 0 .75rem;line-height:1.1}
-.body{background:var(--paper);border:1px solid #ddd;border-radius:10px;padding:1.3rem 1.25rem}
-.body p{margin:0 0 .85rem}.body .hi{font-weight:700}.body .url a{word-break:break-all;font-weight:600}
-.code{display:flex;gap:1rem;align-items:center;margin:1.3rem 0;padding:1rem;background:var(--paper);border:1px dashed #bbb;border-radius:10px}
-.code img{width:112px;height:112px}.code a{word-break:break-all;font-weight:600;font-size:.92rem}
-.shots h2{font-family:"Fraunces",serif;font-size:1.25rem;margin:1.4rem 0 .7rem}
-.row{display:grid;grid-template-columns:1fr 1.2fr 1.6fr;gap:.7rem;align-items:end}
-.shell{background:#111;border-radius:12px;padding:.35rem;box-shadow:0 8px 24px rgba(0,0,0,.16)}
-.shell.ph{border-radius:18px}.shell .scr{background:#fff;overflow:hidden;border-radius:6px;max-height:280px}
-.shell.ph .scr{max-height:320px;border-radius:12px}.shell img{width:100%}
-.lab{font-size:.75rem;color:var(--mute);text-align:center;margin:.3rem 0 0}
-@media(max-width:700px){.row{grid-template-columns:1fr}.shell .scr{max-height:none}}
-.sign{display:grid;grid-template-columns:120px 1fr;gap:1rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid #ddd}
-.sign img{width:120px;height:150px;object-fit:cover;object-position:center 28%;border-radius:6px}
-.nm{font-family:"Fraunces",serif;font-style:italic;font-size:1.35rem;margin:0 0 .35rem}
-.meta{font-size:.95rem;color:var(--mute);margin:0;line-height:1.45}.meta a{color:var(--ink);font-weight:600;text-decoration:none}
-.motto{margin:1rem 0 0;font-weight:700}.postal{font-size:.85rem;color:var(--mute);margin:.45rem 0 0}
-@media print{body{background:#fff;font-size:11pt;line-height:1.48}.pack{max-width:none;padding:0}.skip-print{display:none!important}.body,.code,.sign,.shell{break-inside:avoid}.shell .scr{max-height:none}a{color:var(--ink);text-decoration:none}@page{margin:14mm}}
+:root{--ink:#141414;--paper:#f4f1ea;--mute:#5c584f;--gold:#C9A227;--line:rgba(20,20,20,.14)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.45;font-size:16px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:28px 22px 64px}
+.masthead{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:2.2rem;font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.look-chip{display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;padding:.3rem .5rem;border:1px solid rgba(201,162,39,.45);border-radius:.4rem}
+.look-chip b{color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.1rem 0 0;font-family:system-ui,sans-serif}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+h1{font-size:clamp(2rem,6vw,2.75rem);line-height:1.05;margin:.2rem 0 1rem;font-weight:700}
+.lede{font-size:1.08rem;color:var(--mute);max-width:36em}
+.owner-kicker{font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:2.5rem 0 .8rem}
+section{padding-top:2.6rem;border-top:1px solid var(--line);margin-top:2.4rem}
+.label{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:0 0 .55rem}
+h2{font-size:1.55rem;line-height:1.15;margin:0 0 .85rem}
+p{margin:0 0 .85rem}
+.shot{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:1rem 0 1.2rem;background:#fff}
+.shot img{width:100%}
+.shot-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.55rem;margin:1rem 0}
+.shot-row .shot{margin:0}
+.caps{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:1rem 0}
+.cap{border:1px solid var(--line);border-radius:10px;padding:.85rem .95rem;background:#fff}
+.cap strong{display:block;font-family:system-ui,sans-serif;font-size:.92rem;margin-bottom:.25rem}
+.cap span{font-size:.92rem;color:var(--mute)}
+.qr-box{display:flex;gap:1rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:1rem;background:#fff;margin:1rem 0}
+.qr-box img{width:112px;height:112px}
+.qr-box p{margin:0;font-size:.95rem}
+.sig{display:grid;grid-template-columns:120px 1fr;gap:1rem;align-items:start;margin-top:1.4rem}
+.sig img{width:120px;border-radius:6px;border:1px solid var(--line)}
+.sig .lines{font-family:system-ui,sans-serif;font-size:.92rem;line-height:1.45}
+.sig .lines strong{display:block;font-size:1rem;margin-bottom:.35rem}
+.postal{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--mute);margin-top:1.5rem}
+.deep{font-family:system-ui,sans-serif;font-size:.85rem;word-break:break-all}
+@media (max-width:640px){.shot-row,.caps,.sig{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:11pt}.wrap{max-width:none;padding:0}section{break-inside:avoid;padding-top:18pt;margin-top:14pt}a{text-decoration:none}}
 </style>
 </head>
 <body>
-<div class="pack">
-  <div class="band" aria-hidden="true"></div>
-  <header class="head">
-    <a class="look-chip" href="https://design219.com" aria-label="Design219">
-      <svg class="look-chip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>
-      <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
-    </a>
-    <button class="btn skip-print" id="printBtn" type="button">Print</button>
+<div class="wrap">
+  <header class="masthead">
+    <a class="look-chip" href="https://design219.com">Design<b>219</b></a>
+    <span>Owner packet · unpublished</span>
   </header>
-  <p class="attn">ATTN: Owner · For the owner</p>
-  <h1>Mama’s Gyros Grill</h1>
-  <article class="body">
-    <p class="hi">Mama’s Gyros Grill,</p>
-    <p>mamasgyros.com does not resolve. Someone looking for 3309 East Kiehl lands on Facebook or a directory.</p>
-    <p>I built a page from photographs already public: the door, the spit, a call button, directions to that door. Open it on your phone.</p>
-    <p class="url"><a href="https://design219llc.github.io/outreach-looks/mamas-gyros-grill/">https://design219llc.github.io/outreach-looks/mamas-gyros-grill/</a></p>
-    <p>Call dials (501) 833-0306. Directions open maps to 3309 E Kiehl Ave, Sherwood. Nothing is owed. Nothing is published. If you want it, we put it on an address you own and point Google there. If you do not, you have lost nothing.</p>
-    <p>Facebook is the conversation. A site is what a searcher hits before they know the name.</p>
-  </article>
-  <figure class="code">
-    <img src="img/qr.png" width="128" height="128" alt="QR code that opens the Mama’s Gyros Grill look.">
-    <figcaption><a href="https://design219llc.github.io/outreach-looks/mamas-gyros-grill/">https://design219llc.github.io/outreach-looks/mamas-gyros-grill/</a></figcaption>
-  </figure>
-  <section class="shots" aria-label="Screenshots">
-    <h2>Three widths</h2>
-    <div class="row">
-      <figure><div class="shell ph"><div class="scr"><img src="img/shot-390.png" alt="Mama’s Gyros Grill on a phone, 390 wide."></div></div><figcaption class="lab">Phone · 390</figcaption></figure>
-      <figure><div class="shell"><div class="scr"><img src="img/shot-768.png" alt="Mama’s Gyros Grill on a tablet, 768 wide."></div></div><figcaption class="lab">Tablet · 768</figcaption></figure>
-      <figure><div class="shell"><div class="scr"><img src="img/shot-desktop.png" alt="Mama’s Gyros Grill on desktop."></div></div><figcaption class="lab">Desktop</figcaption></figure>
+  <h1>A website for Mama's Gyros Grill,<br>already built.</h1>
+  <p class="lede">Not a proposal and not a slide mock. The site is finished and working. This packet shows what it looks like on every screen, what it does, how people find it, how it sits with your social, and where it could go. Nothing owed. Nothing signed.</p>
+  <div class="chips"><span>Built on spec</span><span>Not published</span><span>Yours to look at</span></div>
+  <p class="owner-kicker">ATTN: Owner · For the owner</p>
+  <section style="border:0;margin:0;padding-top:0">
+    <p>Hello,</p>
+    <p>Your 3309 bay and neon OPEN already mark Kiehl. What someone searching Sherwood still does not get is a quiet address that is yours: the name, the door, Call, and hours on the first screen of a phone.</p>
+    <p>I built a finished look on my own time from your public photos so you can open it cold. If you want it on a domain you own, we put it there. If not, you have lost nothing.</p>
+  </section>
+  <section>
+    <p class="label">01 · The front page</p>
+    <h2>Your door, your name, your street.</h2>
+    <p>The first screen is door-led: bay 3309, the line <em>Gyros on Kiehl.</em>, hours marked DIRECTORY until you lock them, Call to (501) 833-0306 only, and Directions to 3309 E Kiehl Ave.</p>
+    <figure class="shot"><img src="img/shot-desktop.png" alt="Mama's Gyros Grill unpublished home on a wide screen."></figure>
+  </section>
+  <section>
+    <p class="label">02 · Every screen</p>
+    <h2>Computer, tablet, phone.</h2>
+    <p>Hours, address, and Call sit on the first screen. On a phone, a sticky bar keeps Call · Hours · Directions under the thumb.</p>
+    <div class="shot-row">
+      <figure class="shot"><img src="img/shot-desktop.png" alt="Desktop crop."></figure>
+      <figure class="shot"><img src="img/shot-768.png" alt="Tablet crop."></figure>
+      <figure class="shot"><img src="img/shot-390.png" alt="Phone crop."></figure>
     </div>
   </section>
-  <div class="sign">
-    <img src="img/founder.jpg" width="120" height="150" alt="David Locke of Design219 LLC.">
-    <div>
-      <p class="nm">David Locke</p>
-      <p class="meta">Founder, Design219 LLC<br>Sheridan, Arkansas<br>
-      <a href="mailto:david@design219.com">david@design219.com</a><br>
-      <a href="tel:+18706633023">(870) 663-3023</a><br>
-      <a href="https://design219.com">https://design219.com</a></p>
-      <p class="motto">Whatever you run. We build for you.</p>
-      <p class="postal">110 E. Sunset Drive, Sheridan, AR 72150</p>
+  <section>
+    <p class="label">03 · The working parts</p>
+    <h2>What already works.</h2>
+    <div class="caps">
+      <div class="cap"><strong>One tap dials you</strong><span>Locked to (501) 833-0306.</span></div>
+      <div class="cap"><strong>Directions into Maps</strong><span>3309 E Kiehl Ave, Sherwood, AR 72120.</span></div>
+      <div class="cap"><strong>Hours as an object</strong><span>DIRECTORY — call for today’s hours until you confirm a board.</span></div>
+      <div class="cap"><strong>Your photos, not stock</strong><span>Public frames of this shop only.</span></div>
+      <div class="cap"><strong>Loads on a phone</strong><span>Compressed images; content visible without scripts.</span></div>
+      <div class="cap"><strong>Nothing to babysit</strong><span>Static site — no plugin theater.</span></div>
     </div>
-  </div>
+  </section>
+  <section>
+    <p class="label">04 · Being found</p>
+    <h2>What search engines see.</h2>
+    <p>Page titles, share cards, real headings, and alt text. Name, address, and phone are ready when you publish. Results build over weeks; a claimed Google Business Profile still matters. Nobody honest promises the top spot.</p>
+  </section>
+  <section>
+    <p class="label">05 · Site and social together</p>
+    <h2>Social is the conversation. The site is the address.</h2>
+    <p>Facebook (or your real network) stays the conversation. The site would be the address searchers get when they are not already inside the page.</p>
+  </section>
+  <section>
+    <p class="label">06 · The whole site</p>
+    <h2>Two pages, top to bottom.</h2>
+    <p>Home and Visit. Scan the code for the live phone link.</p>
+    <figure class="shot"><img src="img/shot-home-full.png" alt="Full scroll of home."></figure>
+    <figure class="shot"><img src="img/shot-visit-full.png" alt="Visit page."></figure>
+    <div class="qr-box">
+      <img src="img/qr.png" width="410" height="410" alt="QR code to the unpublished Mama's Gyros Grill site.">
+      <div>
+        <p><strong>Open the unpublished site</strong></p>
+        <p class="deep">https://design219llc.github.io/outreach-looks/mamas-gyros-grill/</p>
+        <p>Deep link only. Not the hub.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <p class="label">07 · What it opens up</p>
+    <h2>The door this puts in the wall.</h2>
+    <p>None of this is required for the site to work. Once you own an address, each piece is a small addition from the same bench.</p>
+    <div class="caps">
+      <div class="cap"><strong>Analytics first</strong><span>See which screens earn taps.</span></div>
+      <div class="cap"><strong>Owner-updatable specials</strong><span>Without a redesign.</span></div>
+      <div class="cap"><strong>Counter / window QR</strong><span>Same site in the room as on the phone.</span></div>
+      <div class="cap"><strong>Call-ahead note</strong><span>Later — when hours are confirmed.</span></div>
+      <div class="cap"><strong>Owned list</strong><span>Email or text you control.</span></div>
+      <div class="cap"><strong>Review nudges</strong><span>After the visit, not fake stars on day one.</span></div>
+    </div>
+    <p>Order matters. Analytics first so the rest is evidence, not a hunch.</p>
+  </section>
+  <section>
+    <p class="label">08 · What is still needed</p>
+    <h2>Two or three short conversations.</h2>
+    <p>Hours labeled DIRECTORY (door glass times if shown stay labeled). Menu/prices not invented. Call stays (501) 833-0306 — never the other number on old graphics. Photo rights from public frames.</p>
+  </section>
+  <section>
+    <p class="label">Close</p>
+    <h2>Fair price before any work starts.</h2>
+    <p>No number in this packet. No obligation and no invoice behind the look. Think about it — it is not going anywhere.</p>
+    <div class="sig">
+      <img src="img/founder.jpg" width="148" height="186" alt="David Locke of Design219 LLC.">
+      <div class="lines">
+        <strong>David Locke</strong>
+        Founder, Design219 LLC<br>
+        Sheridan, Arkansas<br>
+        david@design219.com<br>
+        (870) 663-3023<br>
+        https://design219.com<br><br>
+        Whatever you run. We build for you.
+      </div>
+    </div>
+    <p class="postal">110 E. Sunset Drive, Sheridan, AR 72150</p>
+  </section>
 </div>
-<script>document.getElementById("printBtn").addEventListener("click",function(){try{window.print()}catch(e){alert("Open in your browser to print.")}});</script>
 </body>
 </html>

@@ -8,8 +8,8 @@
   --ink: #1a1410;
   --ink-soft: #5a4a3e;
   --pad: clamp(1.1rem, 4vw, 2.5rem);
-  --display: "DM Serif Display", Georgia, serif;
-  --text: "Karla", "Segoe UI", system-ui, sans-serif;
+  --display: "Newsreader", Georgia, serif;
+  --text: "Figtree", "Segoe UI", system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }

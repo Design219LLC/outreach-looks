@@ -11,8 +11,8 @@
   --ink: #14110c;
   --muted: #6b5c4c;
   --pad: clamp(1rem, 4vw, 2.5rem);
-  --display: "Oswald", "Arial Narrow", Impact, sans-serif;
-  --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --display: "Alfa Slab One", "Arial Narrow", Impact, sans-serif;
+  --text: "Karla", Georgia, "Times New Roman", serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }

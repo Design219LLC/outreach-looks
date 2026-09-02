@@ -1,33 +1,45 @@
-# Mama’s Gyros Grill — build notes
+# Mama’s Gyros Grill — Gate 3–5 build notes
 
-## Facts
+Gate 3–5 · 2026-09-02 · Bay 3309 (DOOR-LED) from Gate 2 lock.
 
-| Field | Value | Source |
-|---|---|---|
-| Name | Mama’s Gyros Grill | CONFIRMED (door sign, FB, Chamber, FDG) |
-| Address | 3309 E Kiehl Ave, Sherwood, AR **72120** | CONFIRMED (door numeral 3309, FB, Chamber) |
-| Phone | (501) 833-0306 · tel:+15018330306 | CONFIRMED (door vinyl + FB + Chamber) |
-| Email | mamasgyrosgrill@yahoo.com | FB About — fill only, not on site |
-| Owner name | none | ATTN: Owner |
-| Website | none (mamasgyros.com / mamasgyrosgrill.com NXDOMAIN) | CONFIRMED gap |
-| Facebook | https://www.facebook.com/people/Mamas-Gyros-Grill/100083011974904/ | CONFIRMED · ~3K followers |
-| Hours | Mon–Fri 11–7 · Sat 11–3 · Sun closed | CONFIRMED on door glass (visit.html · ON THE DOOR) |
-| Google rating | Soft — omit from site | Tristan / Sluurpy 4.7/477; not printed |
-| Established | 1982 | FB intro — used as chip only |
+## Paths
 
-## Design pass
+| | |
+|---|---|
+| Look | `/workspace/looks/mamas-gyros-grill/` |
+| Publish copy | `/workspace/outreach-looks-publish/mamas-gyros-grill/` (rsync, **no git**) |
+| Studio pack | `/workspace/studio-kit/looks/227-mamas-gyros/` |
 
-- Superdesign skipped (David skipped).
-- Magic Patterns not connected.
-- System from shop photos: brick red door vinyl, cream ticket paper, olive salad greens, foil gray, checkered liner.
+## Lock honored
 
-## Grammar
+- **MP keep:** https://www.magicpatterns.com/inspiration/e1d00ffe-591d-40e8-aac1-a0e25df6bbac (Bay 3309 only; stale MP ids ignored)
+- **Type:** Zilla Slab + Manrope (Google Fonts link + CSS `--display` / `--text`)
+- **Color:** ochre `#D4A05A` · neon `#C62828` · roast `#5A2A22` + ink `#171311` / cream `#F7F1E6`
+- **Voice:** Gyros on Kiehl.
+- **Hero:** `img/hero.jpg` (mobile) · `img/door-wide.jpg` (desktop/OG)
+- **Call:** `tel:+15018330306` · (501) 833-0306 — **never** 501-920-4065
+- **NAP:** 3309 E Kiehl Ave, Sherwood, AR 72120
+- **Hours:** DIRECTORY labeled (door vinyl Mon–Fri 11–7 · Sat 11–3 · Sun closed)
+- **Envelope:** ATTN: Owner
+- **Classes:** `bay3309` / `signband` / `neoncall` / `spitstory` / `foilcard` / `patchroom` / `kiehl-dock` (+ bayrail/bayshade/bayname/bayline/baytoday/bayacts/baydir/hoursplate/kiehlfind/fbvinyl/bayfoot) — not Lady Birds `veil`/`kicker`, not prior foil-ticket tree
 
-Food-led foil ticket: gyro face → paper ticket type → spit cut → checker stagger → olive plate → room stagger → bay find. Sticky Call/Visit/Directions. Unique class tree (`kiehl-*`, `foil-*`, `ticket`, `spit-cut`, `checker`, `olive-plate`, `room-stagger`, `bay-find`). Replaces thin door-led clone (kicker/acts/trio) that raced onto Pages first.
+## Gate checklist
 
-## Gaps
+| Gate | Status |
+|---|---|
+| 1 Photo system | PASS (prior) |
+| 2 Design system + MP Bay 3309 | PASS (Natalie CLEAR) |
+| 3 Build from draft | PASS — replaced prior food-led look |
+| 4 Harden | PASS — AA Call, no motion, visible without JS, no broken CSS |
+| 5 Side-by-side vs lady-birds-site | PASS — local qa/ vs lady-birds-site @390/768/desktop |
 
-- Google stars omitted from HTML.
-- No prices.
-- No owner name for ATTN beyond Owner.
-- Lane 2 packet not this pass (look only).
+## DIRECTORY risks
+
+- Hours are DIRECTORY (door vinyl / public listings), not owner-confirmed permanent.
+- No invented prices, menu board, reviews, or fake 4.9.
+- Counter A-frame second phone quarantined from Call UI.
+- Envelope ATTN: Owner only.
+
+## Anti-clone
+
+Diffed mentally vs `/workspace/ladybirds/index.html` and prior `/workspace/looks/mamas-gyros-grill/` foil-ticket HTML. New room, new class tree, door-led first screen.

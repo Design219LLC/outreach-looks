@@ -1,38 +1,40 @@
 # Mama K’s — build notes (#231)
 
+Gate 3–5 · 2026-09-02 · Roadside sign / Yellow sign from MP `9e2cb6c4`.
+
 ## Facts
 
 | Field | Value | Source |
 |---|---|---|
-| Name | Mama K’s / Mama K'S | CONFIRMED (Maps + FB + roadside sign) |
-| Address | 4593 Hwy 9, Leola, AR **72084** | CONFIRMED ZIP in look-photos SOURCES |
-| Phone | (501) 332-7200 · tel:+15013327200 | CONFIRMED (Maps + FB + roadside sign 332-7200) |
-| Email / owner name | none | ATTN: Owner |
+| Name | Mama K’s | CONFIRMED |
+| Address | 4593 Highway 9, Leola, AR **72084** | CONFIRMED |
+| Phone | (501) 332-7200 · `tel:+15013327200` | CONFIRMED (sign 332-7200) |
+| Owner / email | none for cold send | Envelope **ATTN: Owner** |
 | Website | none — mamaksleola.com NXDOMAIN | CONFIRMED |
-| Facebook | https://www.facebook.com/p/Mama-Ks-100063497236464/ | CONFIRMED · 5.3K followers |
-| Hours | omitted — Visit says call | Do not invent |
-| Google rating | 4.8 verified — **star widget omitted** | Prefer omit |
+| Facebook | https://www.facebook.com/p/Mama-Ks-100063497236464/ | CONFIRMED |
+| Hours | **DIRECTORY** — Call for today’s hours | Not owner-confirmed |
+| Google rating | soft — star widget omitted | Prefer omit |
 
-## Design pass
+## Design
 
-- Superdesign canvas skipped (David).
-- Magic Patterns not connected.
-- System from shop photos: highway yellow sign, barn-red roof, corrugated steel booths, cream page. Voice from roadside sign (“Good home cooking.”).
+- Grammar: **Door-led / Roadside sign** — full-bleed yellow board → porch → Train Wreck → booth → FB
+- Type: **Paytone One + Outfit**
+- Color: sign `#E0B40F` · road `#B53A2E` · metal `#52565C` + ink/cream
+- Voice: **Good home cooking.**
+- Hero: `img/hero.jpg` from studio `photos/hero.jpg`
+- Classes: roadside / yellowboard / hwy9 / shade / shopname / porchband / trainwreck / boothstrip / dock — not Lady Birds veil/kicker, not prior hwy-rail/mile-card
+- MP keep: Yellow sign `9e2cb6c4-1d64-4164-a14c-7edd8eff50eb` (canonical only)
+- Call contrast: cream on road ≈ 5.12 AA
 
-## Grammar
+## Anti-clone
 
-**yellow-billboard / booth-zigzag** — roadside sign alone → mile card → porch cut → Train Wreck chapter → booth zig (deer/burger → catfish/Booth 7) → plate stack → menu page photo → find. Sticky Call · Visit · Directions.
-
-## Diff
-
-Not Lady Birds hero+veil+kicker+band; not Uncle Henry smoke-ledger; not SNS smash-lead; not ITTE spread; not Dale’s doorframe+case-rail.
-
-## Photo count used
-
-18 files in kit `img/` from `/workspace/look-photos/mama-ks/` (billboard, porch, train-wreck, booths, food, menu-page, favicon, og + sm variants).
+Replaced prior `/workspace/looks/mama-ks/` skeleton. Diffed mentally vs ladybirds (no veil/kicker/stick). No three equal thumbs.
 
 ## Gaps
 
-- Exact hours unresolved — call only on Visit.
-- Google review count soft — stars omitted entirely.
-- No owner email/name.
+- Hours DIRECTORY only
+- No invented prices / owner name
+
+## Gate 5
+
+**PASS** vs lady-birds-site at 390/768/desktop. Shots + checklist: `qa/GATE5.md`. Paytone One + Outfit only. MP `9e2cb6c4` Yellow/Roadside. No git push.
