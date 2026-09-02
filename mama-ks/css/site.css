@@ -1,7 +1,7 @@
 /* Mama K's — Roadside sign. Door-led. Paytone One + Outfit.
    Different room from ITTE: yellow highway rail + physical sign panel,
    hours object on Home, room → porch bleed → cream Train Wreck.
-   No Georgia/Times behind the sans. */
+   No /Times behind the sans. */
 :root {
   --sign: #E0B40F;
   --road: #B53A2E;
@@ -574,32 +574,4 @@ a { color: inherit; }
     left:1rem !important;
     right:auto !important;
   }
-}
-
-/* Gate 5 Tristan hard fix */
-.dock { }
-@media (min-width: 768px) {
-  .dock { display: none !important; }
-  body { padding-bottom: 0 !important; }
-  .desktop-call { display: inline-flex !important; min-height: 44px; align-items: center; }
-}
-.roadside img.roadside-bleed,
-.roadside picture img {
-  object-fit: cover !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-.shopname {
-  text-shadow: 0 2px 12px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.35) !important;
-  color: #1a1410 !important;
-}
-.yellowboard {
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,.35) 30%, rgba(0,0,0,.55)) !important;
-}
-.yellowboard .shopname,
-.yellowboard p,
-.yellowboard .today-chip { color: #fff8e7 !important; text-shadow: 0 1px 8px rgba(0,0,0,.5) !important; }
-@media (min-width: 1100px) {
-  .yellowboard { max-width: 72rem !important; width: 100%; margin: 0 auto; }
-  .roadside { min-height: min(90vh, 52rem) !important; }
 }

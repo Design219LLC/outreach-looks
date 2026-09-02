@@ -375,7 +375,7 @@ a.mill-ring:hover { background: var(--script-d); }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 3.5rem; /* ≥44px; Lady Birds-ish */
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -500,12 +500,13 @@ a.mill-ring:hover { background: var(--script-d); }
   }
 
   .awning-door {
-    min-height: min(92svh, 52rem);
+    min-height: 100svh;
+    min-height: 100vh;
   }
   .mill-copy {
     margin-left: auto;
     max-width: 28rem;
-    padding: 2rem var(--pad) 2.4rem;
+    padding: 2rem var(--pad) 2.6rem;
   }
   .mill-name { font-size: clamp(2.6rem, 5vw, 3.4rem); }
 
@@ -552,7 +553,10 @@ a.mill-ring:hover { background: var(--script-d); }
 
 /* ——— ~1100 / desktop cut ——— */
 @media (min-width: 1100px) {
-  .awning-door { min-height: min(94svh, 56rem); }
+  .awning-door {
+    min-height: 100svh;
+    min-height: 100vh;
+  }
   .mill-copy {
     max-width: 34rem;
     padding: 2.6rem var(--pad) 3rem;
@@ -577,21 +581,16 @@ a.mill-ring:hover { background: var(--script-d); }
 }
 
 @media (min-width: 1280px) {
-  .mill-copy { max-width: 36rem; }
-  .mill-name { font-size: 4rem; }
+  .mill-copy { max-width: 38rem; padding-right: calc(var(--pad) + 0.5rem); }
+  .mill-name { font-size: 3.85rem; }
 }
 
-
-/* Gate 5 Tristan hard fix — Dale */
-.mill-acts a { min-height: 44px; }
-.mill-dock a { min-height: 44px; }
-.mill-copy {
-  padding-bottom: calc(var(--dock-h) + env(safe-area-inset-bottom, 0px) + 1.1rem);
-}
+/* Gate 5 lock */
+.mill-dock a { min-height: 3.5rem; }
+.mill-acts a, .mill-today, .look-chip, .mill-nav a, .mill-ring { min-height: 44px; }
 @media (min-width: 768px) {
-  .mill-copy { padding-bottom: 2.5rem; }
   .mill-dock { display: none !important; }
   body { padding-bottom: 0 !important; }
-  .mill-nav .mill-ring,
-  a.mill-ring { display: inline-flex !important; min-height: 44px; align-items: center; }
+  .mill-ring { display: inline-flex !important; }
+  .mill-copy { padding-bottom: 2.6rem; }
 }
