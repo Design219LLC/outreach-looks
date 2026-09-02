@@ -1,58 +1,567 @@
-:root{
-  --ink:#1c1410; --cream:#f7f0e4; --y:#e8b923; --metal:#3a3f44; --rust:#9a3412; --paper:#fffdf8;
+/* Mama K’s — Hwy 9 pull-off grammar. Sign leads; ticket type below; booth metal.
+   Unique class tree. 390 / 768 / desktop. Distinct from Lady Birds + Uncle Henry’s. */
+:root {
+  --sign: #f0c512;
+  --sign-deep: #d4a80a;
+  --maroon: #8b1c1c;
+  --maroon-deep: #6e1515;
+  --metal: #3a3e42;
+  --metal-soft: #52585e;
+  --cream: #f7f0e2;
+  --cream-dim: #e8dfcc;
+  --ink: #1a1510;
+  --muted: #5c5348;
+  --pad: clamp(1rem, 4vw, 2.5rem);
+  --display: "Passion One", "Arial Black", Impact, sans-serif;
+  --text: "Nunito Sans", system-ui, sans-serif;
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.45}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:9}
-.look-chip{position:fixed;top:.7rem;right:.7rem;z-index:20;display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;padding:.35rem .55rem;border-radius:.45rem;background:rgba(10,12,16,.72);backdrop-filter:blur(8px);border:1px solid rgba(212,175,55,.35);color:#f4f1ea}
-.look-chip-icon{width:1.05rem;height:1.05rem;color:#D4AF37}
-.look-chip-word{font-size:.95rem;font-weight:600;letter-spacing:-.02em}
-.look-chip-design{color:#f4f1ea}.look-chip-num{color:#D4AF37;font-weight:700}
 
-.hwy-top{background:var(--metal);color:#f7f0e4;padding:.65rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-.hwy-top a{color:#f7f0e4;text-decoration:none;font-weight:600}
-.hwy-top nav{display:flex;gap:1rem;font-size:.95rem}
+*, *::before, *::after { box-sizing: border-box; }
 
-.billboard{margin:0;background:#111}
-.billboard img{width:100%;max-height:52vh;object-fit:cover;object-position:center}
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
 
-.hwy-card{margin:-2.5rem 1rem 0;position:relative;background:var(--paper);border:3px solid var(--ink);border-radius:4px;padding:1.25rem 1.2rem 1.4rem;box-shadow:6px 6px 0 rgba(28,20,16,.18);max-width:34rem}
-.hwy-card .eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);font-weight:700;margin:0 0 .4rem}
-.hwy-card h1{font-family:"Oswald",system-ui,sans-serif;font-weight:700;font-size:clamp(2.2rem,8vw,3.4rem);line-height:.95;margin:0 0 .55rem;text-transform:uppercase}
-.hwy-card .line{margin:0 0 1rem;font-size:1.05rem;color:#3b322c}
-.hwy-acts{display:flex;flex-wrap:wrap;gap:.55rem}
-.btn-y{background:var(--y);color:var(--ink);text-decoration:none;font-weight:700;padding:.85rem 1.1rem;border-radius:999px;border:2px solid var(--ink)}
-.btn-ghost{background:transparent;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:700;padding:.85rem 1.1rem;border-radius:999px}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  padding-bottom: 4.75rem;
+  overflow-x: clip;
+  max-width: 100vw;
+}
 
-.wreck{margin:2.2rem 0 0;padding:0 1rem}
-.wreck figure{margin:0;border:3px solid var(--ink);border-radius:2px;overflow:hidden;background:#111}
-.wreck figcaption{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:.7rem .85rem;background:var(--ink);color:var(--y);font-size:1rem}
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
 
-.booths{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;padding:1.1rem 1rem 0}
-.booths figure{margin:0;border:2px solid var(--ink);overflow:hidden}
-.booths img{width:100%;aspect-ratio:3/4;object-fit:cover}
-@media(max-width:520px){.booths{grid-template-columns:1fr}}
+a { color: inherit; }
+address { font-style: normal; }
 
-.plates{padding:1.4rem 1rem 5.5rem;display:grid;grid-template-columns:1.2fr .8fr;gap:.65rem}
-.plates .wide{grid-column:1/-1}
-.plates figure{margin:0}
-.plates img{width:100%;aspect-ratio:4/3;object-fit:cover;border:2px solid var(--ink)}
-.plates figcaption{font-size:.85rem;margin-top:.35rem;color:#4a3f35}
-@media(max-width:640px){.plates{grid-template-columns:1fr}}
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 80;
+  background: #fff;
+  color: #111;
+  padding: .5rem 1rem;
+}
 
-.foot{padding:1rem;border-top:2px solid var(--ink);font-size:.9rem;color:#4a3f35}
-.foot a{color:var(--rust);font-weight:600}
+/* BrandWordmark chip — Design219 gold only here */
+.look-chip {
+  position: fixed;
+  top: 0.65rem;
+  right: 0.75rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  line-height: 1;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.45rem;
+  background: rgba(10, 12, 16, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  color: #f4f1ea;
+  flex-shrink: 0;
+}
+.look-chip-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+.look-chip-word {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.look-chip-design { color: #f4f1ea; font-weight: 600; }
+.look-chip-num { color: #D4AF37; font-weight: 700; }
 
-.dock{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--ink);z-index:30}
-.dock a{color:var(--cream);text-align:center;text-decoration:none;font-weight:700;padding:.95rem .4rem;font-size:.95rem;border-right:1px solid rgba(247,240,228,.15)}
-.dock a:last-child{border-right:0}
-.dock a:first-child{background:var(--y);color:var(--ink)}
+/* Highway spine header — yellow underline like the roadside sign */
+.hwy-spine {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem var(--pad);
+  padding-right: 6.5rem;
+  background: var(--metal);
+  border-bottom: 4px solid var(--sign);
+  color: var(--cream);
+}
+.hwy-brand {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--sign);
+  line-height: 1;
+}
+.hwy-tabs {
+  display: flex;
+  gap: 1.15rem;
+}
+.hwy-tabs a {
+  text-decoration: none;
+  font-family: var(--text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+.hwy-tabs a[aria-current="page"] { color: var(--sign); }
 
-/* visit */
-.visit-wrap{padding:1rem 1rem 6rem;max-width:40rem;margin:0 auto}
-.visit-wrap h1{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:2rem;margin:.5rem 0}
-.visit-wrap .card{background:var(--paper);border:2px solid var(--ink);padding:1rem 1.1rem;margin:1rem 0}
-.map{border:2px solid var(--ink);margin:1rem 0;aspect-ratio:16/10}
-.map iframe{width:100%;height:100%;border:0}
+/* Pull-off: full-bleed roadside sign — photo alone, no veil */
+.pull-off {
+  margin: 0;
+  background: #1a1c1e;
+}
+.pull-off img {
+  width: 100%;
+  max-height: min(86vh, 50rem);
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+/* Diner ticket under the sign */
+.ticket {
+  padding: clamp(1.6rem, 5vw, 3rem) var(--pad);
+  background: var(--cream);
+  border-bottom: 1px solid var(--cream-dim);
+  max-width: 40rem;
+}
+.mile-tag {
+  margin: 0 0 0.5rem;
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  background: var(--sign);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.ticket h1,
+.door-pass-body h1 {
+  margin: 0.55rem 0 0.5rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 10vw, 3.9rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--maroon);
+}
+.ticket-line {
+  margin: 0 0 1.3rem;
+  font-size: 1.08rem;
+  color: var(--muted);
+  max-width: 28rem;
+}
+.ticket-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.go-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  background: var(--maroon);
+  color: #fff8f0;
+  text-decoration: none;
+  font-family: var(--text);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 0.15rem;
+  border: 2px solid var(--maroon);
+}
+.go-call:hover { background: var(--maroon-deep); border-color: var(--maroon-deep); }
+.go-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--text);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 0.15rem;
+  border: 2px solid var(--ink);
+}
+.go-map:hover { background: var(--ink); color: var(--cream); }
+
+/* Signature plate — Train Wreck editorial */
+.wreck-bay {
+  position: relative;
+  margin: 0;
+  background: #111;
+}
+.wreck-bay img {
+  width: 100%;
+  max-height: min(92vh, 56rem);
+  object-fit: cover;
+  object-position: center 40%;
+}
+.wreck-cap {
+  position: absolute;
+  left: var(--pad);
+  bottom: 1rem;
+  margin: 0;
+  padding: 0.4rem 0.7rem;
+  background: var(--sign);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Booth metal bay — corrugated dining */
+.booth-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem var(--pad);
+  background: var(--metal);
+}
+.booth-cell {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--metal-soft);
+}
+.booth-cell img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.booth-cell figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 1.5rem 0.85rem 0.65rem;
+  background: linear-gradient(transparent, rgba(10, 12, 14, 0.88));
+  color: var(--cream);
+  font-family: var(--text);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Plate zigzag — magazine, not equal three-thumb */
+.plate-zig {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem var(--pad) 0;
+  background: var(--metal);
+}
+.plate-zig figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: #222;
+}
+.plate-zig img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+.plate-tall img { aspect-ratio: 3 / 4; }
+.plate-zig figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 1.5rem 0.85rem 0.65rem;
+  background: linear-gradient(transparent, rgba(10, 12, 14, 0.85));
+  color: var(--cream);
+  font-family: var(--text);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Gravel lot — porch storefront late chapter */
+.gravel-cut {
+  position: relative;
+  margin: 0.5rem 0 0;
+  background: var(--metal);
+}
+.gravel-cut img {
+  width: 100%;
+  max-height: min(88vh, 52rem);
+  object-fit: cover;
+  object-position: center 40%;
+}
+.gravel-cap {
+  position: absolute;
+  left: var(--pad);
+  bottom: 1rem;
+  margin: 0;
+  padding: 0.4rem 0.7rem;
+  background: rgba(26, 21, 16, 0.82);
+  color: var(--sign);
+  font-family: var(--text);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Milepost find strip */
+.milepost {
+  background: var(--cream);
+  padding: clamp(2rem, 5vw, 3.5rem) var(--pad);
+  border-top: 4px solid var(--sign);
+}
+.milepost-inner { max-width: 28rem; }
+.milepost h2 {
+  margin: 0 0 0.65rem;
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 5vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--maroon);
+  line-height: 1;
+}
+.milepost address {
+  margin: 0 0 0.85rem;
+  font-size: 1.12rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.milepost-links {
+  margin: 0;
+  font-family: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.milepost-links a {
+  color: var(--maroon);
+  text-decoration: none;
+}
+.milepost-links a:hover { text-decoration: underline; }
+
+.lot-colophon {
+  padding: 1.25rem var(--pad) 1.5rem;
+  background: var(--metal);
+  color: var(--cream-dim);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.lot-colophon a {
+  color: var(--sign);
+  text-decoration: none;
+}
+
+/* Sticky Call / Visit / Directions */
+.lot-dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--metal);
+  border-top: 3px solid var(--sign);
+  box-shadow: 0 -6px 24px rgba(0,0,0,0.28);
+}
+.lot-dock a {
+  padding: 0.95rem 0.4rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--text);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.lot-dock a + a { border-left: 1px solid rgba(247, 240, 226, 0.15); }
+.lot-dock a:first-child { background: var(--maroon); }
+
+/* Visit page */
+.door-pass {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: var(--cream);
+}
+.door-pass-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.door-pass-body {
+  padding: clamp(1.5rem, 4vw, 2.5rem) var(--pad);
+}
+.door-pass-body .go-call { margin: 0.35rem 0 1rem; }
+
+.soft-hours {
+  padding: 1.5rem var(--pad) 2rem;
+  background: var(--cream);
+  border-top: 1px solid var(--cream-dim);
+}
+.soft-hours h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--maroon);
+}
+.soft-hours-note {
+  margin: 0 0 1.1rem;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+.dir-tag {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.15rem 0.4rem;
+  background: var(--metal);
+  color: var(--cream);
+  font-family: var(--text);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  vertical-align: 0.1em;
+}
+
+.lot-map {
+  margin: 0;
+  background: var(--metal-soft);
+}
+.lot-map iframe {
+  display: block;
+  width: 100%;
+  height: min(52vh, 22rem);
+  border: 0;
+}
+
+/* 768+ */
+@media (min-width: 768px) {
+  .booth-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    padding: 0.6rem var(--pad);
+  }
+  .booth-cell img { aspect-ratio: 4 / 5; }
+
+  .plate-zig {
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.6rem;
+    padding: 0.6rem var(--pad) 0;
+  }
+  .plate-wide {
+    grid-column: 1 / -1;
+  }
+  .plate-wide img { aspect-ratio: 16 / 9; max-height: 28rem; width: 100%; }
+  .plate-zig img { min-height: 16rem; }
+
+  .door-pass {
+    grid-template-columns: 1.15fr 1fr;
+    align-items: stretch;
+    min-height: 22rem;
+  }
+  .door-pass-photo img {
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 22rem;
+  }
+}
+
+/* Desktop wide */
+@media (min-width: 1100px) {
+  .ticket {
+    max-width: none;
+    padding-left: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
+    padding-right: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
+  }
+  .pull-off img {
+    max-height: 44rem;
+    object-position: center 50%;
+  }
+  .plate-zig {
+    grid-template-columns: 1.1fr 0.9fr 0.9fr;
+    grid-template-areas:
+      "wide wide tall-a"
+      "mid  tall-b tall-a";
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+  .plate-wide { grid-area: wide; grid-column: auto; }
+  .plate-mid { grid-area: mid; }
+  .plate-tall-a { grid-area: tall-a; }
+  .plate-tall-b { grid-area: tall-b; }
+  .plate-tall-a img {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 28rem;
+  }
+  .plate-wide img { max-height: 22rem; }
+  .gravel-cut img { max-height: 46rem; }
+
+  .booth-row,
+  .milepost,
+  .lot-colophon {
+    padding-left: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
+    padding-right: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
+  }
+
+  .door-pass {
+    max-width: 68rem;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .hwy-brand { font-size: 1.15rem; }
+  .hwy-spine { padding-right: 5.8rem; }
+}
