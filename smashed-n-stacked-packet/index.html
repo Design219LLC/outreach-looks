@@ -3,187 +3,817 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A website for Smashed N' Stacked, already built.</title>
-<meta name="description" content="The finished Smashed N' Stacked website, walked through for the owner: every screen, what it does, how people find it, and what it opens up next. Built on spec by Design219 LLC.">
 <meta name="robots" content="noindex,nofollow">
+<meta name="description" content="The finished Smashed N' Stacked website, walked through for the owner: every screen size, what it does, how it gets found, and what it opens up next. Built on spec by Design219 LLC.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Design219 LLC">
 <meta property="og:title" content="A website for Smashed N' Stacked, already built.">
 <meta property="og:description" content="Every screen, what it does, and what it opens up next. Built on spec — nothing owed.">
+<meta property="og:url" content="https://design219llc.github.io/outreach-looks/smashed-n-stacked-packet/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A website for Smashed N' Stacked, already built.">
+<meta name="twitter:description" content="Every screen, what it does, and what it opens up next. Built on spec — nothing owed.">
+<title>Smashed N' Stacked Launch Packet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <style>
-:root{--ink:#141414;--paper:#f4f1ea;--soft:#e8e2d6;--mute:#5c584f;--gold:#C9A227;--line:rgba(20,20,20,.14)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.45;font-size:16px}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit}
-.wrap{max-width:720px;margin:0 auto;padding:28px 22px 64px}
-.masthead{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:2.2rem;font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
-.brandline{display:flex;align-items:center;gap:.55rem}
-.look-chip{display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;padding:.3rem .5rem;border:1px solid rgba(201,162,39,.45);border-radius:.4rem}
-.look-chip svg{width:14px;height:14px;color:var(--gold)}
-.look-chip b{color:var(--gold)}
-.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.1rem 0 0;font-family:system-ui,sans-serif}
-.chips span{border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
-h1{font-size:clamp(2rem,6vw,2.75rem);line-height:1.05;margin:.2rem 0 1rem;font-weight:700}
-.lede{font-size:1.08rem;color:var(--mute);max-width:36em}
-.owner-kicker{font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:2.5rem 0 .8rem}
-section{padding-top:2.6rem;border-top:1px solid var(--line);margin-top:2.4rem}
-.label{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:0 0 .55rem}
-h2{font-size:1.55rem;line-height:1.15;margin:0 0 .85rem}
-p{margin:0 0 .85rem}
-.shot{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:1rem 0 1.2rem;background:#fff}
-.shot img{width:100%}
-.shot-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.55rem;margin:1rem 0}
-.shot-row .shot{margin:0}
-.caps{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:1rem 0}
-.cap{border:1px solid var(--line);border-radius:10px;padding:.85rem .95rem;background:#fff}
-.cap strong{display:block;font-family:system-ui,sans-serif;font-size:.92rem;margin-bottom:.25rem}
-.cap span{font-size:.92rem;color:var(--mute)}
-.qr-box{display:flex;gap:1rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:1rem;background:#fff;margin:1rem 0}
-.qr-box img{width:112px;height:112px}
-.qr-box p{margin:0;font-size:.95rem}
-.sig{display:grid;grid-template-columns:120px 1fr;gap:1rem;align-items:start;margin-top:1.4rem}
-.sig img{width:120px;height:auto;border-radius:6px;border:1px solid var(--line)}
-.sig .lines{font-family:system-ui,sans-serif;font-size:.92rem;line-height:1.45}
-.sig .lines strong{display:block;font-size:1rem;margin-bottom:.35rem}
-.postal{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--mute);margin-top:1.5rem}
-.deep{font-family:system-ui,sans-serif;font-size:.85rem;word-break:break-all}
-@media (max-width:640px){.shot-row,.caps,.sig{grid-template-columns:1fr}}
-@media print{
-  body{background:#fff;font-size:11pt}
-  .wrap{max-width:none;padding:0}
-  section{break-inside:avoid;padding-top:18pt;margin-top:14pt}
-  .shot-row{break-inside:avoid}
-  a{text-decoration:none}
-}
+  :root {
+    --cream:    #f4ece2;
+    --cream-2:  #e6d9c8;
+    --cream-3:  #faf5ef;
+    --ink:      #14110e;
+    --ink-soft: #4a3f35;
+    --stone:    #8a8176;
+    --brick:    #8f2d22;
+    --brick-d:  #6e1f18;
+    --gold:     #D4AF37;
+    --chip-bg:  #0a0c10;
+    --bone:     #f4f1ea;
+    --rule:     rgba(20, 17, 14, 0.14);
+    --rule-2:   rgba(20, 17, 14, 0.28);
+    --shadow:   24px 36px -30px rgba(20, 17, 14, 0.5);
+
+    --display: "Fraunces", "Iowan Old Style", Palatino, serif;
+    --text: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 17.5px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 26px 88px; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    margin: 0;
+    text-wrap: balance;
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  h1 { font-size: clamp(2.4rem, 1.3rem + 3.4vw, 4.1rem); font-weight: 700; }
+  h2 { font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.5rem); }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1.02rem; }
+
+  p { margin: 0; max-width: 66ch; text-wrap: pretty; color: var(--ink); }
+
+  .label {
+    font-family: var(--text);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin: 0;
+  }
+
+  a { color: var(--brick); text-underline-offset: 3px; }
+  a:hover { color: var(--brick-d); }
+  a:focus-visible, button:focus-visible, .scroller:focus-visible {
+    outline: 2px solid var(--brick);
+    outline-offset: 3px;
+  }
+
+  .look-chip {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    text-decoration: none; line-height: 1;
+    padding: 0.4rem 0.6rem; border-radius: 0.45rem;
+    background: var(--chip-bg);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    color: var(--bone);
+  }
+  .look-chip-icon { width: 1.05rem; height: 1.05rem; color: var(--gold); flex-shrink: 0; }
+  .look-chip-word {
+    font-family: var(--text); font-size: 0.95rem; font-weight: 700;
+    letter-spacing: -0.02em; white-space: nowrap;
+  }
+  .look-chip-design { color: var(--bone); }
+  .look-chip-num { color: var(--gold); }
+
+  .masthead {
+    padding: 46px 0 34px;
+    border-bottom: 2px solid var(--ink);
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .brandline {
+    display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: space-between; gap: 14px 24px;
+  }
+  .masthead .lede {
+    font-family: var(--display);
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.42rem);
+    line-height: 1.4;
+    color: var(--ink-soft);
+    max-width: 54ch;
+  }
+  .rule-meta {
+    display: flex; flex-wrap: wrap; gap: 5px 28px;
+    font-size: 0.8rem; color: var(--stone); font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .btn {
+    font-family: var(--text); font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 11px 18px; cursor: pointer;
+    background: var(--brick); color: var(--cream); border: 0;
+    border-radius: 3px;
+  }
+  .btn:hover { background: var(--brick-d); }
+
+  section { padding-top: 70px; }
+  .head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .stack { display: flex; flex-direction: column; gap: 17px; }
+
+  .letter {
+    background: var(--cream-3);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--brick);
+    padding: clamp(24px, 4vw, 42px);
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .letter p { max-width: 62ch; }
+  .letter .opening {
+    font-family: var(--display);
+    font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.75rem);
+    line-height: 1.32;
+    color: var(--ink);
+  }
+
+  .scan {
+    display: grid;
+    grid-template-columns: 148px minmax(0, 1fr);
+    gap: 18px 22px;
+    align-items: center;
+    margin-top: 28px;
+    padding: 20px 22px;
+    background: var(--cream-3);
+    border: 1px solid var(--rule);
+    max-width: 640px;
+  }
+  @media (max-width: 520px) { .scan { grid-template-columns: 1fr; } }
+  .scan img {
+    width: 148px; height: 148px;
+    background: #fff;
+    padding: 8px;
+    border: 1px solid var(--rule);
+  }
+  .scan p { font-size: 0.92rem; color: var(--ink-soft); word-break: break-all; }
+  .scan a { color: var(--ink); }
+
+  .devices {
+    display: grid; gap: 32px;
+    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr) minmax(0, 0.62fr);
+    align-items: end;
+  }
+  @media (max-width: 900px) {
+    .devices { grid-template-columns: 1fr; justify-items: start; }
+    .devices figure { max-width: 520px; }
+  }
+
+  figure { margin: 0; }
+
+  .frame { background: var(--ink); padding: 9px 9px 0; box-shadow: var(--shadow); }
+  .frame.phone { padding: 8px; border-radius: 18px; }
+  .frame.tablet { padding: 10px; border-radius: 8px; }
+  .bar { display: flex; gap: 5px; padding: 0 3px 8px; }
+  .bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--bone); opacity: 0.3; display: block; }
+  .frame img { display: block; width: 100%; height: auto; }
+
+  figcaption {
+    font-size: 0.8rem; color: var(--stone); padding-top: 10px; font-weight: 600;
+  }
+
+  .grid { display: grid; gap: 28px 40px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .item { display: flex; flex-direction: column; gap: 6px; }
+  .item p { font-size: 0.97rem; color: var(--ink-soft); }
+  .item .tag {
+    font-size: 0.71rem; font-weight: 700; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--brick);
+  }
+
+  .steps { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .step {
+    display: grid; grid-template-columns: 44px minmax(0, 1fr);
+    gap: 5px 22px; padding: 19px 0; border-bottom: 1px solid var(--rule);
+  }
+  .step .n {
+    font-family: var(--display); font-size: 1.05rem; font-weight: 700;
+    color: var(--brick); padding-top: 2px; font-variant-numeric: tabular-nums;
+  }
+  .step .body { display: flex; flex-direction: column; gap: 4px; }
+  .step p { font-size: 0.97rem; color: var(--ink-soft); }
+
+  .pull {
+    border-left: 3px solid var(--gold);
+    padding: 6px 0 6px 24px;
+    font-family: var(--display);
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.55rem);
+    line-height: 1.34;
+    max-width: 52ch;
+  }
+
+  .roadmap { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(236px, 1fr)); }
+  .card {
+    background: var(--cream-3); border: 1px solid var(--rule);
+    padding: 21px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .card p { font-size: 0.93rem; color: var(--ink-soft); }
+  .card .when {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--stone);
+  }
+  .card.near .when { color: var(--brick); }
+
+  .pages { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .scroller {
+    max-height: 450px; overflow: auto;
+    background: var(--cream-2); box-shadow: var(--shadow);
+  }
+  .scroller img { display: block; width: 100%; height: auto; }
+
+  .pages-note { display: none; }
+
+  @media (max-width: 700px) {
+    .scroller { max-height: 260px; overflow: hidden; }
+    .scroller img { width: 100%; }
+    .pages-note {
+      display: block; padding-top: 18px;
+      font-size: 0.95rem; color: var(--ink-soft);
+    }
+  }
+
+  .signoff {
+    margin-top: 70px; padding-top: 36px; border-top: 2px solid var(--ink);
+    display: grid; gap: 32px; grid-template-columns: 168px minmax(0, 1fr);
+    align-items: start;
+  }
+  @media (max-width: 680px) { .signoff { grid-template-columns: 1fr; } }
+
+  .portrait {
+    width: 168px; height: 210px;
+    display: block; object-fit: cover; object-position: center 32%;
+    background: var(--cream-2);
+    border: 1px solid var(--rule);
+    box-shadow: 14px 20px -18px rgba(20, 17, 14, 0.5);
+  }
+  .sig {
+    font-family: var(--display); font-style: italic; font-weight: 400;
+    font-size: 2.2rem; line-height: 1.1; color: var(--ink); padding: 14px 0 4px;
+  }
+  .sig-rule { width: 280px; border-top: 1px solid var(--rule-2); padding-top: 7px; }
+  .sig-name { font-size: 0.82rem; color: var(--stone); font-weight: 600; }
+  .contact { font-size: 0.9rem; display: flex; flex-direction: column; gap: 3px; padding-top: 10px; }
+  .contact a { color: var(--ink-soft); text-decoration: none; }
+  .contact a:hover { color: var(--brick); text-decoration: underline; }
+  .motto {
+    margin-top: 14px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+  .postal {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--stone);
+  }
+
+  footer {
+    margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 0.79rem; color: var(--stone);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px;
+  }
+
+  @media print {
+    body { font-size: 11pt; line-height: 1.48; background: #fff; }
+    .wrap { max-width: none; padding: 0; }
+    .no-print { display: none !important; }
+    section { padding-top: 24pt; break-inside: avoid; }
+    h1 { font-size: 28pt; }
+    h2 { font-size: 16pt; }
+    h3, h4 { font-size: 11.5pt; }
+    .frame { box-shadow: none; border: 1px solid #bdb6ab; }
+    .scroller { max-height: none; overflow: visible; box-shadow: none; border: 1px solid #bdb6ab; }
+    .devices { grid-template-columns: 1.9fr 1fr 0.6fr; }
+    .roadmap { grid-template-columns: 1fr 1fr; }
+    figure, .card, .step, .item, .signoff, .letter, .scan { break-inside: avoid; }
+    a { color: var(--ink); text-decoration: none; }
+    .scan a, .pages-note a { text-decoration: underline; }
+    @page { margin: 14mm; size: letter; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <header class="masthead">
     <div class="brandline">
       <a class="look-chip" href="https://design219.com" aria-label="Design219">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
-        Design<b>219</b>
+        <svg class="look-chip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>
+        <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
       </a>
-      <span>Owner packet · unpublished</span>
+      <button class="btn no-print" id="printBtn" type="button">Print this packet</button>
     </div>
-    <span>Little Rock, AR</span>
+    <p class="label">For the owner &middot; Smashed N' Stacked &middot; 1020 E 6th St Unit 4, Little Rock</p>
+    <h1>A website for Smashed N' Stacked,<br>already built.</h1>
+    <p class="lede">
+      Not a proposal, not a mock-up on a slide. The site is finished and working. This
+      packet shows you what it looks like on every screen, what it does, how people
+      will find it, how it sits with your Facebook page, and where it could go from
+      here. Nothing is owed and nothing is signed.
+    </p>
+    <div class="rule-meta">
+      <span>Built on spec</span>
+      <span>Not published</span>
+      <span>Yours to look at</span>
+    </div>
   </header>
 
-  <h1>A website for Smashed N' Stacked,<br>already built.</h1>
-  <p class="lede">Not a proposal and not a slide mock. The site is finished and working. This packet shows what it looks like on every screen, what it does, how people find it, how it sits with your Facebook, and where it could go. Nothing owed. Nothing signed.</p>
-  <div class="chips">
-    <span>Built on spec</span>
-    <span>Not published</span>
-    <span>Yours to look at</span>
+  <section>
+    <div class="head">
+      <p class="label">First &middot; Who did this, and why</p>
+      <h2>ATTN: James Mann</h2>
+    </div>
+    <div class="letter">
+      <p class="opening">
+        The smash burgers left the truck and landed in East Village. Someone searching
+        for that door still lands on Facebook or Toast.
+      </p>
+      <p>
+        Public listings put Smashed N' Stacked at
+        <strong>1020 E 6th St Unit 4, Little Rock, AR 72202</strong>, phone
+        <a href="tel:+15012912353">(501) 291-2353</a>. The door fascia reads Unit 4;
+        a few directories still say Unit D. Press coverage of the brick-and-mortar move
+        lists hours as Wednesday through Saturday, 11am to 5pm &mdash; marked on the
+        look as DIRECTORY, call to confirm, not as an owner-locked permanent board.
+      </p>
+      <p>
+        What a hungry person finds today is a strong Facebook page
+        (<a href="https://www.facebook.com/smashednstacked/">facebook.com/smashednstacked</a>)
+        carrying the photos and the conversation, and ordering tools that are not a
+        place you own. There is no finished site sitting at an address under your name.
+      </p>
+      <p>
+        I build websites and the software under them &mdash; the part customers see and
+        the systems that keep a shop running. On my own time I built a finished look
+        from photographs already public on your Facebook: the foil stack, the cheese
+        pull, the Unit 4 garage door, the truck-era portrait. Voice on the hero is the
+        one already in the room: <em>Your favorite burger just got a new home.</em>
+      </p>
+      <p>
+        Open it on a phone. Call dials you. Directions open maps to Unit 4. Nothing is
+        published. Nothing is owed. If you want it, we put it on an address you own and
+        point search there. If you do not, you have lost nothing.
+      </p>
+    </div>
+
+    <figure class="scan">
+      <img src="img/qr.png" width="148" height="148" alt="QR code that opens the unpublished Smashed N' Stacked look.">
+      <figcaption>
+        <p class="label" style="margin-bottom: 8px;">Open on your phone</p>
+        <p>
+          Scan or tap the deep link &mdash; not a hub, not a GitHub page.
+        </p>
+        <p style="margin-top: 8px;">
+          <a href="https://design219llc.github.io/outreach-looks/smashed-n-stacked/">https://design219llc.github.io/outreach-looks/smashed-n-stacked/</a>
+        </p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">01 &middot; The front page</p>
+      <h2>Your plate, your name, your street.</h2>
+    </div>
+    <div class="stack">
+      <p>
+        The first screen is the foil-wrapped smash with the cheese pull &mdash; food
+        first, not a door photo standing in for the product. Beside it sit the name,
+        the line about the new home, the DIRECTORY hours chip, and the two buttons
+        someone actually needs: Call and Directions. No menu to dig through before the
+        phone number. Unit 4 and East Village show up as soon as they scroll one breath.
+      </p>
+      <figure>
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="img/shot-desktop-fold.png" alt="Smashed N' Stacked front page on a computer: cheese-pull foil hero, name, hours chip, Call and Directions." width="1440" height="900">
+        </div>
+        <figcaption>Front page &mdash; desktop, 1440&thinsp;px</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">02 &middot; Every screen</p>
+      <h2>Computer, tablet, phone.</h2>
+    </div>
+    <p style="margin-bottom: 30px;">
+      The same site rearranges itself for whatever opens it. On all three sizes the
+      hours chip, the Call button, and Directions sit on the first screen before
+      anyone scrolls. Nothing important is buried behind a hamburger menu.
+    </p>
+    <div class="devices">
+      <figure>
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <img src="img/shot-desktop-fold.png" alt="Smashed N' Stacked front page on a desktop computer." width="1440" height="900">
+        </div>
+        <figcaption>Desktop &mdash; 1440&thinsp;px</figcaption>
+      </figure>
+      <figure>
+        <div class="frame tablet">
+          <img src="img/shot-768-fold.png" alt="Smashed N' Stacked front page on a tablet." width="768" height="1024">
+        </div>
+        <figcaption>Tablet &mdash; 768&thinsp;px</figcaption>
+      </figure>
+      <figure>
+        <div class="frame phone">
+          <img src="img/shot-390-fold.png" alt="Smashed N' Stacked front page on a phone with the sticky Call, Hours, and Directions bar." width="390" height="844">
+        </div>
+        <figcaption>Phone &mdash; 390&thinsp;px</figcaption>
+      </figure>
+    </div>
+    <p style="padding-top: 24px;">
+      On a phone there is one extra touch: a bar pinned to the bottom with
+      <strong>Call</strong>, <strong>Hours</strong>, and <strong>Directions</strong>.
+      It stays put while someone reads, so the number is never more than one
+      thumb-reach away.
+    </p>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">03 &middot; What it does</p>
+      <h2>The working parts.</h2>
+    </div>
+    <div class="grid">
+      <div class="item">
+        <span class="tag">Calling</span>
+        <h3>One tap dials the shop</h3>
+        <p>Every Call control opens the dialer with <a href="tel:+15012912353">(501) 291-2353</a> already loaded. No copying, no mistyping on a foil-stained thumb.</p>
+      </div>
+      <div class="item">
+        <span class="tag">Directions</span>
+        <h3>Straight into their maps</h3>
+        <p>Directions hands off to Google Maps or Apple Maps aimed at 1020 E 6th St Unit 4 &mdash; the fascia number, not the Unit D ghost some directories still carry.</p>
+      </div>
+      <div class="item">
+        <span class="tag">Hours</span>
+        <h3>Honest about what we know</h3>
+        <p>The board shows Wednesday&ndash;Saturday 11am&ndash;5pm labeled DIRECTORY, with Sunday&ndash;Tuesday as call ahead, plus a plain note that this came from press of the move &mdash; not a locked owner schedule.</p>
+      </div>
+      <div class="item">
+        <span class="tag">Food</span>
+        <h3>Your foil stacks, photographed</h3>
+        <p>Cheese pull, smashed patties in foil, the chalk garage door &mdash; pictures already on your Facebook, not stock burgers from a catalog.</p>
+      </div>
+      <div class="item">
+        <span class="tag">Map</span>
+        <h3>East Village on the Visit page</h3>
+        <p>Address, the Unit 4 / Unit D note, the hours board, Facebook, and a live map for anyone who has never pulled into that lot.</p>
+      </div>
+      <div class="item">
+        <span class="tag">Speed</span>
+        <h3>Loads before they bail</h3>
+        <p>Photos are compressed for phones. A customer on East 6th with one bar still gets the hero and the Call button without waiting on a desktop-sized file.</p>
+      </div>
+      <div class="item">
+        <span class="tag">Everyone</span>
+        <h3>Readable by anyone</h3>
+        <p>Alt text on every photograph, contrast that holds, headings in order, keyboard operable &mdash; the same structure search engines like for the same reason a screen reader does.</p>
+      </div>
+      <div class="item">
+        <span class="tag">Upkeep</span>
+        <h3>Nothing to babysit</h3>
+        <p>No plugin theater, no login to forget, no theme that expires. It sits there and works until you decide what to change.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">04 &middot; Being found</p>
+      <h2>What search engines see.</h2>
+    </div>
+    <div class="stack">
+      <p>
+        A website is not only a page for people &mdash; it is also what Google reads
+        when somebody in Little Rock types <em>smash burger near me</em> or
+        <em>Smashed N' Stacked East Village</em>. This one was built to be read properly.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <div class="body">
+            <h4>Machine-readable shop facts</h4>
+            <p>Name, street address (Unit 4), phone, and the fact that this is a restaurant sit in the page in the format Google publishes for local results. That is what lets hours and a map pin show up beside a listing once the site is live and claimed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div class="body">
+            <h4>Every page titled and described</h4>
+            <p>Home and Visit each carry their own title and summary, so a result reads like an invitation instead of a bare web address.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div class="body">
+            <h4>Shares that look like something</h4>
+            <p>Pasted into Facebook or a text, the link can open with a photograph and a proper description instead of a lonely blue line.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <div class="body">
+            <h4>Written in plain structure</h4>
+            <p>Real headings in a sensible order, and a written description on every photograph. Good for search for the same reason it is good for a blind customer.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">5</div>
+          <div class="body">
+            <h4>Fast, and built for phones first</h4>
+            <p>Google measures both and counts them. This is a light site built for a phone from the ground up, not a desktop page squeezed down.</p>
+          </div>
+        </div>
+      </div>
+      <p style="padding-top: 20px;">
+        <strong>An honest word about search.</strong> None of this is a magic switch.
+        Results build over weeks, and for a local burger shop the single biggest factor
+        is a claimed, filled-in Google Business Profile pointed at an address you own.
+        The site makes that profile stronger. Anyone who promises the top spot is
+        selling something else.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">05 &middot; Site and social together</p>
+      <h2>Facebook is the conversation. The site is the address.</h2>
+    </div>
+    <div class="stack">
+      <p class="pull">
+        You rent the Facebook page. You would own the website. They do different jobs,
+        and they are stronger pointed at each other.
+      </p>
+      <p>
+        Your Facebook page is already doing the living work &mdash; the foil drops, the
+        move to Unit 4, comments from people who followed the truck. The site does not
+        try to replace that. It links straight to
+        <a href="https://www.facebook.com/smashednstacked/">facebook.com/smashednstacked</a>
+        and leaves specials and day-of noise where they belong.
+      </p>
+      <p>
+        What Facebook cannot do is be the first door for someone who has never heard of
+        you. A driver looking for smash burgers in East Village does not start inside
+        Facebook &mdash; they search Google, or they ask the phone out loud. A page
+        inside a social network is largely invisible to that search. A website is
+        exactly what it is looking for.
+      </p>
+      <div class="grid" style="padding-top: 6px;">
+        <div class="item">
+          <span class="tag">Facebook does</span>
+          <h3>Today</h3>
+          <p>Specials, sold-out stacks, a chalk-door update, the crowd after the move. Things that change and want a comment thread.</p>
+        </div>
+        <div class="item">
+          <span class="tag">The site does</span>
+          <h3>Always</h3>
+          <p>Hours posture, Unit 4 address, phone, what the shop is. The facts somebody needs with one hand on the wheel.</p>
+        </div>
+        <div class="item">
+          <span class="tag">Together</span>
+          <h3>A loop</h3>
+          <p>Search finds the site, the site sends them to Facebook to follow you; posts link back to the site, which lifts it in search. Each one feeds the other.</p>
+        </div>
+      </div>
+      <p style="padding-top: 6px;">
+        There is a practical safety net too. Pages get locked, hacked, or caught by a
+        rule change, and there is no support line that answers. If that ever happened
+        to yours, the address, the phone, and the Visit facts would still sit at a
+        place you own.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">06 &middot; The whole site</p>
+      <h2>Two pages, top to bottom.</h2>
+    </div>
+    <p style="margin-bottom: 28px;">
+      Scroll either crop to see the full page as it stands. Home carries the foil hero,
+      the door, the stack photos, and the sticky Call bar. Visit holds the Unit 4 note,
+      the DIRECTORY hours board, Facebook, and the map.
+    </p>
+    <div class="pages">
+      <figure>
+        <div class="scroller" tabindex="0" aria-label="The full home page, scrollable">
+          <img src="img/shot-home-full.png" alt="Full Smashed N' Stacked home page: foil hero, Call and Directions, Unit 4 door, foil stack photo, truck-era portrait, footer." width="780" height="2193">
+        </div>
+        <figcaption>Home</figcaption>
+      </figure>
+      <figure>
+        <div class="scroller" tabindex="0" aria-label="The full visit page, scrollable">
+          <img src="img/shot-visit-full.png" alt="Full Smashed N' Stacked visit page: Unit 4 address, phone, Unit D directory note, DIRECTORY hours, map, sticky Call bar." width="780" height="1200">
+        </div>
+        <figcaption>Visit</figcaption>
+      </figure>
+    </div>
+    <p class="pages-note">
+      These are cropped to fit the screen. The site itself is easier to walk on a phone
+      &mdash; open
+      <a href="https://design219llc.github.io/outreach-looks/smashed-n-stacked/">the live look</a>
+      and tap through it.
+    </p>
+    <figure class="scan" style="margin-top: 28px;">
+      <img src="img/qr.png" width="148" height="148" alt="QR code that opens the unpublished Smashed N' Stacked look.">
+      <figcaption>
+        <p class="label" style="margin-bottom: 8px;">Print QR</p>
+        <p>Same deep link as the cover. Scan from the printed packet.</p>
+        <p style="margin-top: 8px;">
+          <a href="https://design219llc.github.io/outreach-looks/smashed-n-stacked/">https://design219llc.github.io/outreach-looks/smashed-n-stacked/</a>
+        </p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">07 &middot; What it opens up</p>
+      <h2>The door this puts in the wall.</h2>
+    </div>
+    <div class="stack">
+      <p style="margin-bottom: 12px;">
+        None of the following is built, and none of it is required for the site to do
+        its job. Once a burger shop owns its own address &mdash; especially one that
+        just stepped off a truck into a brick room &mdash; each item stops being a
+        second-vendor chase and becomes a small addition from the same bench. Site and
+        software, one pair of hands. Think about this slowly.
+      </p>
+      <div class="roadmap">
+        <div class="card near">
+          <span class="when">First</span>
+          <h4>Knowing what happens</h4>
+          <p>How many people looked, what they tapped, what hour, whether they were already in East Village or two exits away. Numbers instead of a gut feel after the lunch rush.</p>
+        </div>
+        <div class="card near">
+          <span class="when">First</span>
+          <h4>A board you update yourself</h4>
+          <p>Swap a stack name, park a sold-out note, or post today&rsquo;s foil special from your phone. No waiting on a developer to change a price.</p>
+        </div>
+        <div class="card near">
+          <span class="when">First</span>
+          <h4>Counter or window QR</h4>
+          <p>Same facts on the glass or the napkin holder, always current, never a reprint run when the truck special becomes a shop special.</p>
+        </div>
+        <div class="card">
+          <span class="when">Next</span>
+          <h4>Call-ahead that sticks</h4>
+          <p>A clean path for &ldquo;I&rsquo;m five minutes out, smash two&rdquo; that lands as one message instead of a missed ring during the rush.</p>
+        </div>
+        <div class="card">
+          <span class="when">Next</span>
+          <h4>Rewards that remember</h4>
+          <p>A punch card that lives on a phone for the people who followed you from the truck lot to Unit 4 &mdash; and tells you who actually comes back.</p>
+        </div>
+        <div class="card">
+          <span class="when">Next</span>
+          <h4>Catering and office drops</h4>
+          <p>A form for the game-day tray or the downtown lunch order, arriving as one clear ticket instead of a half-heard voicemail.</p>
+        </div>
+        <div class="card">
+          <span class="when">Later</span>
+          <h4>Inventory that counts down</h4>
+          <p>Patties, buns, foil, sauces &mdash; what is on hand and what ran out last Saturday. The end of the clipboard by the flat-top.</p>
+        </div>
+        <div class="card">
+          <span class="when">Later</span>
+          <h4>Gift cards</h4>
+          <p>Sold from the site, redeemed at the counter. Holidays and &ldquo;you have to try this place&rdquo; mostly run themselves.</p>
+        </div>
+        <div class="card">
+          <span class="when">Later</span>
+          <h4>A list you own</h4>
+          <p>Customers who ask to hear from you by text or email, reachable without paying a platform to talk to your own regulars.</p>
+        </div>
+        <div class="card">
+          <span class="when">Later</span>
+          <h4>Reviews, gathered</h4>
+          <p>A gentle nudge to a happy customer at the right moment, pointed where it counts for local search.</p>
+        </div>
+      </div>
+      <p style="padding-top: 24px;">
+        The order matters more than the list. Analytics first, because it tells you
+        which of the others is worth doing. Everything after that becomes a decision
+        made with evidence instead of a hunch from the pass.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">08 &middot; What is still needed</p>
+      <h2>Three short conversations.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <h4>Hours, confirmed by you</h4>
+          <p>What is on the look is DIRECTORY &mdash; Wednesday&ndash;Saturday 11am&ndash;5pm from press of the brick-and-mortar move, with Sunday&ndash;Tuesday as call ahead. Five minutes with you turns that into a permanent board (or corrects it).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <h4>Menu and prices, if you want them on the site</h4>
+          <p>Right now the look is food-led and phone-led: stacks in photographs, Call to order. A printed menu photo or a simple price list is enough if you want a Menu page before publish.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <h4>Photo rights</h4>
+          <p>Hero and gallery frames came from photographs already public on your Facebook. Fine for an unpublished look. Before the site goes live on an address you own, we confirm you can use them &mdash; or swap in fresh phone shots from the Unit 4 flat-top in good light.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="signoff">
+    <img class="portrait" src="img/founder.jpg" alt="David Locke of Design219 LLC." width="168" height="210">
+    <div class="stack">
+      <p class="label">A note to finish</p>
+      <p>
+        The look is finished so you can judge the work, not a slide deck. A fair,
+        manageable price gets named before any paid work starts &mdash; not in this
+        packet, and not as a surprise invoice behind a free sample.
+      </p>
+      <p>
+        There is no obligation attached to any of this. If you want the site, we put it
+        on an address you own and point Google and your Facebook there. If you want to
+        think about it for a while, that is fine too &mdash; it is not going anywhere.
+      </p>
+      <p>
+        If you ever just want somebody to explain what any of this means in plain words,
+        with no pitch on the end, call or email for that.
+      </p>
+      <div class="sig">David Locke</div>
+      <div class="sig-rule">
+        <div class="sig-name">David Locke &middot; Founder, Design219 LLC &middot; Sheridan, Arkansas</div>
+      </div>
+      <div class="contact">
+        <a href="mailto:david@design219.com">david@design219.com</a>
+        <a href="tel:+18706633023">(870) 663-3023</a>
+        <a href="https://design219.com">https://design219.com</a>
+      </div>
+      <p class="motto">Whatever you run. We build for you.</p>
+      <p class="postal">110 E. Sunset Drive, Sheridan, AR 72150</p>
+    </div>
   </div>
 
-  <p class="owner-kicker">ATTN: James Mann · For the owner</p>
-  <section style="border:0;margin:0;padding-top:0">
-    <p>James,</p>
-    <p>Your cheese-pull smash and the East Village Unit 4 door already do the talking online — Facebook and the press carry the plates. What someone searching “smash burger Little Rock” still does not get is a quiet address that is yours: name, Unit 4 street, Call, and today’s hours on the first screen of a phone.</p>
-    <p>I built a finished look on my own time from your public photos so you can open it cold. If you want it on a domain you own, we put it there. If not, you have lost nothing.</p>
-  </section>
+  <footer>
+    <a class="look-chip" href="https://design219.com" aria-label="Design219">
+      <svg class="look-chip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>
+      <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
+    </a>
+    <span>Smashed N' Stacked &middot; concept build &middot; not published</span>
+    <span>Envelope: ATTN: James Mann</span>
+  </footer>
 
-  <section>
-    <p class="label">01 · The front page</p>
-    <h2>Your foil stack, your name, your street.</h2>
-    <p>The first screen is food-led: the cheese-pull smash in foil, the line <em>Your favorite burger just got a new home</em>, hours marked DIRECTORY until you lock them, Call to (501) 291-2353, and Directions into Maps for 1020 E 6th St Unit 4. No digging for the number.</p>
-    <figure class="shot"><img src="img/shot-desktop.png" alt="Smashed N' Stacked unpublished home on a wide screen." width="1440" height="900"></figure>
-  </section>
-
-  <section>
-    <p class="label">02 · Every screen</p>
-    <h2>Computer, tablet, phone.</h2>
-    <p>Hours, address, and Call sit on the first screen before a long scroll. On a phone, a sticky bar keeps Call · Hours · Directions under the thumb.</p>
-    <div class="shot-row">
-      <figure class="shot"><img src="img/shot-desktop.png" alt="Desktop crop of Smashed N' Stacked home."></figure>
-      <figure class="shot"><img src="img/shot-768.png" alt="Tablet crop of Smashed N' Stacked home."></figure>
-      <figure class="shot"><img src="img/shot-390.png" alt="Phone crop of Smashed N' Stacked home."></figure>
-    </div>
-  </section>
-
-  <section>
-    <p class="label">03 · The working parts</p>
-    <h2>What already works.</h2>
-    <div class="caps">
-      <div class="cap"><strong>One tap dials you</strong><span>Locked to (501) 291-2353.</span></div>
-      <div class="cap"><strong>Directions into Maps</strong><span>Unit 4 — not the stale Unit D string some directories still show.</span></div>
-      <div class="cap"><strong>Hours as an object</strong><span>DIRECTORY-labeled until you confirm a permanent board.</span></div>
-      <div class="cap"><strong>Your plates, not stock</strong><span>Cheese-pull, chalk door, hand stack, truck — public photos of this shop.</span></div>
-      <div class="cap"><strong>Loads on a phone</strong><span>Compressed food frames; content visible without scripts.</span></div>
-      <div class="cap"><strong>Nothing to babysit</strong><span>Static site — no plugin theater.</span></div>
-    </div>
-  </section>
-
-  <section>
-    <p class="label">04 · Being found</p>
-    <h2>What search engines see.</h2>
-    <p>Page titles, share cards, real headings, and alt text on your food and door. Machine-readable name, address, and phone are ready when you publish. Results build over weeks; a claimed Google Business Profile still matters. Nobody honest promises the top spot — this just stops sending searchers into a dead end.</p>
-  </section>
-
-  <section>
-    <p class="label">05 · Site and social together</p>
-    <h2>Facebook is the conversation. The site is the address.</h2>
-    <p>You already run <strong>facebook.com/smashednstacked</strong> for specials and the room. That page is rented. The site would be an address you own: searchers who have never opened your Facebook still land on Call and Unit 4. Posts can point home; if a page locks or breaks, the facts stay put.</p>
-  </section>
-
-  <section>
-    <p class="label">06 · The whole site</p>
-    <h2>Two pages, top to bottom.</h2>
-    <p>Home (foil hero, chalk door, stack + truck) and Visit (Unit 4 note, DIRECTORY hours board, map). The live phone link is easier than these crops — scan the code.</p>
-    <figure class="shot"><img src="img/shot-home-full.png" alt="Full scroll of Smashed N' Stacked home."></figure>
-    <figure class="shot"><img src="img/shot-visit-full.png" alt="Visit page for Smashed N' Stacked."></figure>
-    <div class="qr-box">
-      <img src="img/qr.png" width="410" height="410" alt="QR code to the unpublished Smashed N' Stacked site.">
-      <div>
-        <p><strong>Open the unpublished site</strong></p>
-        <p class="deep">https://design219llc.github.io/outreach-looks/smashed-n-stacked/</p>
-        <p>Deep link only. Not the hub. Not a GitHub repo page.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <p class="label">07 · What it opens up</p>
-    <h2>The door this puts in the wall.</h2>
-    <p>None of this is built yet; none is required for the site to work. Once you own an address, each piece is a small addition from the same bench — not a second vendor chase.</p>
-    <div class="caps">
-      <div class="cap"><strong>Analytics first</strong><span>See which plates and which buttons earn taps.</span></div>
-      <div class="cap"><strong>Owner-updatable specials</strong><span>Foil drops and limited runs without a redesign.</span></div>
-      <div class="cap"><strong>Counter / window QR</strong><span>Same site in the room as on the phone.</span></div>
-      <div class="cap"><strong>Call-ahead / catering note</strong><span>Later — when the board is confirmed.</span></div>
-      <div class="cap"><strong>Owned list</strong><span>Email or text you control, not only a feed algorithm.</span></div>
-      <div class="cap"><strong>Review nudges</strong><span>After the visit, not fake stars on day one.</span></div>
-    </div>
-    <p>Order matters. Analytics first so the rest is evidence, not a hunch.</p>
-  </section>
-
-  <section>
-    <p class="label">08 · What is still needed</p>
-    <h2>Two or three short conversations.</h2>
-    <p><strong>Hours.</strong> Wed–Sat 11–5 is labeled DIRECTORY from press on the brick-and-mortar move — not an owner-confirmed permanent board. Confirm or rewrite.</p>
-    <p><strong>Menu / prices.</strong> Not invented here. If you want a menu page, we use what you approve.</p>
-    <p><strong>Photo rights.</strong> Frames are from public press and your Facebook. Say if any plate should come down or be replaced with your phone shots.</p>
-  </section>
-
-  <section>
-    <p class="label">Close</p>
-    <h2>Fair price before any work starts.</h2>
-    <p>No number in this packet. No obligation and no invoice behind the look. Think about it — it is not going anywhere. Happy to walk the site in plain words with no pitch.</p>
-    <div class="sig">
-      <img src="img/founder.jpg" width="148" height="186" alt="David Locke of Design219 LLC.">
-      <div class="lines">
-        <strong>David Locke</strong>
-        Founder, Design219 LLC<br>
-        Sheridan, Arkansas<br>
-        david@design219.com<br>
-        (870) 663-3023<br>
-        https://design219.com<br><br>
-        Whatever you run. We build for you.
-      </div>
-    </div>
-    <p class="postal">110 E. Sunset Drive, Sheridan, AR 72150</p>
-  </section>
 </div>
+
+<script>
+  document.getElementById("printBtn").addEventListener("click", function () {
+    try {
+      window.print();
+    } catch (err) {
+      alert("Printing is blocked in this preview. Open the packet file in your browser and print from there.");
+    }
+  });
+</script>
+
 </body>
 </html>
