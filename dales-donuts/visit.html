@@ -16,50 +16,63 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
-<body>
+<body class="page-visit">
   <a class="skip" href="#main">Skip to content</a>
   <a class="look-chip" href="https://design219.com" aria-label="Design219">
     <svg class="look-chip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
     <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
   </a>
 
-  <header class="mast-dales">
-    <a class="brand-dales" href="index.html">Dale's Donuts</a>
-    <nav class="nav-dales" aria-label="Primary">
+  <header class="mill-bar">
+    <a class="mill-mark" href="index.html">Dale's Donuts</a>
+    <nav class="mill-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="visit.html" aria-current="page">Visit</a>
+      <a class="mill-ring" href="tel:+15017762710">Call</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="ticket">
-      <div class="ticket-photo">
-        <img src="img/4.jpg" width="300" height="400" alt="Dale's takeout box with red script logo.">
-      </div>
-      <div class="ticket-body">
-        <p class="eyebrow-dales">Come by</p>
+    <section class="mill-find">
+      <figure class="mill-find-pic">
+        <img src="img/bts-box.jpg" width="1100" height="966" alt="Glazed donuts being boxed at Dale's Donuts.">
+      </figure>
+      <div class="mill-find-copy">
+        <p class="mill-kicker">Come by</p>
         <h1>919 Military Rd</h1>
-        <p class="line-dales">Benton, AR — under the blue awning.</p>
-        <ul class="ticket-list">
-          <li><a href="tel:+15017762710">(501) 776-2710</a></li>
-          <li><a href="https://www.google.com/maps/dir/?api=1&destination=919+Military+Rd,+Benton,+AR">Get directions</a></li>
-          <li><a href="https://www.facebook.com/people/Dales-Donuts-Benton/61579812901069/">Facebook</a></li>
-        </ul>
-        <p class="fine-dales">Call the shop for today's hours.</p>
+        <p class="mill-find-line">Benton, AR — under the blue awning.</p>
+        <div class="mill-acts">
+          <a class="mill-call" href="tel:+15017762710">Call (501) 776-2710</a>
+          <a class="mill-dir mill-dir--ink" href="https://www.google.com/maps/dir/?api=1&destination=919+Military+Rd,+Benton,+AR">Directions</a>
+        </div>
       </div>
     </section>
-    <div class="map-dales">
+
+    <section class="clock-board" id="hours" aria-labelledby="hours-heading">
+      <p class="clock-kicker"><span class="dir-pill">DIRECTORY</span> Hours</p>
+      <h2 id="hours-heading">Call for today</h2>
+      <p class="clock-lede">No owner-confirmed standing board. Directories disagree — we do not invent open times.</p>
+      <ol class="clock-rows">
+        <li><span>Today</span><span>Call to confirm</span></li>
+        <li><span>Weekdays</span><span>DIRECTORY — call</span></li>
+        <li><span>Weekend</span><span>DIRECTORY — call</span></li>
+      </ol>
+      <a class="mill-call" href="tel:+15017762710">Call (501) 776-2710</a>
+      <p class="clock-note">Ring before you drive. 919 Military Rd, Benton.</p>
+    </section>
+
+    <div class="mill-map">
       <iframe title="Map of Dale's Donuts, Benton AR" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=919%20Military%20Rd%2C%20Benton%2C%20AR&z=16&output=embed"></iframe>
     </div>
   </main>
 
-  <footer class="base-dales">
+  <footer class="mill-foot">
     Dale's Donuts · 919 Military Rd · Benton, AR · <a href="tel:+15017762710">(501) 776-2710</a>
   </footer>
 
-  <nav class="dock-dales" aria-label="Quick actions">
+  <nav class="mill-dock" aria-label="Quick actions">
     <a href="tel:+15017762710">Call</a>
-    <a href="visit.html">Visit</a>
+    <a href="#hours">Hours</a>
     <a href="https://www.google.com/maps/dir/?api=1&destination=919+Military+Rd,+Benton,+AR">Directions</a>
   </nav>
 </body>

@@ -1,5 +1,4 @@
-/* Uncle Henry’s BBQ — pit-tray grammar. Food leads; type on butcher paper below.
-   Unique class tree. 390 / 768 / desktop. */
+/* Uncle Henry’s BBQ — Barn door grammar. Type on the bleed. Unique classes. */
 :root {
   --plank: #1c1712;
   --plank-soft: #2a221b;
@@ -12,7 +11,8 @@
   --muted: #6b5c4c;
   --pad: clamp(1rem, 4vw, 2.5rem);
   --display: "Alfa Slab One", "Arial Narrow", Impact, sans-serif;
-  --text: "Karla", Georgia, "Times New Roman", serif;
+  --text: "Karla", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --dock: 4.5rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -29,190 +29,196 @@ body {
   font-family: var(--text);
   font-size: 1.0625rem;
   line-height: 1.55;
-  padding-bottom: 4.75rem;
+  padding-bottom: calc(var(--dock) + env(safe-area-inset-bottom, 0px));
   overflow-x: clip;
-  max-width: 100vw;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  height: auto;
-}
-
+img { max-width: 100%; display: block; height: auto; }
 a { color: inherit; }
-
 address { font-style: normal; }
 
-.skip {
-  position: absolute;
-  left: -999px;
-  top: 0;
-}
+.skip { position: absolute; left: -999px; top: 0; }
 .skip:focus {
-  left: 1rem;
-  top: 1rem;
-  z-index: 80;
-  background: #fff;
-  color: #111;
-  padding: .5rem 1rem;
+  left: 1rem; top: 1rem; z-index: 80;
+  background: #fff; color: #111; padding: .5rem 1rem;
 }
 
+/* Chip: top-left on phone; never cover Call */
 .look-chip {
   position: fixed;
-  top: 0.65rem;
-  right: 0.75rem;
-  z-index: 60;
+  top: 3.6rem;
+  left: .65rem;
+  right: auto;
+  bottom: auto;
+  z-index: 35;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   text-decoration: none;
   line-height: 1;
   padding: 0.35rem 0.55rem;
+  min-height: 44px;
   border-radius: 0.45rem;
   background: rgba(10, 12, 16, 0.72);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
   color: #f4f1ea;
-  flex-shrink: 0;
 }
-.look-chip-icon {
-  width: 1.05rem;
-  height: 1.05rem;
-  color: #D4AF37;
-  flex-shrink: 0;
-}
+.look-chip-icon { width: 1.05rem; height: 1.05rem; color: #D4AF37; }
 .look-chip-word {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
+  font-size: 0.95rem; font-weight: 600; white-space: nowrap;
 }
-.look-chip-design { color: #f4f1ea; font-weight: 600; }
+.look-chip-design { color: #f4f1ea; }
 .look-chip-num { color: #D4AF37; font-weight: 700; }
 
 .pitbar {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  left: 0; right: 0; top: 0;
   z-index: 40;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding: 0.75rem var(--pad);
-  padding-right: 6.5rem;
-  background: rgba(28, 23, 18, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--sauce);
+  background: linear-gradient(180deg, rgba(28,23,18,.85), transparent);
   color: var(--cream);
 }
 .pitname {
   font-family: var(--display);
   font-size: 1.05rem;
-  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--cream);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
-.pitnav { display: flex; gap: 1.1rem; }
+.pitnav { display: flex; gap: 1rem; align-items: center; }
 .pitnav a {
   text-decoration: none;
   font-family: var(--display);
   font-size: 0.78rem;
-  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--cream-dim);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 .pitnav a[aria-current="page"] { color: var(--mustard); }
+.pitnav .top-call {
+  display: none;
+  background: var(--sauce);
+  color: #fff8f0;
+  padding: 0.55rem 0.95rem;
+  border-radius: 0.2rem;
+  letter-spacing: 0.08em;
+}
 
-.traybleed {
-  margin: 0;
+/* —— Door-led hero: type ON the bleed —— */
+.barnbleed {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
   background: var(--plank);
+  color: var(--cream);
 }
-.traybleed img {
+.barnbleed-pic,
+.barnbleed-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-height: min(88vh, 52rem);
-  object-fit: cover;
-  object-position: center 40%;
+  height: 100%;
 }
-
-.butcher {
-  padding: clamp(1.75rem, 5vw, 3.25rem) var(--pad);
-  background: var(--cream);
-  border-bottom: 1px solid var(--cream-dim);
-  max-width: 42rem;
+.barnbleed-img {
+  object-fit: cover;
+  object-position: center 35%;
+}
+.barnbleed-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28,23,18,.35) 8%, rgba(28,23,18,.55) 42%, rgba(28,23,18,.92) 78%, #1c1712 100%);
+  pointer-events: none;
+}
+.barnbleed-copy {
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem var(--pad) calc(var(--dock) + env(safe-area-inset-bottom, 0px) + 1.1rem);
+  max-width: 36rem;
 }
 .stamp {
   margin: 0 0 0.55rem;
   font-family: var(--display);
   font-size: 0.78rem;
-  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--sauce);
+  color: var(--mustard);
 }
-.butcher h1,
-.doorpass-body h1 {
-  margin: 0 0 0.55rem;
+.barnbleed-copy h1 {
+  margin: 0 0 0.75rem;
   font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(2.4rem, 9vw, 3.6rem);
-  line-height: 1.05;
+  font-size: clamp(2.2rem, 9vw, 3.4rem);
+  line-height: 1.02;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--plank);
+  color: var(--cream);
 }
-.butcher-line {
-  margin: 0 0 1.35rem;
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 28rem;
+.butcher-hours {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(243,234,216,.28);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--cream-dim);
+}
+.butcher-dir {
+  font-family: var(--display);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mustard);
 }
 .butcher-acts {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.65rem;
 }
-
-.sauce-go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.85rem 1.25rem;
-  background: var(--sauce);
-  color: #fff8f0;
-  text-decoration: none;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 0.2rem;
-  border: 2px solid var(--sauce);
-}
-.sauce-go:hover { background: var(--sauce-deep); border-color: var(--sauce-deep); }
+.sauce-go,
 .sauce-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 1.25rem;
-  background: transparent;
-  color: var(--plank);
+  min-height: 44px;
+  padding: 0.95rem 1.25rem;
   text-decoration: none;
   font-family: var(--display);
-  font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 0.2rem;
-  border: 2px solid var(--plank);
+  border: 2px solid transparent;
 }
-.sauce-ghost:hover { background: var(--plank); color: var(--cream); }
+.sauce-go {
+  background: var(--sauce);
+  color: #fff8f0;
+  border-color: var(--sauce);
+}
+.sauce-go:hover { background: var(--sauce-deep); border-color: var(--sauce-deep); }
+.sauce-ghost {
+  background: transparent;
+  color: var(--cream);
+  border-color: rgba(243,234,216,.45);
+}
+.sauce-ghost:hover { background: rgba(243,234,216,.12); }
 
 .ashgrid {
   display: grid;
@@ -236,16 +242,13 @@ address { font-style: normal; }
 .ash-wide img { aspect-ratio: 4 / 5; }
 .ashgrid figcaption {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 0; right: 0; bottom: 0;
   margin: 0;
   padding: 1.6rem 0.85rem 0.7rem;
   background: linear-gradient(transparent, rgba(14, 10, 8, 0.85));
   color: var(--cream);
   font-family: var(--display);
   font-size: 0.78rem;
-  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -257,9 +260,9 @@ address { font-style: normal; }
 }
 .rockface-shot {
   width: 100%;
-  max-height: min(90vh, 54rem);
+  max-height: min(70vh, 40rem);
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 40%;
 }
 .rockface-cap {
   position: absolute;
@@ -271,7 +274,6 @@ address { font-style: normal; }
   color: var(--cream);
   font-family: var(--display);
   font-size: 0.78rem;
-  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -296,16 +298,13 @@ address { font-style: normal; }
 }
 .lodge-cell figcaption {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 0; right: 0; bottom: 0;
   margin: 0;
   padding: 1.5rem 0.85rem 0.65rem;
   background: linear-gradient(transparent, rgba(14, 10, 8, 0.85));
   color: var(--cream);
   font-family: var(--display);
   font-size: 0.78rem;
-  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -320,7 +319,6 @@ address { font-style: normal; }
   margin: 0 0 0.65rem;
   font-family: var(--display);
   font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--plank);
@@ -328,65 +326,56 @@ address { font-style: normal; }
 .findrock address {
   margin: 0 0 0.85rem;
   font-size: 1.15rem;
-  line-height: 1.45;
   color: var(--muted);
 }
 .findrock-links {
   margin: 0;
   font-family: var(--display);
   font-size: 0.85rem;
-  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.findrock-links a {
-  color: var(--sauce);
-  text-decoration: none;
-}
-.findrock-links a:hover { text-decoration: underline; }
+.findrock-links a { color: var(--sauce); text-decoration: none; }
 
 .pitcolophon {
   padding: 1.25rem var(--pad) 1.5rem;
   background: var(--plank);
   color: var(--cream-dim);
   font-size: 0.88rem;
-  line-height: 1.5;
 }
-.pitcolophon a {
-  color: var(--mustard);
-  text-decoration: none;
-}
+.pitcolophon a { color: var(--mustard); text-decoration: none; }
 
 .pitdock {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 0; right: 0; bottom: 0;
   z-index: 50;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background: var(--plank);
   border-top: 2px solid var(--sauce);
-  box-shadow: 0 -6px 24px rgba(0,0,0,0.28);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 .pitdock a {
+  min-height: 44px;
   padding: 0.95rem 0.4rem;
   text-align: center;
   text-decoration: none;
   font-family: var(--display);
   font-size: 0.82rem;
-  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .pitdock a + a { border-left: 1px solid rgba(243, 234, 216, 0.15); }
-.pitdock a:first-child { background: var(--sauce); }
+.pitdock a.pitdock-call { background: var(--sauce); }
 
+/* Visit */
 .doorpass {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
   background: var(--cream);
 }
 .doorpass-photo img {
@@ -397,125 +386,171 @@ address { font-style: normal; }
 .doorpass-body {
   padding: clamp(1.5rem, 4vw, 2.5rem) var(--pad);
 }
-.doorpass-body .sauce-go { margin: 0.35rem 0 1rem; }
+.doorpass-body h1 {
+  margin: 0 0 0.55rem;
+  font-family: var(--display);
+  font-size: clamp(2rem, 7vw, 3rem);
+  text-transform: uppercase;
+  color: var(--plank);
+}
+.butcher-line {
+  margin: 0 0 1.1rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
 
 .softclock {
-  padding: 1.5rem var(--pad) 2rem;
-  background: var(--cream);
-  border-top: 1px solid var(--cream-dim);
+  margin: 0 var(--pad) 1.5rem;
+  max-width: 36rem;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--cream-dim);
+  border-radius: 12px;
+  background: rgba(28,23,18,.03);
 }
 .softclock h2 {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.5rem;
   font-family: var(--display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 1.25rem;
   text-transform: uppercase;
-}
-.softclock-note {
-  margin: 0 0 1.1rem;
-  max-width: 34rem;
-  color: var(--muted);
-  font-size: 1rem;
+  color: var(--sauce);
 }
 .softclock-tag {
   display: inline-block;
-  margin-right: 0.4rem;
-  padding: 0.15rem 0.4rem;
-  background: var(--plank);
-  color: var(--cream);
+  margin-bottom: 0.75rem;
   font-family: var(--display);
   font-size: 0.68rem;
-  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  vertical-align: 0.1em;
+  color: var(--muted);
+  border: 1px solid var(--cream-dim);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+.hours-rows {
+  list-style: none;
+  margin: 0 0 0.85rem;
+  padding: 0;
+}
+.hours-rows li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(28,23,18,.08);
+  font-size: 0.98rem;
+}
+.hours-rows li:last-child { border: 0; }
+.softclock-note {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.pitmap {
+  margin: 0 var(--pad) 2rem;
+  max-width: 48rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--cream-dim);
+  aspect-ratio: 16/10;
+}
+.pitmap iframe { width: 100%; height: 100%; border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
 }
 
-.pitmap { margin: 0; background: var(--plank-soft); }
-.pitmap iframe {
-  display: block;
-  width: 100%;
-  height: min(52vh, 22rem);
-  border: 0;
-}
-
+/* —— 768 tablet —— */
 @media (min-width: 768px) {
-  .ashgrid {
-    grid-template-columns: 1fr 1.15fr;
-    gap: 0.65rem;
-    padding: 0.65rem var(--pad) 0;
+  body { padding-bottom: 0; }
+  .pitdock { display: none !important; }
+  .look-chip {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
   }
-  .ash-wide { grid-column: 1 / 2; }
-  .ash-tall--b { grid-column: 2 / 3; }
-  .ashgrid img { min-height: 18rem; }
-
+  .pitbar {
+    position: relative;
+    background: rgba(28, 23, 18, 0.96);
+    border-bottom: 2px solid var(--sauce);
+    padding: 0.85rem 1.5rem;
+  }
+  .pitnav .top-call { display: inline-flex; }
+  .barnbleed { min-height: min(86vh, 44rem); }
+  .barnbleed-copy {
+    /* leave gutter above bottom-left chip */
+    padding: 2rem 1.75rem 5.75rem;
+    max-width: 42rem;
+  }
+  .butcher-acts {
+    margin-left: 9rem; /* clear chip horizontally */
+  }
+  .barnbleed-copy h1 { font-size: clamp(2.8rem, 6vw, 3.8rem); }
+  .ashgrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem 0;
+  }
+  .ash-tall { grid-row: span 2; }
+  .ash-tall img { height: 100%; aspect-ratio: auto; min-height: 22rem; }
   .lodge {
     grid-template-columns: 1fr 1fr;
-    gap: 0.65rem;
-    padding: 0.65rem var(--pad);
+    padding: 0.75rem 1.5rem;
   }
-  .lodge-cell img { aspect-ratio: 4 / 5; }
-
-  .doorpass {
-    grid-template-columns: 1.15fr 1fr;
-    align-items: stretch;
-    min-height: 22rem;
-  }
-  .doorpass-photo img {
-    height: 100%;
-    aspect-ratio: auto;
-    min-height: 22rem;
-  }
+  .findrock { padding: 2.5rem 1.5rem; }
+  .doorpass { grid-template-columns: 1.1fr 1fr; }
+  .softclock { margin: 0 1.5rem 1.75rem; }
+  .pitmap { margin: 0 1.5rem 2.5rem; }
 }
 
+/* —— 1100 desktop wide ~72rem —— */
 @media (min-width: 1100px) {
-  .butcher {
-    max-width: none;
-    padding-left: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
-    padding-right: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
-  }
-  .traybleed img {
-    max-height: 46rem;
-    object-position: center 45%;
-  }
-  .ashgrid {
-    grid-template-columns: 0.9fr 1.1fr 0.9fr;
-    grid-template-areas:
-      "tall stack wide"
-      "tall potato wide";
+  .barnbleed { min-height: min(90vh, 52rem); }
+  .barnbleed-copy {
     max-width: 72rem;
+    width: 100%;
     margin: 0 auto;
+    padding: 2.75rem clamp(1.5rem, 4vw, 2.5rem) 6rem;
   }
-  .ash-tall { grid-area: tall; }
-  .ash-stack { grid-area: stack; }
-  .ash-wide { grid-area: wide; grid-column: auto; }
-  .ash-tall--b { grid-area: potato; grid-column: auto; }
-  .ash-tall img,
-  .ash-wide img {
-    aspect-ratio: auto;
-    height: 100%;
-    min-height: 28rem;
-  }
-  .ash-stack img,
-  .ash-tall--b img { min-height: 13.5rem; }
-
-  .rockface-shot { max-height: 48rem; }
-
+  .barnbleed-copy h1 { max-width: 16ch; font-size: clamp(3.2rem, 5vw, 4.4rem); }
+  .ashgrid,
   .lodge,
   .findrock,
   .pitcolophon {
-    padding-left: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
-    padding-right: max(var(--pad), calc((100vw - 68rem) / 2 + var(--pad)));
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .doorpass {
-    max-width: 68rem;
-    margin: 0 auto;
+  .ashgrid { grid-template-columns: 1.15fr 1fr 1fr; padding: 1rem clamp(1.5rem, 4vw, 2.5rem) 0; }
+  .lodge { padding: 1rem clamp(1.5rem, 4vw, 2.5rem); }
+  .findrock { padding: 3rem clamp(1.5rem, 4vw, 2.5rem); }
+  .rockface-shot { max-height: min(60vh, 36rem); }
+  .softclock { max-width: 36rem; }
+  .doorpass,
+  .softclock,
+  .pitmap {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-@media (max-width: 360px) {
-  .pitname { font-size: 0.92rem; }
-  .pitbar { padding-right: 5.8rem; }
+/* Gate 5 chip lock — never cover header Call or hero CTAs */
+.look-chip{
+  position:fixed !important;
+  left:.65rem !important;
+  right:auto !important;
+  top:3.6rem !important;
+  bottom:auto !important;
+  z-index:35 !important;
+}
+@media (min-width: 768px){
+  .look-chip{
+    top:auto !important;
+    bottom:1rem !important;
+    left:1rem !important;
+    right:auto !important;
+  }
+  .barnbleed-copy .butcher-acts{
+    margin-left:9rem;
+  }
 }

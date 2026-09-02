@@ -16,75 +16,89 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
-<body>
+<body class="page-home">
   <a class="skip" href="#main">Skip to content</a>
   <a class="look-chip" href="https://design219.com" aria-label="Design219">
     <svg class="look-chip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
     <span class="look-chip-word"><span class="look-chip-design">Design</span><span class="look-chip-num">219</span></span>
   </a>
 
-  <header class="mast-dales">
-    <a class="brand-dales" href="index.html">Dale's Donuts</a>
-    <nav class="nav-dales" aria-label="Primary">
+  <header class="mill-bar">
+    <a class="mill-mark" href="index.html">Dale's Donuts</a>
+    <nav class="mill-nav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
       <a href="visit.html">Visit</a>
+      <a class="mill-ring" href="tel:+15017762710">Call</a>
     </nav>
   </header>
 
   <main id="main">
-    <!-- Grammar: cinematic storefront FIRST, type BELOW (no veil overlay) -->
-    <section class="doorframe" aria-label="Storefront">
-      <picture>
+    <section class="awning-door" aria-label="Storefront">
+      <picture class="awning-pic">
         <source media="(max-width: 640px)" srcset="img/hero-sm.jpg">
-        <img src="img/hero.jpg" width="1200" height="900" alt="Dale's Donuts storefront on Military Road in Benton — wood siding, blue metal awning, neon OPEN, Dale's DONUTS sign.">
+        <img src="img/hero.jpg" width="533" height="400" alt="Dale's Donuts storefront with blue awning and neon OPEN on Military Road in Benton." fetchpriority="high" decoding="async">
       </picture>
-    </section>
-
-    <section class="nameplate">
-      <p class="eyebrow-dales">Benton · Military Road</p>
-      <h1>The door on Military.</h1>
-      <p class="line-dales">919 Military Rd. Fresh from the case.</p>
-      <p class="hours-dales" id="hours"><b>Hours</b> · DIRECTORY · call for today</p>
-      <div class="cta-row">
-        <a class="pill-go" href="tel:+15017762710">Call (501) 776-2710</a>
-        <a class="pill-line" href="https://www.google.com/maps/dir/?api=1&destination=919+Military+Rd,+Benton,+AR">Directions</a>
+      <div class="awning-shade" aria-hidden="true"></div>
+      <div class="mill-copy">
+        <p class="mill-voice">The door on Military.</p>
+        <h1 class="mill-name">Dale's Donuts</h1>
+        <a class="mill-today" href="visit.html#hours"><span class="dir-pill">DIRECTORY</span> Call for today's hours</a>
+        <div class="mill-acts">
+          <a class="mill-call" href="tel:+15017762710">Call (501) 776-2710</a>
+          <a class="mill-dir" href="https://www.google.com/maps/dir/?api=1&destination=919+Military+Rd,+Benton,+AR">Directions</a>
+        </div>
       </div>
     </section>
 
-    <!-- Horizontal bakery "case" scroll — not a 3-equal strip -->
-    <section class="case-rail" aria-label="From the case">
-      <figure class="case-pane">
-        <img src="img/2.jpg" width="533" height="400" alt="Glass donut cases and counter inside Dale's Donuts, Benton.">
-        <figcaption>At the counter</figcaption>
+    <section class="case-band" aria-label="Inside the case">
+      <figure class="case-shot">
+        <img src="img/2.jpg" width="533" height="400" alt="Glass donut cases and counter inside Dale's Donuts, Benton." loading="lazy" decoding="async">
       </figure>
-      <figure class="case-pane">
-        <img src="img/3.jpg" width="300" height="400" alt="Open box of Dale's donuts — glazed, cinnamon rolls, sprinkles.">
+      <div class="case-copy">
+        <p class="mill-kicker">Inside</p>
+        <h2>The case on Military.</h2>
+        <p>Blue-check floor. Glass still full in the morning. 919 Military Rd, Benton.</p>
+        <a class="mill-textlink" href="visit.html#hours">Hours and the map</a>
+      </div>
+    </section>
+
+    <section class="glaze-split" aria-label="From the box">
+      <figure class="glaze-open">
+        <img src="img/3.jpg" width="300" height="400" alt="Open box of Dale's donuts — glazed, cinnamon rolls, sprinkles." loading="lazy" decoding="async">
         <figcaption>By the dozen</figcaption>
       </figure>
-      <figure class="case-pane">
-        <img src="img/4.jpg" width="300" height="400" alt="White takeout box with red Dale's script logo.">
-        <figcaption>Take it home</figcaption>
+      <div class="glaze-mark">
+        <p class="mill-kicker mill-kicker--glaze">Take it home</p>
+        <h2>Grab a box for the road.</h2>
+        <p>Red script on the lid. Same shop that sits under the blue awning.</p>
+        <figure class="glaze-lid">
+          <img src="img/4.jpg" width="300" height="400" alt="White takeout box with red Dale's script logo." loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="mill-room" aria-label="The room">
+      <figure>
+        <img src="img/bts-room.jpg" width="1100" height="982" alt="Inside Dale's Donuts — red Dale's wall script, checkered floor." loading="lazy" decoding="async">
+        <figcaption>Checkered floor · Benton</figcaption>
       </figure>
-      <figure class="case-pane">
-        <img src="img/bts-box.jpg" width="1100" height="966" alt="Glazed donuts being boxed in an open white box at Dale's Donuts.">
-        <figcaption>Glazed · boxed</figcaption>
-      </figure>
-      <figure class="case-pane">
-        <img src="img/bts-room.jpg" width="1100" height="982" alt="Behind-the-scenes inside Dale's Donuts — red Dale's wall script, checkered floor, camera and LED light.">
-        <figcaption>Inside · BTS</figcaption>
-      </figure>
+    </section>
+
+    <section class="mill-fb" aria-label="Facebook">
+      <h2>They still post here</h2>
+      <p>Specials and closed days land on the Benton Facebook page first.</p>
+      <a class="mill-dir mill-dir--ink" href="https://www.facebook.com/people/Dales-Donuts-Benton/61579812901069/">Facebook</a>
     </section>
   </main>
 
-  <footer class="base-dales">
+  <footer class="mill-foot">
     Dale's Donuts · 919 Military Rd · Benton, AR ·
-    <a href="tel:+15017762710">(501) 776-2710</a> ·
-    <a href="https://www.facebook.com/people/Dales-Donuts-Benton/61579812901069/">Facebook</a>
+    <a href="tel:+15017762710">(501) 776-2710</a>
   </footer>
 
-  <nav class="dock-dales" aria-label="Quick actions">
+  <nav class="mill-dock" aria-label="Quick actions">
     <a href="tel:+15017762710">Call</a>
-    <a href="visit.html">Visit</a>
+    <a href="visit.html#hours">Hours</a>
     <a href="https://www.google.com/maps/dir/?api=1&destination=919+Military+Rd,+Benton,+AR">Directions</a>
   </nav>
 </body>

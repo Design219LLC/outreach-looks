@@ -28,29 +28,33 @@
     <nav class="pitnav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
       <a href="visit.html">Visit</a>
+      <a class="top-call" href="tel:+18709423937">Call</a>
     </nav>
   </header>
 
   <main id="main">
-    <!-- Grammar: FOOD tray leads full-bleed — type sits in the butcher stamp BELOW, not on a veil. -->
-    <figure class="traybleed">
-      <picture>
-        <source media="(max-width: 640px)" srcset="img/plate-sm.jpg">
+    <!-- Grammar: DOOR-LED Barn door — type on the bleed (Gate 5). Tray food supports below. -->
+    <section class="barnbleed" aria-labelledby="uh-title">
+      <picture class="barnbleed-pic">
+        <source media="(max-width: 767px)" srcset="img/hero-sm.jpg">
+        <source media="(max-width: 1099px)" srcset="img/hero.jpg">
         <img
-          src="img/plate.jpg"
+          class="barnbleed-img"
+          src="img/storefront.jpg"
           width="900"
           height="1200"
-          alt="Pulled pork plate with barbecue sauce, coleslaw, green beans, and white bread at Uncle Henry’s BBQ.">
+          alt="Uncle Henry’s BBQ weathered wood storefront with EST.1984 sign and flags on S Rock Street in Sheridan."
+          fetchpriority="high">
       </picture>
-    </figure>
-
-    <section class="butcher" aria-labelledby="uh-title">
-      <p class="stamp">Est. 1984 · Sheridan</p>
-      <h1 id="uh-title">Ham smoked since '84.</h1>
-      <p class="butcher-line">202 S Rock St. Styrofoam trays. Wood walls. Flags on the porch.</p>
-      <div class="butcher-acts">
-        <a class="sauce-go" href="tel:+18709423937">Call (870) 942-3937</a>
-        <a class="sauce-ghost" href="https://www.google.com/maps/dir/?api=1&destination=202+S+Rock+St,+Sheridan,+AR+72150">Directions</a>
+      <div class="barnbleed-shade" aria-hidden="true"></div>
+      <div class="barnbleed-copy">
+        <p class="stamp">Est. 1984 · Sheridan</p>
+        <h1 id="uh-title">Ham smoked since '84.</h1>
+        <p class="butcher-hours" id="hours"><span class="butcher-dir">DIRECTORY</span> Call for today’s hours</p>
+        <div class="butcher-acts">
+          <a class="sauce-go" href="tel:+18709423937">Call (870) 942-3937</a>
+          <a class="sauce-ghost" href="https://www.google.com/maps/dir/?api=1&destination=202+S+Rock+St,+Sheridan,+AR+72150">Directions</a>
+        </div>
       </div>
     </section>
 
@@ -74,17 +78,17 @@
       </figure>
     </section>
 
-    <section class="rockface" aria-label="The smokehouse">
+    <section class="rockface" aria-label="On the tray">
       <picture>
-        <source media="(max-width: 640px)" srcset="img/storefront-sm.jpg">
+        <source media="(max-width: 767px)" srcset="img/plate-sm.jpg">
         <img
           class="rockface-shot"
-          src="img/storefront.jpg"
+          src="img/plate.jpg"
           width="900"
           height="1200"
-          alt="Uncle Henry’s BBQ weathered wood storefront on S Rock St — hanging UNCLE HENRY’S EST.1984 sign, Ham Smoked board, Arkansas and U.S. flags.">
+          alt="Pulled pork plate with barbecue sauce, coleslaw, green beans, and white bread at Uncle Henry’s BBQ.">
       </picture>
-      <p class="rockface-cap">202 S Rock · under the flags</p>
+      <p class="rockface-cap">Styrofoam trays · wood walls</p>
     </section>
 
     <section class="lodge" aria-label="Porch and dining room">
@@ -120,8 +124,8 @@
   </footer>
 
   <nav class="pitdock" aria-label="Quick actions">
-    <a href="tel:+18709423937">Call</a>
-    <a href="visit.html">Visit</a>
+    <a class="pitdock-call" href="tel:+18709423937">Call</a>
+    <a href="visit.html#hours">Hours</a>
     <a href="https://www.google.com/maps/dir/?api=1&destination=202+S+Rock+St,+Sheridan,+AR+72150">Directions</a>
   </nav>
 </body>

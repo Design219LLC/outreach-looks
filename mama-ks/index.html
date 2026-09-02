@@ -43,14 +43,16 @@
         <img class="roadside-bleed" src="img/hero.jpg" width="1600" height="1200" alt="Mama K's yellow roadside restaurant sign reading GOOD HOME COOKING and 332-7200 on Highway 9 in Leola." fetchpriority="high">
       </picture>
       <div class="shade" aria-hidden="true"></div>
-      <div class="yellowboard">
-        <p class="hwy9">Hwy 9 · Leola</p>
-        <h1 class="shopname">Mama K’s</h1>
-        <p class="signline">Good home cooking.</p>
-        <p class="today-chip" id="hours">
-          <span class="dir-chip">DIRECTORY</span>
-          <strong>Today</strong> · Call for today’s hours
-        </p>
+      <div class="boardstack">
+        <div class="yellowboard">
+          <p class="hwy9">Hwy 9 · Leola</p>
+          <h1 class="shopname">Mama K’s</h1>
+          <p class="signline">Good home cooking.</p>
+          <p class="today-chip" id="today">
+            <span class="dir-chip">DIRECTORY</span>
+            <strong>Today</strong> · Call for today’s hours
+          </p>
+        </div>
         <div class="road-acts">
           <a class="road-call" href="tel:+15013327200">Call (501) 332-7200</a>
           <a class="cream-dir" href="https://www.google.com/maps/dir/?api=1&destination=4593+Highway+9,+Leola,+AR+72084">Directions</a>
@@ -58,28 +60,13 @@
       </div>
     </section>
 
-    <section class="porchband" aria-label="The porch">
-      <figure>
-        <picture>
-          <source media="(max-width: 640px)" srcset="img/porch-sm.jpg">
-          <img src="img/porch.jpg" width="1400" height="1050" alt="Mama K's metal building porch with neon OPEN on Highway 9 in Leola.">
-        </picture>
-        <figcaption class="porchcap"><b>4593 Highway 9</b> · porch · neon OPEN</figcaption>
-      </figure>
-    </section>
+    <div class="mile-rule" aria-hidden="true"></div>
 
-    <section class="trainwreck" aria-label="Train Wreck">
-      <div class="trainwreck-copy">
-        <div class="trainwreck-rule" aria-hidden="true"></div>
-        <h2>The Train Wreck</h2>
-        <p class="trainwreck-line">Fries, BBQ pork, beans, and slaw — the plate locals order by name. No prices here; ask the shop.</p>
-      </div>
-      <figure class="trainwreck-cut">
-        <picture>
-          <source media="(max-width: 640px)" srcset="img/trainwreck-sm.jpg">
-          <img src="img/trainwreck.jpg" width="900" height="1200" alt="Train Wreck plate at Mama K's — fries with BBQ pork, beans, barbecue sauce, and coleslaw.">
-        </picture>
-      </figure>
+    <section class="hours-board" id="hours" aria-labelledby="hours-title">
+      <h2 id="hours-title">Hours</h2>
+      <span class="dir-chip">DIRECTORY</span>
+      <p class="hours-callout">Call for today’s hours</p>
+      <p class="hours-fine">No owner-confirmed permanent schedule on file — confirm by phone before you drive.</p>
     </section>
 
     <section class="boothstrip" aria-label="Inside">
@@ -92,6 +79,30 @@
         </picture>
         <figcaption class="booth-cap">Interior · photographed room</figcaption>
       </figure>
+    </section>
+
+    <section class="porchbleed" aria-label="The porch">
+      <picture>
+        <source media="(max-width: 640px)" srcset="img/porch-sm.jpg">
+        <img src="img/porch.jpg" width="1400" height="1050" alt="Mama K's metal building porch with neon OPEN on Highway 9 in Leola.">
+      </picture>
+      <p class="porch-metal"><b>4593 Highway 9</b> · porch · neon OPEN</p>
+    </section>
+
+    <section class="wreckband" aria-label="Train Wreck">
+      <div class="wreckband-inner">
+        <figure class="trainwreck-cut">
+          <picture>
+            <source media="(max-width: 640px)" srcset="img/trainwreck-sm.jpg">
+            <img src="img/trainwreck.jpg" width="900" height="1200" alt="Train Wreck plate at Mama K's — fries with BBQ pork, beans, barbecue sauce, and coleslaw.">
+          </picture>
+        </figure>
+        <div class="wreck-copy">
+          <div class="trainwreck-rule" aria-hidden="true"></div>
+          <h2>The Train Wreck</h2>
+          <p class="trainwreck-line">Fries, BBQ pork, beans, and slaw — the plate locals order by name. No prices here; ask the shop.</p>
+        </div>
+      </div>
     </section>
 
     <aside class="fb-board" aria-label="Facebook">
@@ -108,7 +119,7 @@
 
   <nav class="dock" aria-label="Quick actions">
     <a class="dock-call" href="tel:+15013327200">Call</a>
-    <a href="visit.html#hours">Hours</a>
+    <a href="#hours">Hours</a>
     <a href="https://www.google.com/maps/dir/?api=1&destination=4593+Highway+9,+Leola,+AR+72084">Directions</a>
   </nav>
 </body>

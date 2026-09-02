@@ -9,13 +9,13 @@
   --line: rgba(247, 241, 230, 0.14);
   --dock-h: 4.4rem;
   --pad: clamp(1.05rem, 4vw, 2.4rem);
-  --display: "Zilla Slab", Georgia, "Times New Roman", serif;
+  --display: "Zilla Slab", ui-serif, serif;
   --text: Manrope, "Segoe UI", system-ui, sans-serif;
   --gold: #C9A227;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -31,7 +31,7 @@ body {
   font-family: var(--text);
   font-size: 1.05rem;
   line-height: 1.45;
-  padding-bottom: var(--dock-h);
+  padding-bottom: calc(var(--dock-h) + env(safe-area-inset-bottom, 0px));
   overflow-x: clip;
 }
 
@@ -49,6 +49,7 @@ a { color: inherit; }
   position: fixed; top: 0.65rem; right: 0.65rem; z-index: 45;
   display: inline-flex; align-items: center; gap: 0.4rem;
   text-decoration: none; padding: 0.35rem 0.55rem; border-radius: 0.45rem;
+  min-height: 44px;
   background: rgba(23, 19, 17, 0.82);
   border: 1px solid rgba(201, 162, 39, 0.42);
   color: #f4f1ea; backdrop-filter: blur(8px);
@@ -61,7 +62,6 @@ a { color: inherit; }
 .bayrail {
   display: flex; justify-content: space-between; align-items: center; gap: 1rem;
   padding: 0.7rem var(--pad);
-  padding-right: max(var(--pad), 8rem);
   border-bottom: 1px solid var(--line);
   background: rgba(23, 19, 17, 0.96);
   position: sticky; top: 0; z-index: 30;
@@ -73,17 +73,22 @@ a { color: inherit; }
   font-family: var(--display); font-weight: 700; font-size: 1.05rem;
   text-decoration: none; letter-spacing: -0.01em;
   white-space: nowrap;
+  min-height: 44px; display: inline-flex; align-items: center;
 }
 .bayrail-nav {
   display: flex; align-items: center; gap: 0.85rem;
   font-size: 0.9rem; font-weight: 600; color: var(--cream-soft);
 }
-.bayrail-nav a { text-decoration: none; }
+.bayrail-nav a {
+  text-decoration: none;
+  min-height: 44px; display: inline-flex; align-items: center;
+}
 .bayrail-nav a[aria-current="page"] { color: var(--cream); }
 .bayrail-call {
   display: none; text-decoration: none; font-weight: 700;
   background: var(--neon); color: var(--cream);
   padding: 0.5rem 0.85rem; border-radius: 10px; font-size: 0.9rem;
+  min-height: 44px; align-items: center; justify-content: center;
 }
 @media (max-width: 520px) {
   .bayrail-nav { display: none; }
@@ -93,7 +98,9 @@ a { color: inherit; }
 }
 
 .bay3309 {
-  position: relative; min-height: min(88vh, 46rem);
+  position: relative;
+  min-height: calc(100svh - 3.4rem);
+  min-height: calc(100vh - 3.4rem);
   display: flex; flex-direction: column; justify-content: flex-end;
   overflow: hidden; background: var(--ink);
 }
@@ -107,7 +114,8 @@ a { color: inherit; }
 }
 .signband {
   position: relative; z-index: 2;
-  padding: 1.4rem var(--pad) 1.35rem; max-width: 40rem;
+  padding:  1.15rem var(--pad) calc(1.75rem + var(--dock-h) + env(safe-area-inset-bottom, 0px));
+  max-width: 40rem;
 }
 .bayname {
   font-family: var(--display); font-weight: 700;
@@ -134,12 +142,14 @@ a { color: inherit; }
   font-weight: 700; font-size: 1.02rem;
   background: var(--neon); color: var(--cream);
   padding: 0.95rem 1.05rem; border-radius: 14px;
+  min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
 }
 .baydir {
   flex: 1 1 7.5rem; min-width: 7rem; text-align: center; text-decoration: none;
   font-weight: 600; font-size: 1.02rem;
   border: 1.5px solid rgba(247,241,230,.38); color: var(--cream);
   padding: 0.95rem 1.05rem; border-radius: 14px;
+  min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
 }
 .neoncall:hover, .baydir:hover { filter: brightness(1.06); }
 @media (prefers-reduced-motion: reduce) {
@@ -174,7 +184,7 @@ a { color: inherit; }
 }
 
 .spitstory {
-  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 0.9rem;
+  display: grid; grid-template-columns: 1fr; gap: 0.75rem;
   align-items: center; padding: 1.5rem var(--pad) 0.35rem;
   max-width: 52rem; margin: 0 auto;
 }
@@ -192,8 +202,8 @@ a { color: inherit; }
   width: 2.5rem; height: 3px; background: var(--roast);
   border-radius: 2px; margin: 0 0 0.75rem;
 }
-@media (max-width: 560px) {
-  .spitstory { grid-template-columns: 1fr; gap: 0.75rem; }
+@media (min-width: 768px) {
+  .spitstory { grid-template-columns: 1.05fr 0.95fr; gap: 0.9rem; }
 }
 
 .foilcard { padding: 1.35rem var(--pad) 0.25rem; max-width: 42rem; margin: 0 auto; }
@@ -234,7 +244,7 @@ a { color: inherit; }
   color: var(--ochre); text-decoration: none;
   border-bottom: 1px solid rgba(212,160,90,.35);
 }
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .kiehlfind {
     grid-template-columns: 0.9fr 1.1fr; align-items: end; gap: 1.5rem;
   }
@@ -249,8 +259,10 @@ a { color: inherit; }
 .fbvinyl h2 { font-family: var(--display); font-size: 1.35rem; margin: 0 0 0.4rem; }
 .fbvinyl p { margin: 0 0 0.9rem; color: var(--cream-soft); font-size: 0.95rem; }
 .fbvinyl a {
-  display: inline-block; text-decoration: none; font-weight: 700; color: var(--cream);
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; font-weight: 700; color: var(--cream);
   border: 1.5px solid rgba(247,241,230,.35); padding: 0.7rem 1rem; border-radius: 12px;
+  min-height: 44px;
 }
 
 .bayfoot {
@@ -269,14 +281,19 @@ a { color: inherit; }
 .kiehl-dock a {
   text-align: center; padding: 0.95rem 0.4rem; text-decoration: none;
   font-weight: 700; font-size: 0.9rem; color: var(--cream);
+  min-height: 44px; display: flex; align-items: center; justify-content: center;
 }
 .kiehl-dock a.primary { background: var(--neon); color: var(--cream); }
-@media (min-width: 900px) {
-  .kiehl-dock { display: none; }
+@media (min-width: 768px) {
+  .kiehl-dock { display: none !important; }
   body { padding-bottom: 0; }
-  .bay3309 { min-height: min(86vh, 52rem); }
-  .signband { padding-bottom: 2rem; max-width: 44rem; }
-  .hoursplate { margin-left: var(--pad); }
+  .bayrail-call { display: inline-flex !important; }
+  .bay3309 { min-height: min(86vh, 48rem); }
+  .signband { padding: 2rem var(--pad) 2.25rem; max-width: 44rem; }
+  .hoursplate { margin-left: var(--pad); max-width: 40rem; }
+  .spitstory, .foilcard, .patchroom, .kiehlfind, .fbvinyl, .bayfoot {
+    max-width: 56rem;
+  }
 }
 
 .visit-shell {
@@ -302,4 +319,132 @@ a { color: inherit; }
 .visit-door { margin: 0 0 1rem; border-radius: 16px; overflow: hidden; }
 .visit-door img {
   width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center 40%;
+}
+
+@media (min-width: 1100px) {
+  .bay3309 { min-height: min(90vh, 52rem); }
+  .signband {
+    max-width: 72rem;
+    width: 100%;
+    padding: 2.5rem clamp(1.5rem, 4vw, 2.5rem) 3rem;
+  }
+  .bayname { font-size: clamp(3rem, 4.5vw, 4.2rem); }
+  .hoursplate, .spitstory, .foilcard, .patchroom, .kiehlfind, .fbvinyl, .bayfoot, .visit-shell {
+    max-width: 72rem;
+  }
+  .foilcard img { aspect-ratio: 16/10; max-height: 34rem; }
+  .patchroom img { min-height: 26rem; }
+  .spitstory img { min-height: 22rem; }
+}
+
+/* Gate 5 three-cut lock — appended */
+@media (min-width: 768px) {
+  body { padding-bottom: 0 !important; }
+  .kiehl-dock { display: none !important; }
+  .bayrail-call { display: inline-flex !important; }
+}
+@media (min-width: 1100px) {
+  .foilcard, .patchroom, .spitstory, .visit-shell, .kiehlfind, .fbvinyl, .bayfoot, .hoursplate, .signband { max-width: 72rem; }
+}
+
+/* Gate 5 chip lock — never cover header Call or hero CTAs */
+.look-chip{
+  position:fixed !important;
+  left:.65rem !important;
+  right:auto !important;
+  top:3.6rem !important;
+  bottom:auto !important;
+  z-index:35 !important;
+  min-height:44px !important;
+}
+@media (min-width: 768px){
+  .look-chip{
+    top:auto !important;
+    bottom:1rem !important;
+    left:1rem !important;
+    right:auto !important;
+  }
+}
+
+/* Gate 5 final geometry — last word */
+.bayrail-call { display: none !important; }
+.kiehl-dock a { min-height: 44px !important; }
+
+@media (max-width: 767px) {
+  /* Overlay header so hero is true first screen (Lady Birds craft) */
+  .bayrail {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    z-index: 30 !important;
+    background: linear-gradient(180deg, rgba(23,19,17,.88), transparent) !important;
+    border-bottom: 0 !important;
+  }
+  .bay3309 {
+    min-height: 100svh !important;
+    min-height: 100vh !important;
+  }
+  .signband {
+    padding: 1.15rem var(--pad, 1.1rem) calc(4.85rem + env(safe-area-inset-bottom, 0px) + 1.15rem) !important;
+    max-width: 36rem !important;
+  }
+  .bayname {
+    font-size: clamp(2.05rem, 8.2vw, 2.9rem) !important;
+    line-height: 0.96 !important;
+    margin: 0 0 0.4rem !important;
+  }
+  .bayline { margin: 0 0 0.55rem !important; font-size: 1.02rem !important; }
+  .baytoday { margin: 0 0 0.85rem !important; }
+}
+
+@media (min-width: 768px) {
+  .kiehl-dock { display: none !important; }
+  body { padding-bottom: 0 !important; }
+  .bayrail-call { display: inline-flex !important; min-height: 44px; align-items: center; }
+  .bayrail {
+    position: sticky !important;
+    background: rgba(23, 19, 17, 0.96) !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+  .bay3309 { min-height: min(86vh, 48rem) !important; }
+  .signband {
+    padding: 2rem 1.75rem 5.75rem !important; /* clear bottom-left chip */
+    max-width: 42rem !important;
+  }
+  .bayacts { margin-left: 9rem !important; }
+  .hoursplate { max-width: 40rem !important; }
+}
+
+@media (min-width: 1100px) {
+  .bay3309 { min-height: min(90vh, 52rem) !important; }
+  .signband {
+    max-width: 72rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 2.75rem clamp(1.5rem, 4vw, 2.5rem) 6rem !important;
+  }
+  .hoursplate, .spitstory, .foilcard, .patchroom, .kiehlfind, .fbvinyl, .bayfoot, .visit-shell {
+    max-width: 72rem !important;
+  }
+}
+
+
+/* Pin signband to viewport bottom of bleed — prevent section grow burying CTAs */
+@media (max-width: 767px) {
+  .bay3309 {
+    min-height: 100svh !important;
+    min-height: 100vh !important;
+    max-height: 100svh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
+  .signband {
+    position: absolute !important;
+    left: 0; right: 0;
+    bottom: 0 !important;
+    padding: 1rem 1.1rem calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
+    max-width: none !important;
+  }
 }

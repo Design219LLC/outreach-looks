@@ -9,12 +9,12 @@
   --line: rgba(250, 247, 242, 0.16);
   --dock-h: 4.35rem;
   --pad: clamp(1.05rem, 4vw, 2.25rem);
-  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --display: "Fraunces", ui-serif, serif;
   --text: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -65,6 +65,7 @@ a { color: inherit; }
   line-height: 1;
   padding: 0.35rem 0.55rem;
   border-radius: 0.45rem;
+  min-height: 44px;
   background: rgba(10, 12, 16, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -124,6 +125,12 @@ a { color: inherit; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--cream-soft);
+}
+.plate-nav a,
+.plate-mark {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 .plate-nav a[aria-current="page"] { color: var(--cream); }
 .plate-nav a:hover { color: var(--gravy); }
@@ -489,6 +496,9 @@ a { color: inherit; }
 }
 
 @media (min-width: 768px) {
+  body { padding-bottom: 0; }
+  .dock { display: none; }
+  .desktop-call { display: inline-flex; }
   .plate-hero {
     min-height: min(88vh, 42rem);
   }
@@ -535,8 +545,6 @@ a { color: inherit; }
 @media (min-width: 1100px) {
   .plate-hero { min-height: min(90vh, 48rem); }
   .plate-copy { padding-left: clamp(2rem, 6vw, 5rem); }
-  .dock { display: none; }
-  body { padding-bottom: 0; }
 }
 
 @media (max-width: 640px) {
@@ -552,4 +560,145 @@ a { color: inherit; }
   margin-top: 1rem;
   padding-left: 0;
   padding-right: 0;
+}
+
+/* Header Call — phone uses dock; show from 768 */
+.desktop-call {
+  display: none;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+  background: var(--gravy);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.55rem 0.95rem;
+  border-radius: 10px;
+  min-height: 2.75rem;
+  min-width: 4.5rem;
+}
+
+/* Gate 5 three-cut lock — appended */
+.plate-hero {
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+.plate-copy {
+  padding-bottom: calc(1.1rem + env(safe-area-inset-bottom, 0px));
+}
+.dock {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.dock a {
+  min-height: 44px;
+}
+body {
+  padding-bottom: calc(var(--dock-h) + env(safe-area-inset-bottom, 0px));
+}
+.plate-mast {
+  padding-right: var(--pad); /* chip is top-left / bottom-left, not top-right */
+  flex-wrap: nowrap;
+}
+@media (min-width: 768px) {
+  body { padding-bottom: 0 !important; }
+  .dock { display: none !important; }
+  .desktop-call, .plate-mast .top-call, .plate-call {
+    display: inline-flex !important;
+  }
+  .plate-hero {
+    min-height: min(88svh, 44rem);
+  }
+  .plate-mast {
+    gap: 1.25rem;
+  }
+  .plate-nav {
+    font-size: 0.82rem;
+    gap: 1.1rem;
+  }
+  .plate-name {
+    font-size: clamp(2.9rem, 5.2vw, 3.9rem);
+  }
+  .gravy-acts {
+    flex-direction: row;
+    max-width: 28rem;
+  }
+  .gravy-side,
+  .chef-story,
+  .drop-band,
+  .fb-lane,
+  .table-foot {
+    max-width: 56rem;
+  }
+  .visit-sheet {
+    max-width: 48rem;
+    padding-top: 6rem;
+  }
+}
+@media (min-width: 1100px) {
+  .plate-hero { min-height: min(90svh, 50rem); }
+  .gravy-side,
+  .chef-story,
+  .drop-band,
+  .fb-lane,
+  .table-foot,
+  .visit-sheet,
+  .visit-wrap,
+  .plate-shell {
+    max-width: 72rem;
+  }
+  .plate-copy {
+    max-width: 42rem;
+    padding-left: clamp(2rem, 6vw, 5rem);
+  }
+  .gravy-side img,
+  .chef-cut img,
+  .drop-cut img {
+    border-radius: 18px;
+  }
+}
+
+/* Gate 5 chip lock — never cover header Call or hero CTAs */
+.look-chip{
+  position:fixed !important;
+  left:.65rem !important;
+  right:auto !important;
+  top:3.6rem !important;
+  bottom:auto !important;
+  z-index:35 !important;
+  min-height:44px !important;
+}
+@media (min-width: 768px){
+  .look-chip{
+    top:auto !important;
+    bottom:1rem !important;
+    left:1rem !important;
+    right:auto !important;
+  }
+}
+
+/* Gate 5 Tristan hard fix */
+.plate-copy {
+  padding-bottom: calc(var(--dock-h, 4.35rem) + env(safe-area-inset-bottom, 0px) + 1.1rem) !important;
+}
+.gravy-acts a { min-height: 44px !important; }
+.dock a { min-height: 44px !important; }
+@media (min-width: 768px) {
+  .dock { display: none !important; }
+  body { padding-bottom: 0 !important; }
+  .desktop-call { display: inline-flex !important; min-height: 44px; align-items: center; }
+  .plate-copy { padding-bottom: 2.5rem !important; }
+}
+
+@media (min-width: 1280px) {
+  .gravy-side,
+  .chef-story,
+  .drop-band,
+  .fb-lane,
+  .table-foot,
+  .visit-sheet {
+    max-width: 72rem;
+  }
 }

@@ -1,229 +1,597 @@
-/* Dale's Donuts — bakery door + case scroll. Unique class tree. */
+/* Dale's Donuts — Awning door (c2c7eb68). Newsreader + Figtree. Unique mill/awning/case/glaze/clock tree. */
 :root {
-  --cream: #f6efe4;
-  --cream-deep: #e8d9c4;
-  --navy: #1e3a5f;
-  --navy-d: #152a46;
-  --cherry: #c41e3a;
-  --ink: #1a1410;
-  --ink-soft: #5a4a3e;
+  --awning: #5B9BB4;
+  --script: #B23A52;
+  --script-d: #9c3247;
+  --glaze: #C4894A;
+  --ink: #2C241E;
+  --cream: #F7F3EC;
+  --cream-deep: #EFE6D8;
+  --muted: rgba(247, 243, 236, 0.72);
+  --line: rgba(247, 243, 236, 0.16);
+  --dock-h: 4.4rem;
   --pad: clamp(1.1rem, 4vw, 2.5rem);
-  --display: "Newsreader", Georgia, serif;
-  --text: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --display: "Newsreader", system-ui, sans-serif;
+  --text: "Figtree", system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--text);
-  font-size: 1.0625rem;
-  line-height: 1.5;
-  padding-bottom: 4.75rem;
+
+html {
   overflow-x: clip;
 }
-img { max-width: 100%; display: block; height: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  padding-bottom: calc(var(--dock-h) + env(safe-area-inset-bottom, 0px));
+  overflow-x: clip;
+}
+
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 
 .skip { position: absolute; left: -999px; top: 0; }
-.skip:focus { left: 1rem; top: 1rem; z-index: 80; background: #fff; padding: .5rem 1rem; }
+.skip:focus {
+  left: 1rem; top: 1rem; z-index: 80;
+  background: var(--cream); color: var(--ink);
+  padding: 0.5rem 0.85rem;
+}
 
+/* Outreach chip — top-left on phone; bottom-left from 768. Never cover header Call. */
 .look-chip {
-  position: fixed; top: 0.65rem; right: 0.75rem; z-index: 60;
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  text-decoration: none; line-height: 1;
-  padding: 0.35rem 0.55rem;
-  border-radius: 0.45rem;
-  background: rgba(10, 12, 16, 0.72);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-  color: #f4f1ea;
-  flex-shrink: 0;
-}
-.look-chip-icon { width: 1.05rem; height: 1.05rem; color: #D4AF37; flex-shrink: 0; }
-.look-chip-word { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
-.look-chip-design { color: #f4f1ea; font-weight: 600; }
-.look-chip-num { color: #D4AF37; font-weight: 700; }
-
-/* Mast */
-.mast-dales {
-  position: sticky; top: 0; z-index: 40;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; padding: .75rem var(--pad);
-  background: rgba(246, 239, 228, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--navy);
-}
-.brand-dales {
-  font-family: var(--display);
-  font-size: 1.35rem;
+  position: fixed;
+  top: 3.6rem;
+  left: 0.65rem;
+  right: auto;
+  z-index: 35;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   text-decoration: none;
-  color: var(--navy);
+  line-height: 1;
+  padding: 0.45rem 0.65rem;
+  min-height: 44px;
+  border-radius: 0.45rem;
+  background: rgba(44, 36, 30, 0.82);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  color: #f4f1ea;
 }
-.nav-dales { display: flex; gap: 1.2rem; }
-.nav-dales a {
-  text-decoration: none; font-size: .8rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
+.look-chip-icon { width: 1.05rem; height: 1.05rem; color: #C9A227; flex-shrink: 0; }
+.look-chip-word {
+  font-family: system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
-.nav-dales a[aria-current="page"] { color: var(--cherry); }
+.look-chip-design { color: #f4f1ea; }
+.look-chip-num { color: #C9A227; font-weight: 700; }
 
-/* Cinematic door — photo only, no overlay type */
-.doorframe {
-  width: 100%;
-  background: var(--navy-d);
-}
-.doorframe picture, .doorframe img {
-  width: 100%;
-  max-height: min(62vh, 36rem);
-  object-fit: cover;
-  object-position: 50% 40%;
-}
-
-/* Type BELOW the photo */
-.nameplate {
-  padding: 2rem var(--pad) 2.4rem;
-  max-width: 40rem;
-}
-.eyebrow-dales {
-  margin: 0 0 .5rem;
-  font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--navy); font-weight: 700;
-}
-.nameplate h1, .ticket-body h1 {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(2.4rem, 8vw, 4.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0 0 .55rem;
-  color: var(--navy);
-}
-.line-dales {
-  margin: 0 0 1.35rem;
-  font-size: 1.15rem;
-  color: var(--ink-soft);
-  max-width: 26rem;
-}
-.cta-row { display: flex; flex-wrap: wrap; gap: .55rem; }
-.pill-go, .pill-line {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: 2.85rem; padding: .55rem 1.25rem;
-  text-decoration: none; border-radius: 999px; font-weight: 700;
-}
-.pill-go { background: var(--cherry); color: #fff; }
-.pill-go:hover { background: #9e1830; }
-.pill-line { border: 2px solid var(--navy); color: var(--navy); }
-
-/* Horizontal case scroll */
-.case-rail {
+/* Overlay mast — sits on the door photo */
+.mill-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 40;
   display: flex;
-  gap: .65rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 var(--pad) 2.6rem;
-  scrollbar-width: thin;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem var(--pad);
+  background: linear-gradient(180deg, rgba(44, 36, 30, 0.72), transparent);
 }
-.case-pane {
-  flex: 0 0 min(78vw, 20rem);
-  margin: 0;
-  scroll-snap-align: start;
-  background: var(--cream-deep);
-}
-.case-pane img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-.case-pane figcaption {
-  padding: .65rem .8rem .8rem;
-  font-size: .78rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+.mill-mark {
+  font-family: var(--display);
   font-weight: 700;
-  color: var(--navy);
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--cream);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.mill-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.mill-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 0.65rem;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mill-nav a[aria-current="page"] { color: var(--cream); }
+.mill-nav .mill-ring,
+a.mill-ring {
+  display: none;
+  background: var(--script);
+  color: var(--cream) !important;
+  border-radius: 999px;
+  padding: 0 0.95rem;
+  min-width: 4.25rem;
+}
+.mill-nav .mill-ring:hover,
+a.mill-ring:hover { background: var(--script-d); }
+
+/* Door-led overlay hero — type ON the bleed */
+.awning-door {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--cream);
+}
+.awning-pic,
+.awning-pic img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.awning-pic img {
+  object-fit: cover;
+  object-position: center 38%;
+}
+.awning-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(44,36,30,.22) 8%, rgba(44,36,30,.45) 42%, rgba(44,36,30,.88) 76%, #2C241E 100%);
+}
+.mill-copy {
+  position: relative;
+  z-index: 2;
+  padding: 1.2rem var(--pad) calc(var(--dock-h) + env(safe-area-inset-bottom, 0px) + 1rem);
+  max-width: 36rem;
+}
+.mill-voice {
+  margin: 0 0 0.35rem;
+  color: var(--awning);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.mill-name {
+  margin: 0 0 0.75rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 8.4vw, 3.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.mill-today {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  min-height: 44px;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dir-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.4rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: var(--awning);
+  color: var(--ink);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.mill-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+.mill-call,
+.mill-dir {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1.15rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 12px;
+}
+.mill-call {
+  background: var(--script);
+  color: var(--cream);
+}
+.mill-call:hover { background: var(--script-d); }
+.mill-dir {
+  border: 1.5px solid rgba(247, 243, 236, 0.38);
+  color: var(--cream);
+}
+.mill-dir--ink {
+  border-color: rgba(44, 36, 30, 0.28);
+  color: var(--ink);
 }
 
-/* Visit — bakery ticket, not NAP dump */
-.ticket {
+/* Interior case — cream room after the door */
+.case-band {
+  background: var(--cream);
+  color: var(--ink);
+  padding: 2.2rem var(--pad) 2.4rem;
+}
+.case-shot { margin: 0 0 1.2rem; }
+.case-shot img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.case-copy { max-width: 32rem; }
+.mill-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--awning);
+}
+.mill-kicker--glaze { color: var(--glaze); }
+.case-copy h2,
+.glaze-mark h2,
+.mill-fb h2,
+.clock-board h2,
+.mill-find-copy h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+.case-copy h2,
+.glaze-mark h2 {
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+}
+.case-copy p,
+.glaze-mark p,
+.mill-fb p {
+  margin: 0 0 1rem;
+  color: rgba(44, 36, 30, 0.72);
+}
+.mill-textlink {
+  font-weight: 700;
+  color: var(--script);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Glaze + script box — not a 3-equal strip */
+.glaze-split {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 2rem var(--pad) 2.4rem;
   display: grid;
-  gap: 0;
-  margin: 1.5rem var(--pad) 0;
-  border: 2px solid var(--navy);
-  background: #fffdf8;
+  gap: 1.25rem;
+}
+.glaze-open,
+.glaze-lid { margin: 0; }
+.glaze-open img,
+.glaze-lid img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.glaze-open figcaption {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glaze);
+}
+.glaze-mark p { color: var(--muted); }
+.glaze-lid img { aspect-ratio: 1; max-width: 12rem; }
+
+.mill-room {
+  background: var(--ink);
+  padding: 0 var(--pad) 2.2rem;
+}
+.mill-room figure { margin: 0; }
+.mill-room img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.mill-room figcaption {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.mill-fb {
+  margin: 0 var(--pad) 0;
+  padding: 1.4rem 1.25rem 1.6rem;
+  border: 1px solid var(--line);
+  max-width: 40rem;
+  background: rgba(247, 243, 236, 0.04);
+}
+.mill-fb h2 { font-size: 1.45rem; }
+.mill-fb p { color: var(--muted); }
+
+.mill-foot {
+  padding: 2rem var(--pad) 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.mill-foot a { color: var(--awning); font-weight: 700; text-decoration: none; }
+
+/* Sticky dock — Call · Hours · Directions. Phone only. */
+.mill-dock {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--ink);
+  color: var(--cream);
+  border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.mill-dock a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+.mill-dock a + a { border-left: 1px solid var(--line); }
+.mill-dock a:first-child { background: var(--script); }
+
+/* Visit page — cream ticket + designed hours object */
+.page-visit {
+  background: var(--cream);
+  color: var(--ink);
+}
+.page-visit .mill-bar {
+  position: sticky;
+  background: rgba(247, 243, 236, 0.96);
+  border-bottom: 2px solid var(--ink);
+}
+.page-visit .mill-mark { color: var(--ink); }
+.page-visit .mill-nav a { color: rgba(44, 36, 30, 0.62); }
+.page-visit .mill-nav a[aria-current="page"] { color: var(--script); }
+.page-visit .mill-foot {
+  color: rgba(44, 36, 30, 0.62);
+  border-top-color: rgba(44, 36, 30, 0.18);
+}
+.page-visit .mill-foot a { color: var(--ink); }
+
+.mill-find {
+  padding: 1.4rem var(--pad) 0.5rem;
   max-width: 48rem;
 }
-.ticket-photo img {
+.mill-find-pic { margin: 0 0 1.1rem; }
+.mill-find-pic img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  max-height: 16rem;
 }
-.ticket-body { padding: 1.6rem 1.4rem 1.8rem; }
-.ticket-list {
-  list-style: none; margin: 0 0 1rem; padding: 0;
+.mill-find-copy h1 {
+  font-size: clamp(2.1rem, 7vw, 3.2rem);
+  color: var(--ink);
 }
-.ticket-list li { margin: .35rem 0; font-weight: 700; }
-.ticket-list a { color: var(--cherry); text-decoration: none; }
-.ticket-list a:hover { text-decoration: underline; }
-.fine-dales { margin: 0; font-size: .85rem; color: var(--ink-soft); }
-.map-dales {
+.mill-find-line {
+  margin: 0 0 1rem;
+  color: rgba(44, 36, 30, 0.68);
+}
+
+.clock-board {
+  margin: 1.4rem var(--pad) 0;
+  padding: 1.25rem 1.15rem 1.4rem;
+  max-width: 40rem;
+  background: #fffdf8;
+  border-top: 4px solid var(--script);
+  border: 1px solid rgba(44, 36, 30, 0.12);
+  border-top-width: 4px;
+  border-top-color: var(--script);
+}
+.clock-kicker {
+  margin: 0 0 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.clock-board h2 {
+  font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+  color: var(--ink);
+}
+.clock-lede {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: rgba(44, 36, 30, 0.68);
+}
+.clock-rows {
+  list-style: none;
+  margin: 0 0 1.1rem;
+  padding: 0;
+}
+.clock-rows li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(44, 36, 30, 0.1);
+  font-family: var(--display);
+  font-size: 1.15rem;
+}
+.clock-rows li span:last-child {
+  font-family: var(--text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--script);
+  text-align: right;
+}
+.clock-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+  color: rgba(44, 36, 30, 0.62);
+}
+.mill-map {
   margin: 1.2rem var(--pad) 0;
   max-width: 48rem;
   background: var(--cream-deep);
 }
-.map-dales iframe { width: 100%; height: 16rem; border: 0; }
+.mill-map iframe { width: 100%; height: 16rem; border: 0; }
 
-.base-dales {
-  padding: 2rem var(--pad) 1.4rem;
-  margin-top: 2rem;
-  border-top: 2px solid var(--navy);
-  font-size: .92rem;
-  color: var(--ink-soft);
-}
-.base-dales a { color: var(--navy); font-weight: 700; }
-
-/* Sticky dock — unique class */
-.dock-dales {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  background: var(--navy); color: var(--cream);
-}
-.dock-dales a {
-  text-decoration: none; min-height: 3.3rem;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  font-size: .76rem;
-}
-.dock-dales a + a { border-left: 1px solid rgba(246,239,228,.18); }
-.dock-dales a:first-child { background: var(--cherry); }
-
+/* ——— 768 cut ——— */
 @media (min-width: 768px) {
-  .doorframe picture, .doorframe img {
-    max-height: min(70vh, 42rem);
+  body { padding-bottom: 0; }
+  .mill-dock { display: none !important; }
+  .mill-nav .mill-ring,
+  a.mill-ring { display: inline-flex !important; }
+
+  .look-chip {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
   }
-  .nameplate { padding: 2.6rem var(--pad) 2.8rem; }
-  .case-pane { flex-basis: min(42vw, 24rem); }
-  .ticket {
-    grid-template-columns: 14rem 1fr;
-    margin: 2.2rem auto 0;
+
+  .awning-door {
+    min-height: min(92svh, 52rem);
   }
-  .ticket-photo img { max-height: none; height: 100%; aspect-ratio: auto; }
-  .map-dales { margin: 1.4rem auto 0; width: calc(100% - 2 * var(--pad)); }
+  .mill-copy {
+    margin-left: auto;
+    max-width: 28rem;
+    padding: 2rem var(--pad) 2.4rem;
+  }
+  .mill-name { font-size: clamp(2.6rem, 5vw, 3.4rem); }
+
+  .case-band {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.75rem;
+    align-items: center;
+    padding: 2.6rem var(--pad);
+  }
+  .case-shot { margin: 0; }
+
+  .glaze-split {
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 1.75rem;
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mill-room,
+  .mill-fb,
+  .mill-foot,
+  .mill-find,
+  .clock-board,
+  .mill-map {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mill-find {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    width: calc(100% - 2 * var(--pad));
+  }
+  .mill-find-pic { margin: 0; }
+  .clock-board { width: calc(100% - 2 * var(--pad)); }
+  .mill-map { width: calc(100% - 2 * var(--pad)); }
 }
 
+/* ——— ~1100 / desktop cut ——— */
 @media (min-width: 1100px) {
-  .case-rail { padding-left: max(var(--pad), calc((100% - 70rem) / 2)); }
+  .awning-door { min-height: min(94svh, 56rem); }
+  .mill-copy {
+    max-width: 34rem;
+    padding: 2.6rem var(--pad) 3rem;
+  }
+  .mill-name { font-size: clamp(3rem, 4.2vw, 4.1rem); }
+
+  .case-band,
+  .glaze-split,
+  .mill-room,
+  .mill-fb,
+  .mill-foot,
+  .mill-find,
+  .clock-board,
+  .mill-map {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .case-band { padding: 3rem var(--pad); }
+  .mill-room img { min-height: 26rem; }
+  .glaze-lid img { max-width: 14rem; }
 }
 
-/* phone chip clearance */
-@media (max-width: 640px) {
-  .mast-dales { padding-right: 7.5rem; }
+@media (min-width: 1280px) {
+  .mill-copy { max-width: 36rem; }
+  .mill-name { font-size: 4rem; }
 }
 
-.hours-dales{display:inline-block;margin:.35rem 0 1rem;padding:.4rem .75rem;border:1px solid rgba(28,20,16,.18);border-radius:999px;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:rgba(28,20,16,.62);font-family:Figtree,system-ui,sans-serif}
-.hours-dales b{color:inherit;font-weight:700}
+
+/* Gate 5 Tristan hard fix — Dale */
+.mill-acts a { min-height: 44px; }
+.mill-dock a { min-height: 44px; }
+.mill-copy {
+  padding-bottom: calc(var(--dock-h) + env(safe-area-inset-bottom, 0px) + 1.1rem);
+}
+@media (min-width: 768px) {
+  .mill-copy { padding-bottom: 2.5rem; }
+  .mill-dock { display: none !important; }
+  body { padding-bottom: 0 !important; }
+  .mill-nav .mill-ring,
+  a.mill-ring { display: inline-flex !important; min-height: 44px; align-items: center; }
+}
